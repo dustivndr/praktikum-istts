@@ -12,9 +12,7 @@ public class App {
         try(Scanner input = new Scanner(System.in)) {
             while(menu != 2) 
             {
-                System.out.println("\nHangman Game");
-                System.out.println("1. Start Game");
-                System.out.println("2. Exit");
+                System.out.println("\nHangman Game \n1. Start Game \n2. Exit");
                 System.out.print(">> ");
                 menu = input.nextInt();
 
@@ -43,21 +41,18 @@ public class App {
             System.out.print("Guess: ");
             String guess = input.next().toLowerCase();
 
-            for (int i = 0; i < guessWord.length(); i++) {
+            for (int i = 0; i < guessWord.length(); i++)
                 if (guessWord.charAt(i) == guess.charAt(0))
                     hiddenWord = hiddenWord.substring(0, i * 2) + guess + hiddenWord.substring(i * 2 + 1); // di kali 2 buat spasinya "_ "
-            }
             
             if (!guessWord.contains(guess)) {
-                System.out.println("Wrong!");
-                lives--;
-                for (int i = lives; i < hangman.length; i++) { System.out.println(hangman[i]); }
+                System.out.println("Wrong!"); lives--;
+                for (int i = lives; i < hangman.length; i++) System.out.println(hangman[i]);
             }
 
             if (lives == 0) { System.out.println("You lost! The word was: " + guessWord); break; }
 
             if (!hiddenWord.contains("_")) { System.out.println("Congratzz! You've guessed the word: " + guessWord); break; }
-            
         }
 
     } // close psv game
