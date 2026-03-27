@@ -6,10 +6,14 @@ public class App {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
+
+        Room room1 = new Room(false, 200, false, "", 0, 0, 0);
+        Room room2 = new Room(false, 300, false, "", 0, 0, 0);
+        Room room3 = new Room(false, 400, false, "", 0, 0, 0);
         
         while (true) { 
             programMenu();
-            mainMenu();
+            mainMenu(room1, room2, room3);
         }
 
     } // close psvm
@@ -31,11 +35,7 @@ public class App {
 
     } // close psv programMenu
 
-    public static void mainMenu() {
-
-        Room room1 = new Room(false, 200, false, "", 0, 0, 0);
-        Room room2 = new Room(false, 300, false, "", 0, 0, 0);
-        Room room3 = new Room(false, 400, false, "", 0, 0, 0);
+    public static void mainMenu(Room room1, Room room2, Room room3) {
 
         while (true) { 
             System.out.println("=================");
@@ -59,7 +59,7 @@ public class App {
                 case 1 -> Menu.buyRoom(room1, room2, room3);
                 case 2 -> Menu.checkPotentialRenters(room1, room2, room3);
                 case 3 -> Menu.checkRoomStatus(room1, room2, room3);
-                case 4 -> User.dayCounter++;
+                case 4 -> Menu.nextDay(room1, room2, room3);
                 default -> System.out.println("yang bener lah");
             }
         }

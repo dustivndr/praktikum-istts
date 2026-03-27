@@ -64,7 +64,8 @@ public class Menu {
                     System.out.println("Not enough money left to buy!\n");
                 }
             }
-            default -> System.out.println("yang bener lah");
+            case 4 -> System.out.println("Purchase cancelled.\n");
+            default -> System.out.println("yang bener lah\n");
         }
 
     } // close psv buyRoom
@@ -161,7 +162,7 @@ public class Menu {
                 System.out.println("  Rent Duration: " + room1.rentDuration + " days");
                 System.out.println("  Days Rented: " + room1.dayRented + " days");
                 System.out.println("  Payment: $" + room1.payment + "/day");
-                System.out.println("  Status  : Occupied\n");
+                System.out.println("  Status: Occupied\n");
             }
             else {
                 System.out.println("Room 1:");
@@ -179,7 +180,7 @@ public class Menu {
                 System.out.println("  Rent Duration: " + room2.rentDuration + " days");
                 System.out.println("  Days Rented: " + room2.dayRented + " days");
                 System.out.println("  Payment: $" + room2.payment + "/day");
-                System.out.println("  Status  : Occupied\n");
+                System.out.println("  Status: Occupied\n");
             }
             else {
                 System.out.println("Room 2:");
@@ -197,7 +198,7 @@ public class Menu {
                 System.out.println("  Rent Duration: " + room3.rentDuration + " days");
                 System.out.println("  Days Rented: " + room3.dayRented + " days");
                 System.out.println("  Payment: $" + room3.payment + "/day");
-                System.out.println("  Status  : Occupied\n");
+                System.out.println("  Status: Occupied\n");
             }
             else {
                 System.out.println("Room 3:");
@@ -209,5 +210,64 @@ public class Menu {
         }
         
     } // close psv checkRoomStatus
+
+    public static void nextDay(Room room1, Room room2, Room room3) {
+
+        User.dayCounter++;
+
+        boolean hasFinishedTenant =
+            (room1.status && room1.dayRented + 1 >= room1.rentDuration) ||
+            (room2.status && room2.dayRented + 1 >= room2.rentDuration) ||
+            (room3.status && room3.dayRented + 1 >= room3.rentDuration);
+
+        if (hasFinishedTenant) {
+            System.out.println("=== DAY " + User.dayCounter + " ===");
+        }
+
+        if (room1.status) {
+            room1.dayRented++;
+            if (room1.dayRented >= room1.rentDuration) {
+                User.money += room1.payment * room1.rentDuration;
+                System.out.println("Room 1 - " + room1.tenant + " paid $" + (room1.payment * room1.rentDuration));
+                System.out.println(room1.tenant + " has finised renting and moved out from Room 1!\n");
+                room1.status = false;
+                room1.tenant = "";
+                room1.rentDuration = 0;
+                room1.dayRented = 0;
+                room1.payment = 0;
+            }
+        }
+
+        if (room2.status) {
+            room2.dayRented++;
+            if (room2.dayRented >= room2.rentDuration) {
+                User.money += room2.payment * room2.rentDuration;
+                System.out.println("Room 2 - " + room2.tenant + " paid $" + (room2.payment * room2.rentDuration));
+                System.out.println(room2.tenant + " has finised renting and moved out from Room 2!\n");
+                room2.status = false;
+                room2.tenant = "";
+                room2.rentDuration = 0;
+                room2.dayRented = 0;
+                room2.payment = 0;
+            }
+        }
+
+        if (room3.status) {
+            room3.dayRented++;
+            if (room3.dayRented >= room3.rentDuration) {
+                User.money += room3.payment * room3.rentDuration;
+                System.out.println("Room 3 - " + room3.tenant + " paid $" + (room3.payment * room3.rentDuration));
+                System.out.println(room3.tenant + " has finised renting and moved out from Room 3!\n");
+                room3.status = false;
+                room3.tenant = "";
+                room3.rentDuration = 0;
+                room3.dayRented = 0;
+                room3.payment = 0;
+            }
+        }
+
+        System.out.println();
+
+    } // close psv nextDay
 
 }
