@@ -61,7 +61,10 @@ public class Game {
                 printTableInfo(4);
             }
             System.out.println("=====================");
-            String menu = "move (wasd) | quit (x) | expand shop (e)";
+            String menu = "move (wasd) | quit (x)";
+            if (!isShopExpanded) {
+                menu += " | expand shop (e)";
+            }
             if (canSeatCustomers()) {
                 menu += " | seat (t)";
             }
@@ -73,7 +76,7 @@ public class Game {
             String choose = scanner.nextLine().toLowerCase();
 
             if (choose.length() != 1) {
-                System.out.println("Input harus sesuai");
+                System.out.println("Invalid input (gblh lebih dari 1 huruf)!");
             } else {
                 switch (choose) {
                     case "x" -> {
@@ -81,9 +84,7 @@ public class Game {
                         return;
                     }
                     case "e" -> {
-                        if (isShopExpanded) {
-                            System.out.println("\nShop is already expanded.");
-                        } else if (gold >= 100) {
+                        if (gold >= 100) {
                             gold -= 100;
                             isShopExpanded = true;
                             map = buildMap(true);
@@ -92,8 +93,6 @@ public class Game {
                             playerCol = 1;
                             redrawCustomerMarkers();
                             System.out.println("\nShop expanded! 2 new tables added!");
-                        } else {
-                            System.out.println("\nNot enough gold to expand shop. Need at least 100 gold.");
                         }
                     }
                     case "g" -> gold += 100;
@@ -310,13 +309,11 @@ public class Game {
         System.out.print(">> ");
 
         String foodInput = scanner.nextLine().trim();
-        int foodChoice;
-        try {
-            foodChoice = Integer.parseInt(foodInput);
-        } catch (NumberFormatException e) {
+        if (!isAllDigits(foodInput)) {
             System.out.println("Invalid menu choice.");
             return;
         }
+        int foodChoice = Integer.parseInt(foodInput);
 
         if (foodChoice < 1 || foodChoice > 3) {
             System.out.println("Invalid menu choice.");
@@ -325,13 +322,11 @@ public class Game {
 
         System.out.print("Amount: ");
         String amountInput = scanner.nextLine().trim();
-        int amount;
-        try {
-            amount = Integer.parseInt(amountInput);
-        } catch (NumberFormatException e) {
+        if (!isAllDigits(amountInput)) {
             System.out.println("Invalid amount.");
             return;
         }
+        int amount = Integer.parseInt(amountInput);
 
         if (amount <= 0) {
             System.out.println("Amount must be more than 0.");
@@ -340,6 +335,20 @@ public class Game {
 
         carryingFoodName = MENU_ITEMS[foodChoice - 1];
         carryingFoodAmount = amount;
+    }
+
+    public static boolean isAllDigits(String input) {
+        if (input == null || input.isEmpty()) {
+            return false;
+        }
+
+        for (int i = 0; i < input.length(); i++) {
+            if (!Character.isDigit(input.charAt(i))) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static boolean canServeFood() {
@@ -362,21 +371,29 @@ public class Game {
             return;
         }
 
-        if (tableOrders[targetTable].equals(carryingFoodName)) {
-            int customerCount = tableCustomers[targetTable];
+        int customerCount = tableCustomers[targetTable];
+        if (tableOrders[targetTable].equals(carryingFoodName) && carryingFoodAmount == customerCount) {
+            int goldEarned = customerCount * 10;
             clearTable(targetTable);
-            gold += customerCount * 10;
+            gold += goldEarned;
             carryingFoodName = "";
             carryingFoodAmount = 0;
             System.out.println("\nFood served successfully");
+            System.out.println("Gained " + goldEarned + " gold!");
             return;
         }
 
-        tablePatience[targetTable] = Math.max(0, tablePatience[targetTable] - 5);
+        tablePatience[targetTable] -= 5;
+        if (tablePatience[targetTable] < 0)
+            tablePatience[targetTable] = 0;
+        carryingFoodName = "";
+        carryingFoodAmount = 0;
         System.out.println("Wrong Food!");
         if (tablePatience[targetTable] == 0) {
             clearTable(targetTable);
-            gold = Math.max(0, gold - 10);
+            gold -= 10;
+            if (gold < 0)
+                gold = 0;
             System.out.println("Table " + targetTable + " customers left! Gold -10.");
         }
     }
@@ -398,7 +415,10 @@ public class Game {
             tablePatience[tableId]--;
             if (tablePatience[tableId] <= 0) {
                 clearTable(tableId);
-                gold = Math.max(0, gold - 10);
+                gold -= 10;
+                if (gold < 0) {
+                    gold = 0;
+                }
                 System.out.println("Table " + tableId + " customers left! Gold -10.");
             }
         }
@@ -438,12 +458,11 @@ public class Game {
         int startRow = TABLE_STARTS[tableId][0];
         int startCol = TABLE_STARTS[tableId][1];
 
-        // Top row: row = startRow, Bottom row: row = startRow + 2
         int[][] candidatePositions = {
-            { startRow, startCol - 1 },           // top-left
-            { startRow, startCol + 5 },           // top-right
-            { startRow + 2, startCol - 1 },       // bottom-left
-            { startRow + 2, startCol + 5 }        // bottom-right
+            { startRow, startCol - 1 },
+            { startRow, startCol + 5 },
+            { startRow + 2, startCol - 1 },
+            { startRow + 2, startCol + 5 }
         };
 
         int customersToPlace = tableCustomers[tableId];

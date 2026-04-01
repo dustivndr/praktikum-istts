@@ -17,12 +17,10 @@ public class App {
         System.out.println("1. Start Game \n2. Exit");
         System.out.print(">> ");
 
-        // ---
         String input = Game.scanner.nextLine().trim();
         if (input.equals("1")) return 1;
         if (input.equals("2")) return 2;
         return -1;
-        // kalo ga di giniin error di terminal ku + detect kalo inputan bukan angka
     }
 
 }
