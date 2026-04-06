@@ -1,0 +1,142 @@
+NOMOR 1
+Detail_Struk                                                                            
+----------------------------------------------------------------------------------------
+STRUK-49 : Bpk/Ibu Chef Arnold membeli Daging Sapi Rendang 1Kg seharga Rp135000.00      
+STRUK-2 : Bpk/Ibu Dewi Sartika membeli Daging Sapi Rendang 1Kg seharga Rp135000.00      
+STRUK-10 : Bpk/Ibu Dina Lorenza membeli Daging Sapi Rendang 1Kg seharga Rp135000.00     
+STRUK-29 : Bpk/Ibu Luna Maya membeli Daging Sapi Rendang 1Kg seharga Rp135000.00        
+STRUK-21 : Bpk/Ibu Raffi Ahmad membeli Daging Sapi Rendang 1Kg seharga Rp135000.00      
+STRUK-34 : Bpk/Ibu Ruben Onsu membeli Daging Sapi Rendang 1Kg seharga Rp135000.00       
+STRUK-32 : Bpk/Ibu Andre Taulany membeli Indomie Goreng (Karton) seharga Rp115000.00    
+STRUK-42 : Bpk/Ibu Atta Halilintar membeli Indomie Goreng (Karton) seharga Rp115000.00  
+STRUK-22 : Bpk/Ibu Nagita Slavina membeli Indomie Goreng (Karton) seharga Rp115000.00   
+STRUK-4 : Bpk/Ibu Nina Zatulini membeli Indomie Goreng (Karton) seharga Rp115000.00     
+STRUK-50 : Bpk/Ibu Raditya Dika membeli Indomie Goreng (Karton) seharga Rp115000.00     
+STRUK-11 : Bpk/Ibu Rudi Heryanto membeli Indomie Goreng (Karton) seharga Rp115000.00    
+STRUK-22 : Bpk/Ibu Nagita Slavina membeli Mie Sedaap Soto (Karton) seharga Rp110000.00  
+STRUK-50 : Bpk/Ibu Raditya Dika membeli Mie Sedaap Soto (Karton) seharga Rp110000.00    
+STRUK-11 : Bpk/Ibu Rudi Heryanto membeli Mie Sedaap Soto (Karton) seharga Rp110000.00   
+STRUK-42 : Bpk/Ibu Atta Halilintar membeli Susu Dancow 1+ Madu 800g seharga Rp95000.00  
+STRUK-30 : Bpk/Ibu Deddy Corbuzier membeli Susu Dancow 1+ Madu 800g seharga Rp95000.00  
+STRUK-21 : Bpk/Ibu Raffi Ahmad membeli Susu Dancow 1+ Madu 800g seharga Rp95000.00      
+STRUK-6 : Bpk/Ibu Siska Kohl membeli Susu Dancow 1+ Madu 800g seharga Rp95000.00        
+STRUK-1 : Bpk/Ibu Ahmad Ridwan membeli Beras Maknyus 5 Kg seharga Rp75000.00            
+STRUK-32 : Bpk/Ibu Andre Taulany membeli Pedigree Beef 1.5Kg seharga Rp75000.00         
+STRUK-49 : Bpk/Ibu Chef Arnold membeli Beras Maknyus 5 Kg seharga Rp75000.00            
+STRUK-10 : Bpk/Ibu Dina Lorenza membeli Beras Maknyus 5 Kg seharga Rp75000.00           
+STRUK-14 : Bpk/Ibu Nita Thalia membeli Beras Maknyus 5 Kg seharga Rp75000.00            
+STRUK-21 : Bpk/Ibu Raffi Ahmad membeli Beras Maknyus 5 Kg seharga Rp75000.00            
+STRUK-41 : Bpk/Ibu Rizky Febian membeli Beras Maknyus 5 Kg seharga Rp75000.00           
+STRUK-34 : Bpk/Ibu Ruben Onsu membeli Beras Maknyus 5 Kg seharga Rp75000.00             
+STRUK-6 : Bpk/Ibu Siska Kohl membeli Beras Maknyus 5 Kg seharga Rp75000.00              
+STRUK-26 : Bpk/Ibu Vidi Aldiano membeli Beras Maknyus 5 Kg seharga Rp75000.00           
+STRUK-32 : Bpk/Ibu Andre Taulany membeli Whiskas Tuna 1.2Kg seharga Rp65000.00          
+STRUK-28 : Bpk/Ibu Ariel Noah membeli Pampers Mami Poko L30 seharga Rp65000.00          
+STRUK-42 : Bpk/Ibu Atta Halilintar membeli Pampers Mami Poko L30 seharga Rp65000.00     
+STRUK-50 : Bpk/Ibu Raditya Dika membeli Whiskas Tuna 1.2Kg seharga Rp65000.00           
+STRUK-6 : Bpk/Ibu Siska Kohl membeli Pampers Mami Poko L30 seharga Rp65000.00           
+
+NOMOR 2
+ID_Pegawai  Tipe_Bayar   Nama_Item             
+----------  -----------  ----------------------
+0005        CREDIT CARD  Pampers Mami Poko L3  
+0005        CREDIT CARD  Taro Net Seaweed 65g  
+0005        CREDIT CARD  Tango Waffle Coklat   
+0005        CREDIT CARD  Pocari Sweat 500ml--  
+0005        QRIS         Kacang Garuda Rosta   
+0005        QRIS         Aqua Botol 600ml----  
+
+NOMOR 3
+
+Info_Pasokan                                     Waktu_Beli  
+-----------------------------------------------  ------------
+Alat Tulis Kantor dipasok oleh Faber-Castell     2026/03/31  
+Alat Tulis Kantor dipasok oleh Faber-Castell     2026/03/31  
+Alat Tulis Kantor dipasok oleh Faber-Castell     2026/03/07  
+Alat Tulis Kantor dipasok oleh Faber-Castell     2026/03/07  
+Minuman dipasok oleh PT Garudafood               2026/03/21  
+Cemilan dipasok oleh PT Garudafood               2026/03/21  
+Minuman dipasok oleh PT Garudafood               2026/03/12  
+Cemilan dipasok oleh PT Garudafood               2026/03/12  
+Kebutuhan Hewan dipasok oleh Whiskas (Mars Inc)  2026/03/31  
+Kebutuhan Hewan dipasok oleh Whiskas (Mars Inc)  2026/03/31  
+Kebutuhan Hewan dipasok oleh Whiskas (Mars Inc)  2026/03/10  
+Kebutuhan Hewan dipasok oleh Whiskas (Mars Inc)  2026/03/10  
+Sembako dipasok oleh PT Wings Surya              2026/03/27  
+Sembako dipasok oleh PT Wings Surya              2026/03/27  
+Sembako dipasok oleh PT Wings Surya              2026/03/12  
+Sembako dipasok oleh PT Wings Surya              2026/03/12  
+Susu & Olahan dipasok oleh PT Ultrajaya          2026/03/24  
+Minuman dipasok oleh PT Ultrajaya                2026/03/24  
+Minuman dipasok oleh PT Ultrajaya                2026/03/24  
+Susu & Olahan dipasok oleh PT Ultrajaya          2026/03/08  
+Minuman dipasok oleh PT Ultrajaya                2026/03/08  
+Minuman dipasok oleh PT Ultrajaya                2026/03/08  
+
+NOMOR 4
+
+Info_Belanja                                   Barang                     amount_paid  
+---------------------------------------------  -------------------------  -------------
+Pelanggan Siska Kohl memborong Kebutuhan Bayi  Pampers Mami Poko L30____      850000.00
+Pelanggan Siska Kohl memborong Kebutuhan Bayi  Susu Dancow 1+ Madu 800g_      850000.00
+Pelanggan Sarwendah memborong Perawatan Diri   Biore Mens Facial Wash 10      215000.00
+Pelanggan Sarwendah memborong Perawatan Diri   Gatsby Styling Pomade 75g      215000.00
+Pelanggan Sarwendah memborong Perawatan Diri   Sabun Lifebuoy Total 10__      215000.00
+
+
+
+NOMOR 5
+
+ID_Nota        Profil_Pelanggan            Detail_Item                                  
+-------------  --------------------------  ---------------------------------------------
+INV-2026-0044  THARIQ HALILINTAR (gold)    makanan beku->Sosis Champ Sapi 500g          
+INV-2026-0044  THARIQ HALILINTAR (gold)    makanan beku->Fiesta Chicken Nugget 500g     
+INV-2026-0044  THARIQ HALILINTAR (gold)    roti & kue->Sari Roti Tawar Spesial          
+INV-2026-0040  MAHALINI RAHARJA (gold)     sayur & buah->Bawang Merah 500g              
+INV-2026-0040  MAHALINI RAHARJA (gold)     bumbu dapur->Royco Ayam 100g                 
+INV-2026-0040  MAHALINI RAHARJA (gold)     bumbu dapur->Kecap Bango 520ml               
+INV-2026-0042  ATTA HALILINTAR (platinum)  kebutuhan bayi->Susu Dancow 1+ Madu 800g     
+INV-2026-0030  DEDDY CORBUZIER (platinum)  kebutuhan bayi->Susu Dancow 1+ Madu 800g     
+INV-2026-0042  ATTA HALILINTAR (platinum)  kebutuhan bayi->Pampers Mami Poko L30        
+INV-2026-0042  ATTA HALILINTAR (platinum)  sembako->Indomie Goreng (Karton)             
+INV-2026-0025  ANYA GERALDINE (gold)       sembako->Minyak Goreng Bimoli 2L             
+INV-2026-0022  NAGITA SLAVINA (platinum)   sembako->Mie Sedaap Soto (Karton)            
+INV-2026-0022  NAGITA SLAVINA (platinum)   sembako->Indomie Goreng (Karton)             
+INV-2026-0032  ANDRE TAULANY (platinum)    kebutuhan hewan->Whiskas Tuna 1.2Kg          
+INV-2026-0032  ANDRE TAULANY (platinum)    kebutuhan hewan->Pedigree Beef 1.5Kg         
+INV-2026-0032  ANDRE TAULANY (platinum)    sembako->Indomie Goreng (Karton)             
+INV-2026-0011  RUDI HERYANTO (platinum)    sembako->Indomie Goreng (Karton)             
+INV-2026-0011  RUDI HERYANTO (platinum)    sembako->Mie Sedaap Soto (Karton)            
+INV-2026-0041  RIZKY FEBIAN (gold)         sembako->Minyak Goreng Bimoli 2L             
+INV-2026-0041  RIZKY FEBIAN (gold)         sembako->Beras Maknyus 5 Kg                  
+INV-2026-0026  VIDI ALDIANO (gold)         sembako->Beras Maknyus 5 Kg                  
+INV-2026-0041  RIZKY FEBIAN (gold)         sembako->Gula Pasir Gulaku 1 Kg              
+INV-2026-0031  SULE SUTISNA (gold)         makanan beku->Fiesta Chicken Nugget 500g     
+INV-2026-0031  SULE SUTISNA (gold)         makanan beku->Sosis Champ Sapi 500g          
+INV-2026-0048  CHEF RENATTA (gold)         pembersih rumah->Rinso Anti Noda 700g        
+INV-2026-0048  CHEF RENATTA (gold)         perawatan diri->Dettol Body Wash 410ml       
+INV-2026-0050  RADITYA DIKA (platinum)     kebutuhan hewan->Whiskas Tuna 1.2Kg          
+INV-2026-0031  SULE SUTISNA (gold)         roti & kue->Sari Roti Tawar Spesial          
+INV-2026-0050  RADITYA DIKA (platinum)     sembako->Indomie Goreng (Karton)             
+INV-2026-0050  RADITYA DIKA (platinum)     sembako->Mie Sedaap Soto (Karton)            
+INV-2026-0014  NITA THALIA (platinum)      sembako->Minyak Goreng Bimoli 2L             
+INV-2026-0049  CHEF ARNOLD (gold)          sembako->Beras Maknyus 5 Kg                  
+INV-2026-0021  RAFFI AHMAD (platinum)      sembako->Beras Maknyus 5 Kg                  
+INV-2026-0014  NITA THALIA (platinum)      sembako->Beras Maknyus 5 Kg                  
+INV-2026-0021  RAFFI AHMAD (platinum)      kebutuhan bayi->Susu Dancow 1+ Madu 800g     
+INV-2026-0046  BOY WILLIAM (platinum)      susu & olahan->Milo Active Go UHT 190ml      
+INV-2026-0049  CHEF ARNOLD (gold)          daging & ikan->Daging Sapi Rendang 1Kg       
+INV-2026-0021  RAFFI AHMAD (platinum)      daging & ikan->Daging Sapi Rendang 1Kg       
+INV-2026-0046  BOY WILLIAM (platinum)      susu & olahan->Yakult 5 Botol                
+INV-2026-0034  RUBEN ONSU (platinum)       sembako->Beras Maknyus 5 Kg                  
+INV-2026-0034  RUBEN ONSU (platinum)       daging & ikan->Daging Sapi Rendang 1Kg       
+INV-2026-0013  AGUS SALIM (gold)           susu & olahan->Keju Kraft Cheddar 165g       
+INV-2026-0028  ARIEL NOAH (gold)           kebutuhan bayi->Pampers Mami Poko L30        
+INV-2026-0034  RUBEN ONSU (platinum)       daging & ikan->Ayam Broiler Utuh             
+INV-2026-0035  SARWENDAH (platinum)        perawatan diri->Sabun Lifebuoy Total 10      
+INV-2026-0035  SARWENDAH (platinum)        perawatan diri->Biore Mens Facial Wash 100g  
+INV-2026-0029  LUNA MAYA (platinum)        daging & ikan->Daging Sapi Rendang 1Kg       
+INV-2026-0035  SARWENDAH (platinum)        perawatan diri->Gatsby Styling Pomade 75g    
+
+
+
