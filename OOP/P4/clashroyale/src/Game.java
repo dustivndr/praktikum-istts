@@ -1,4 +1,3 @@
-
 import card.*;
 import java.util.*;
 
@@ -36,7 +35,6 @@ public class Game {
         }
 
         System.out.print("Active Troops " + owner + ": ");
-
         for (int i = 0; i < troopsInArena.size(); i++) {
             Troop troop = troopsInArena.get(i);
             System.out.print(troop.getName() + "(" + troop.getHp() + " HP)");
@@ -53,7 +51,6 @@ public class Game {
         }
 
         System.out.print("Active Buildings " + owner + ": ");
-
         for (int i = 0; i < buildingsInArena.size(); i++) {
             Building building = buildingsInArena.get(i);
             System.out.print(building.getName() + "(" + building.getHp() + " HP)");
@@ -109,6 +106,8 @@ public class Game {
             int[] opponentKingTower,
             int[] playerElixirRef) {
 
+        deadTroop.clearForcedTowerTarget();
+
         if (deadTroop.getName().equalsIgnoreCase("Elixir Golem")) {
             System.out.println("[EFFECT] " + deadOwner + " Elixir Golem split into 2 Mini Elixir Golems!");
             deadOwnerTroops.add(new Troop("Mini Elixir Golem", 2, 1, 0));
@@ -123,7 +122,7 @@ public class Game {
         }
 
         if (deadTroop.getName().equalsIgnoreCase("Bomber")) {
-            System.out.println("[EFFECT] " + deadOwner + " Bomber meledak: 2 damage ke semua troop, bangunan, dan tower lawan.");
+            System.out.println("[EFFECT] Bomber exploded on everyone! (2 dmg)");
 
             int i = 0;
             while (i < opponentTroops.size()) {
@@ -163,11 +162,11 @@ public class Game {
 
             for (i = 0; i < opponentPrincessTowers.length; i++) {
                 if (opponentPrincessTowers[i] > 0) {
-                    opponentPrincessTowers[i] = Math.max(0, opponentPrincessTowers[i] - 2);
+                    damageTowerWithAnnouncement(deadOwner.equalsIgnoreCase("Player") ? "Enemy" : "Player", i, 2, opponentPrincessTowers, opponentKingTower);
                 }
             }
             if (opponentKingTower[0] > 0) {
-                opponentKingTower[0] = Math.max(0, opponentKingTower[0] - 2);
+                damageTowerWithAnnouncement(deadOwner.equalsIgnoreCase("Player") ? "Enemy" : "Player", 2, 2, opponentPrincessTowers, opponentKingTower);
             }
         }
     }
@@ -185,6 +184,38 @@ public class Game {
             int[] defenderPrincessTowers,
             int[] defenderKingTower,
             int[] playerElixirRef) {
+
+        if (attacker.hasForcedTowerTarget()) {
+            int lockedTowerTarget = attacker.getForcedTowerTarget();
+            if (getTowerHp(lockedTowerTarget, defenderPrincessTowers, defenderKingTower) > 0) {
+                System.out.println("[ATTACK] " + attackerOwner + " " + attacker.getName() + " => " + defenderOwner + " " + getTowerName(lockedTowerTarget) + " (" + attacker.getDamage() + " dmg)");
+                damageTowerWithAnnouncement(defenderOwner, lockedTowerTarget, attacker.getDamage(), defenderPrincessTowers, defenderKingTower);
+
+                if (getTowerHp(lockedTowerTarget, defenderPrincessTowers, defenderKingTower) > 0) {
+                    int counterDamage = getTowerCounterDamage(lockedTowerTarget);
+                    System.out.println("[COUNTER] " + defenderOwner + " " + getTowerName(lockedTowerTarget) + " => " + attackerOwner + " " + attacker.getName() + " (" + counterDamage + " dmg)");
+                    attacker.takeDamage(counterDamage);
+                    if (attacker.isDead()) {
+                        System.out.println("[DEATH] " + attackerOwner + " " + attacker.getName() + " died from counter attack!");
+                        handleTroopDeathEffects(
+                                attacker,
+                                attackerOwner,
+                                attackerTroops,
+                                attackerBuildings,
+                                attackerPrincessTowers,
+                                attackerKingTower,
+                                defenderTroops,
+                                defenderBuildings,
+                                defenderPrincessTowers,
+                                defenderKingTower,
+                                playerElixirRef);
+                        return false;
+                    }
+                }
+                return true;
+            }
+            attacker.clearForcedTowerTarget();
+        }
 
         if (!defenderTroops.isEmpty()) {
             int idx = random.nextInt(defenderTroops.size());
@@ -252,20 +283,21 @@ public class Game {
         }
 
         System.out.println("[ATTACK] " + attackerOwner + " " + attacker.getName() + " => " + defenderOwner + " " + getTowerName(targetTower) + " (" + attacker.getDamage() + " dmg)");
-        damageSelectedTower(targetTower, attacker.getDamage(), defenderPrincessTowers, defenderKingTower);
+        damageTowerWithAnnouncement(defenderOwner, targetTower, attacker.getDamage(), defenderPrincessTowers, defenderKingTower);
 
         if (getTowerHp(targetTower, defenderPrincessTowers, defenderKingTower) > 0) {
-            System.out.println("[COUNTER] " + defenderOwner + " " + getTowerName(targetTower) + " => " + attackerOwner + " " + attacker.getName() + " (3 dmg)");
-            attacker.takeDamage(3);
+            int counterDamage = getTowerCounterDamage(targetTower);
+            System.out.println("[COUNTER] " + defenderOwner + " " + getTowerName(targetTower) + " => " + attackerOwner + " " + attacker.getName() + " (" + counterDamage + " dmg)");
+            attacker.takeDamage(counterDamage);
             if (attacker.isDead()) {
                 System.out.println("[DEATH] " + attackerOwner + " " + attacker.getName() + " died from counter attack!");
                 handleTroopDeathEffects(
                         attacker,
                         attackerOwner,
                         attackerTroops,
-                    attackerBuildings,
-                    attackerPrincessTowers,
-                    attackerKingTower,
+                        attackerBuildings,
+                        attackerPrincessTowers,
+                        attackerKingTower,
                         defenderTroops,
                         defenderBuildings,
                         defenderPrincessTowers,
@@ -308,6 +340,7 @@ public class Game {
                     defenderKingTower,
                     playerElixirRef);
             if (!alive) {
+                attacker.clearForcedTowerTarget();
                 attackerTroops.remove(i);
             } else {
                 i++;
@@ -323,6 +356,13 @@ public class Game {
             return "Right Princess Tower";
         }
         return "King Tower";
+    }
+
+    private static int getTowerCounterDamage(int towerIndex) {
+        if (towerIndex == 2) {
+            return 5;
+        }
+        return 3;
     }
 
     private static int getTowerHp(int towerIndex, int[] enemyPrincessTowers, int[] enemyKingTower) {
@@ -347,23 +387,46 @@ public class Game {
         enemyKingTower[0] = Math.max(0, enemyKingTower[0] - damage);
     }
 
+    private static void damageTowerWithAnnouncement(String towerOwner, int towerIndex, int damage, int[] princessTowers, int[] kingTower) {
+        int prevHp = getTowerHp(towerIndex, princessTowers, kingTower);
+        if (prevHp <= 0) {
+            return;
+        }
+
+        damageSelectedTower(towerIndex, damage, princessTowers, kingTower);
+        if (getTowerHp(towerIndex, princessTowers, kingTower) <= 0) {
+            System.out.println("[TOWER] " + towerOwner + " " + getTowerName(towerIndex) + " destroyed");
+        }
+    }
+
+    private static int chooseAutoTowerTarget(int[] enemyPrincessTowers, int[] enemyKingTower) {
+        return chooseRandomTowerTarget(enemyPrincessTowers, enemyKingTower);
+    }
+
     private static int chooseEnemyTower(int[] enemyPrincessTowers, int[] enemyKingTower) {
         while (true) {
-            System.out.println("Pilih tower target:");
-            System.out.println("1. Princess Tower 1 [HP: " + enemyPrincessTowers[0] + "]");
-            System.out.println("2. Princess Tower 2 [HP: " + enemyPrincessTowers[1] + "]");
-            System.out.println("3. King Tower [HP: " + enemyKingTower[0] + "]");
+            System.out.println("Choose target tower:");
+            System.out.println("1. Enemy Left Princess Tower");
+            System.out.println("2. Enemy Right Princess Tower");
+            System.out.println("3. Enemy King Tower");
             System.out.print(">> ");
 
             int pick = scanner.nextInt();
             if (pick < 1 || pick > 3) {
-                System.out.println("Pilihan tidak valid.");
+                System.out.println("Invalid choice.");
                 continue;
             }
 
-            int idx = pick - 1;
+            int idx;
+            switch (pick) {
+                case 1 -> idx = 0;
+                case 2 -> idx = 1;
+                case 3 -> idx = 2;
+                default -> idx = -1;
+            }
+
             if (getTowerHp(idx, enemyPrincessTowers, enemyKingTower) <= 0) {
-                System.out.println("Tower itu sudah hancur, pilih tower lain.");
+                System.out.println("Target tower already destroyed, choose another tower.");
                 continue;
             }
 
@@ -390,7 +453,7 @@ public class Game {
             if (buildingName.equalsIgnoreCase("Cannon")) {
                 int targetTower = chooseRandomTowerTarget(targetPrincessTowers, targetKingTower);
                 if (targetTower != -1) {
-                    damageSelectedTower(targetTower, 2, targetPrincessTowers, targetKingTower);
+                    damageTowerWithAnnouncement(targetOwner, targetTower, 2, targetPrincessTowers, targetKingTower);
                     System.out.println("[EFFECT] " + owner + " Cannon menyerang " + targetOwner + " " + getTowerName(targetTower) + " (2 dmg)");
                 }
                 continue;
@@ -407,74 +470,88 @@ public class Game {
             }
 
             if (buildingName.equalsIgnoreCase("Goblin Hut")) {
-                int spawnCount = 2 + random.nextInt(3); // 2-4
+                int spawnCount = 2 + random.nextInt(3);
                 System.out.println("[EFFECT] " + owner + " Goblin Hut masih aktif => spawn " + spawnCount + " goblin untuk menyerang");
-                for (int i = 1; i <= spawnCount; i++) {
+                for (int i = 0; i < spawnCount; i++) {
                     ownerTroops.add(new Troop("Goblin", 3, 1, 0));
                 }
             }
         }
     }
 
-    private static int applySpellLogic(Spell selectedSpell, int[] enemyPrincessTowers, int[] enemyKingTower) {
+    private static void applySpellLogic(
+            Spell selectedSpell,
+            String casterOwner,
+            boolean manualTarget,
+            int[] targetPrincessTowers,
+            int[] targetKingTower,
+            String targetOwner,
+            ArrayList<Troop> casterTroops) {
+
         String spellName = selectedSpell.getName();
 
         if (spellName.equalsIgnoreCase("Fireball")) {
-            int targetTower = chooseEnemyTower(enemyPrincessTowers, enemyKingTower);
-            damageSelectedTower(targetTower, 4, enemyPrincessTowers, enemyKingTower);
-            System.out.println("Fireball hits " + getTowerName(targetTower) + " for 4 damage.");
-            return 0;
+            int targetTower = manualTarget
+                    ? chooseEnemyTower(targetPrincessTowers, targetKingTower)
+                    : chooseAutoTowerTarget(targetPrincessTowers, targetKingTower);
+            damageTowerWithAnnouncement(targetOwner, targetTower, 4, targetPrincessTowers, targetKingTower);
+            System.out.println("[EFFECT] " + casterOwner + " " + spellName + " melakukan damage sebesar 4 pada " + targetOwner + " " + getTowerName(targetTower));
+            return;
         }
 
         if (spellName.equalsIgnoreCase("Arrow")) {
-            for (int i = 0; i < enemyPrincessTowers.length; i++) {
-                if (enemyPrincessTowers[i] > 0) {
-                    enemyPrincessTowers[i] = Math.max(0, enemyPrincessTowers[i] - 2);
+            for (int i = 0; i < targetPrincessTowers.length; i++) {
+                if (targetPrincessTowers[i] > 0) {
+                    damageTowerWithAnnouncement(targetOwner, i, 2, targetPrincessTowers, targetKingTower);
                 }
             }
-            if (enemyKingTower[0] > 0) {
-                enemyKingTower[0] = Math.max(0, enemyKingTower[0] - 2);
+            if (targetKingTower[0] > 0) {
+                damageTowerWithAnnouncement(targetOwner, 2, 2, targetPrincessTowers, targetKingTower);
             }
-            System.out.println("Arrow deals 2 damage to all enemy towers.");
-            return 0;
+            System.out.println("[EFFECT] " + casterOwner + " Arrow menyerang semua tower dengan damage sebesar 2");
+            return;
         }
 
         if (spellName.equalsIgnoreCase("Goblin Barrel")) {
-            int targetTower = chooseEnemyTower(enemyPrincessTowers, enemyKingTower);
-            damageSelectedTower(targetTower, 2, enemyPrincessTowers, enemyKingTower);
-            System.out.println("Goblin Barrel deals 2 damage to " + getTowerName(targetTower) + ".");
+            int targetTower = manualTarget
+                    ? chooseEnemyTower(targetPrincessTowers, targetKingTower)
+                    : chooseAutoTowerTarget(targetPrincessTowers, targetKingTower);
+            damageTowerWithAnnouncement(targetOwner, targetTower, 2, targetPrincessTowers, targetKingTower);
+            System.out.println("[EFFECT] " + casterOwner + " Goblin Barrel melakukan damage sebesar 2 pada " + targetOwner + " " + getTowerName(targetTower));
 
-            int spawnCount = 1 + random.nextInt(3); // 1-3
-            System.out.println("Goblin Barrel spawns " + spawnCount + " goblins.");
-            for (int i = 1; i <= spawnCount; i++) {
-                if (getTowerHp(targetTower, enemyPrincessTowers, enemyKingTower) <= 0) {
-                    System.out.println("Target tower already destroyed before goblin " + i + " attacks.");
-                    break;
-                }
-                damageSelectedTower(targetTower, 1, enemyPrincessTowers, enemyKingTower);
-                System.out.println("Goblin Barrel Goblin " + i + " hits " + getTowerName(targetTower) + " for 1 damage.");
+            int spawnCount = 1 + random.nextInt(3);
+            System.out.println("[EFFECT] " + casterOwner + " Goblin Barrel spawn " + spawnCount + " goblin");
+            for (int i = 0; i < spawnCount; i++) {
+                Troop goblin = new Troop("Goblin", 3, 1, 0);
+                goblin.setForcedTowerTarget(targetTower);
+                casterTroops.add(goblin);
             }
-            return 0;
+            return;
         }
 
         System.out.println("Spell has no special logic yet.");
-        return 0;
     }
 
-    private static String doEnemyTurn(ArrayList<Troop> enemyTroops, ArrayList<Building> enemyBuildings) {
+    private static String doEnemyTurn(ArrayList<Troop> enemyTroops, ArrayList<Building> enemyBuildings, Spell[] enemySpellRef) {
         int roll = random.nextInt(100);
-        if (roll < 55) {
+        if (roll < 25) {
             return ">> Enemy skipped their turn.";
         }
 
-        if (roll < 85) {
+        if (roll < 55) {
             Troop randomEnemyCard = troops[random.nextInt(troops.length)];
             return deployTroopCard(randomEnemyCard, enemyTroops, "Enemy");
         }
 
-        Building randomEnemyBuilding = buildings[random.nextInt(buildings.length)];
-        enemyBuildings.add(cloneBuilding(randomEnemyBuilding));
-        return ">> Enemy deploys " + randomEnemyBuilding.getName();
+        if (roll < 80) {
+            Building randomEnemyBuilding = buildings[random.nextInt(buildings.length)];
+            enemyBuildings.add(cloneBuilding(randomEnemyBuilding));
+            return ">> Enemy deploys " + randomEnemyBuilding.getName();
+        }
+
+        Spell randomEnemySpell = spells[random.nextInt(spells.length)];
+        enemySpellRef[0] = randomEnemySpell;
+        return ">> Enemy deploys " + randomEnemySpell.getName();
     }
 
     public static void game() {
@@ -496,92 +573,120 @@ public class Game {
             Building randomBuilding = buildings[buldingIndex];
             Spell randomSpell = spells[spellIndex];
 
-            System.out.println();
-            System.out.println("==========================");
-            System.out.println("|      CLASH ROYALE      |");
-            System.out.println("==========================");
-            printActiveBuildings("Enemy", enemyBuildings);
-            printActiveTroops("Enemy", enemyTroops);
-            System.out.println("|        [Enemy]         |");
-            System.out.println("| [PT]     [KT]     [PT] |");
-            System.out.println("| [" + enemyPrincessTowers[0] + "]     [" + enemyKingTower[0] + "]     [" + enemyPrincessTowers[1] + "] |");
-            System.out.println("|                        |");
-            System.out.println("--------- RIVER --------- ");
-            System.out.println("|                        |");
-            System.out.println("| [" + playerPrincessTowers[0] + "]     [" + playerKingTower[0] + "]     [" + playerPrincessTowers[1] + "] |");
-            System.out.println("| [PT]     [KT]     [PT] |");
-            System.out.println("|        [Player]        |");
-            printActiveBuildings("Player", playerBuildings);
-            printActiveTroops("Player", playerTroops);
-            System.out.println("==========================");
-            System.out.println("Elixir: " + elixir + "/10");
-            System.out.println("Choose a card:");
+            String playerActionLog = "";
+            Spell spellToResolve = null;
+            Spell[] enemySpellToResolve = {null};
+            String validationMessage = "";
+            boolean validActionChosen = false;
 
-            System.out.print("1. ");
-            randomTroop.displayForSelect();
-            System.out.println();
+            while (!validActionChosen) {
+                System.out.println();
+                System.out.println("==========================");
+                System.out.println("|      CLASH ROYALE      |");
+                System.out.println("==========================");
+                System.out.println("|        [Enemy]         |");
+                if (!enemyBuildings.isEmpty() || !enemyTroops.isEmpty()) {
+                    System.out.println("==========================");
+                }
+                printActiveBuildings("Enemy", enemyBuildings);
+                printActiveTroops("Enemy", enemyTroops);
+                System.out.println("| [PT]     [KT]     [PT] |");
+                System.out.println("| [" + enemyPrincessTowers[0] + "]     [" + enemyKingTower[0] + "]     [" + enemyPrincessTowers[1] + "] |");
+                System.out.println("|                        |");
+                System.out.println("--------- RIVER --------- ");
+                System.out.println("|                        |");
+                System.out.println("| [" + playerPrincessTowers[0] + "]     [" + playerKingTower[0] + "]     [" + playerPrincessTowers[1] + "] |");
+                System.out.println("| [PT]     [KT]     [PT] |");
+                System.out.println("|        [Player]        |");
+                if (!playerBuildings.isEmpty() || !playerTroops.isEmpty()) {
+                    System.out.println("==========================");
+                }
+                printActiveBuildings("Player", playerBuildings);
+                printActiveTroops("Player", playerTroops);
+                System.out.println("==========================");
 
-            System.out.print("2. ");
-            randomBuilding.displayForSelect();
-            System.out.println();
+                if (!validationMessage.isEmpty()) {
+                    System.out.println(validationMessage);
+                }
 
-            System.out.print("3. ");
-            randomSpell.displayForSelect();
-            System.out.println();
+                System.out.println("Elixir: " + elixir + "/10");
+                System.out.println("Choose a card:");
 
-            System.out.println("4. Skip Turn");
-            System.out.print(">> ");
-            int pil = scanner.nextInt();
-            String playerActionLog;
+                System.out.print("1. ");
+                randomTroop.displayForSelect();
+                System.out.println();
 
-            switch (pil) {
-                case 1 -> {
+                System.out.print("2. ");
+                randomBuilding.displayForSelect();
+                System.out.println();
 
-                    if (elixir < randomTroop.getElixirCost()) {
-                        playerActionLog = ">> Player gagal deploy " + randomTroop.getName() + " (elixir tidak cukup).";
-                    } else {
-                        elixir -= randomTroop.getElixirCost();
-                        playerActionLog = deployTroopCard(randomTroop, playerTroops, "Player");
+                System.out.print("3. ");
+                randomSpell.displayForSelect();
+                System.out.println();
+
+                System.out.println("4. Skip Turn");
+                System.out.print(">> ");
+                int pil = scanner.nextInt();
+
+                switch (pil) {
+                    case 1 -> {
+                        if (elixir < randomTroop.getElixirCost()) {
+                            validationMessage = "Not enough elixir";
+                        } else {
+                            elixir -= randomTroop.getElixirCost();
+                            playerActionLog = deployTroopCard(randomTroop, playerTroops, "Player");
+                            validActionChosen = true;
+                        }
                     }
-                }
-                case 2 -> {
-
-                    if (elixir < randomBuilding.getElixirCost()) {
-                        playerActionLog = ">> Player gagal deploy " + randomBuilding.getName() + " (elixir tidak cukup).";
-                    } else {
-                        elixir -= randomBuilding.getElixirCost();
-                        playerBuildings.add(cloneBuilding(randomBuilding));
-                        playerActionLog = ">> Player deploys " + randomBuilding.getName();
+                    case 2 -> {
+                        if (elixir < randomBuilding.getElixirCost()) {
+                            validationMessage = "Not enough elixir";
+                        } else {
+                            elixir -= randomBuilding.getElixirCost();
+                            playerBuildings.add(cloneBuilding(randomBuilding));
+                            playerActionLog = ">> Player deploys " + randomBuilding.getName();
+                            validActionChosen = true;
+                        }
                     }
-                }
-                case 3 -> {
-
-                    if (elixir < randomSpell.getElixirCost()) {
-                        playerActionLog = ">> Player gagal cast " + randomSpell.getName() + " (elixir tidak cukup).";
-                    } else {
-                        elixir -= randomSpell.getElixirCost();
-                        playerActionLog = ">> Player casts " + randomSpell.getName();
-                        applySpellLogic(randomSpell, enemyPrincessTowers, enemyKingTower);
+                    case 3 -> {
+                        if (elixir < randomSpell.getElixirCost()) {
+                            validationMessage = "Not enough elixir";
+                        } else {
+                            elixir -= randomSpell.getElixirCost();
+                            playerActionLog = ">> Player deploys " + randomSpell.getName();
+                            spellToResolve = randomSpell;
+                            validActionChosen = true;
+                        }
                     }
-                }
-                case 4 -> {
-                    playerActionLog = ">> Player skipped their turn.";
-                }
-                case 10 -> {
-                    elixir = 10;
-                    playerActionLog = ">> Debug: elixir set to 10.";
-                }
-                default -> {
-                    playerActionLog = ">> Input tidak valid. Player melewatkan aksi.";
+                    case 4 -> {
+                        playerActionLog = ">> Player skipped their turn.";
+                        validActionChosen = true;
+                    }
+                    case 10 -> {
+                        elixir = 10;
+                        playerActionLog = ">> Debug: elixir set to 10.";
+                        validActionChosen = true;
+                    }
+                    default -> {
+                        validationMessage = "Input tidak valid";
+                    }
                 }
             }
-
-            String enemyActionLog = doEnemyTurn(enemyTroops, enemyBuildings);
 
             System.out.println();
             System.out.println("=========== TURN " + turn + " ===========");
             System.out.println(playerActionLog);
+
+            String enemyActionLog = doEnemyTurn(enemyTroops, enemyBuildings, enemySpellToResolve);
             System.out.println(enemyActionLog);
+
+            if (spellToResolve != null) {
+                applySpellLogic(spellToResolve, "Player", true, enemyPrincessTowers, enemyKingTower, "Enemy", playerTroops);
+            }
+
+            if (enemySpellToResolve[0] != null) {
+                applySpellLogic(enemySpellToResolve[0], "Enemy", false, playerPrincessTowers, playerKingTower, "Player", enemyTroops);
+            }
             System.out.println("------------------------------");
 
             int[] elixirRef = {elixir};
@@ -603,13 +708,12 @@ public class Game {
             }
 
             turn++;
-            if (elixir < 10)
+            if (elixir < 10) {
                 elixir++;
-            if (elixir < 0)
+            }
+            if (elixir < 0) {
                 elixir = 0;
-            
+            }
         }
-
     }
-
 }
