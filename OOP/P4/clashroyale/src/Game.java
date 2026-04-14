@@ -116,7 +116,10 @@ public class Game {
         }
 
         if (deadTroop.getName().equalsIgnoreCase("Mini Elixir Golem") && deadOwner.equalsIgnoreCase("Player")) {
-            playerElixirRef[0] = Math.min(10, playerElixirRef[0] + 1);
+            playerElixirRef[0] = playerElixirRef[0] + 1;
+            if (playerElixirRef[0] > 10) {
+                playerElixirRef[0] = 10;
+            }
             System.out.println("[EFFECT] Mini Elixir Golem died => Player gains +1 Elixir");
             return;
         }
@@ -375,16 +378,32 @@ public class Game {
         return enemyKingTower[0];
     }
 
+    private static String formatHp(int hp) {
+        if (hp < 0) {
+            hp = 0;
+        }
+        return (hp < 10 ? "0" : "") + hp;
+    }
+
     private static void damageSelectedTower(int towerIndex, int damage, int[] enemyPrincessTowers, int[] enemyKingTower) {
         if (towerIndex == 0) {
-            enemyPrincessTowers[0] = Math.max(0, enemyPrincessTowers[0] - damage);
+            enemyPrincessTowers[0] = enemyPrincessTowers[0] - damage;
+            if (enemyPrincessTowers[0] < 0) {
+                enemyPrincessTowers[0] = 0;
+            }
             return;
         }
         if (towerIndex == 1) {
-            enemyPrincessTowers[1] = Math.max(0, enemyPrincessTowers[1] - damage);
+            enemyPrincessTowers[1] = enemyPrincessTowers[1] - damage;
+            if (enemyPrincessTowers[1] < 0) {
+                enemyPrincessTowers[1] = 0;
+            }
             return;
         }
-        enemyKingTower[0] = Math.max(0, enemyKingTower[0] - damage);
+        enemyKingTower[0] = enemyKingTower[0] - damage;
+        if (enemyKingTower[0] < 0) {
+            enemyKingTower[0] = 0;
+        }
     }
 
     private static void damageTowerWithAnnouncement(String towerOwner, int towerIndex, int damage, int[] princessTowers, int[] kingTower) {
@@ -454,24 +473,27 @@ public class Game {
                 int targetTower = chooseRandomTowerTarget(targetPrincessTowers, targetKingTower);
                 if (targetTower != -1) {
                     damageTowerWithAnnouncement(targetOwner, targetTower, 2, targetPrincessTowers, targetKingTower);
-                    System.out.println("[EFFECT] " + owner + " Cannon menyerang " + targetOwner + " " + getTowerName(targetTower) + " (2 dmg)");
+                    System.out.println("[EFFECT] " + owner + " Cannon attacks " + targetOwner + " " + getTowerName(targetTower) + " (2 dmg)");
                 }
                 continue;
             }
 
             if (buildingName.equalsIgnoreCase("Elixir Collector")) {
                 if (ownerElixirRef != null) {
-                    ownerElixirRef[0] = Math.min(10, ownerElixirRef[0] + 1);
-                    System.out.println("[EFFECT] " + owner + " Elixir Collector masih aktif => " + owner + " mendapatkan +1 elixir");
+                    ownerElixirRef[0] = ownerElixirRef[0] + 1;
+                    if (ownerElixirRef[0] > 10) {
+                        ownerElixirRef[0] = 10;
+                    }
+                    System.out.println("[EFFECT] " + owner + " Elixir Collector is still active => " + owner + " gains +1 elixir");
                 } else {
-                    System.out.println("[EFFECT] " + owner + " Elixir Collector masih aktif.");
+                    System.out.println("[EFFECT] " + owner + " Elixir Collector is still active.");
                 }
                 continue;
             }
 
             if (buildingName.equalsIgnoreCase("Goblin Hut")) {
                 int spawnCount = 2 + random.nextInt(3);
-                System.out.println("[EFFECT] " + owner + " Goblin Hut masih aktif => spawn " + spawnCount + " goblin untuk menyerang");
+                System.out.println("[EFFECT] " + owner + " Goblin Hut is still active => spawn " + spawnCount + " goblin(s) to attack");
                 for (int i = 0; i < spawnCount; i++) {
                     ownerTroops.add(new Troop("Goblin", 3, 1, 0));
                 }
@@ -495,7 +517,7 @@ public class Game {
                     ? chooseEnemyTower(targetPrincessTowers, targetKingTower)
                     : chooseAutoTowerTarget(targetPrincessTowers, targetKingTower);
             damageTowerWithAnnouncement(targetOwner, targetTower, 4, targetPrincessTowers, targetKingTower);
-            System.out.println("[EFFECT] " + casterOwner + " " + spellName + " melakukan damage sebesar 4 pada " + targetOwner + " " + getTowerName(targetTower));
+            System.out.println("[EFFECT] " + casterOwner + " " + spellName + " deals 4 damage to " + targetOwner + " " + getTowerName(targetTower));
             return;
         }
 
@@ -508,7 +530,7 @@ public class Game {
             if (targetKingTower[0] > 0) {
                 damageTowerWithAnnouncement(targetOwner, 2, 2, targetPrincessTowers, targetKingTower);
             }
-            System.out.println("[EFFECT] " + casterOwner + " Arrow menyerang semua tower dengan damage sebesar 2");
+            System.out.println("[EFFECT] " + casterOwner + " Arrow attacks all towers for 2 damage");
             return;
         }
 
@@ -517,10 +539,10 @@ public class Game {
                     ? chooseEnemyTower(targetPrincessTowers, targetKingTower)
                     : chooseAutoTowerTarget(targetPrincessTowers, targetKingTower);
             damageTowerWithAnnouncement(targetOwner, targetTower, 2, targetPrincessTowers, targetKingTower);
-            System.out.println("[EFFECT] " + casterOwner + " Goblin Barrel melakukan damage sebesar 2 pada " + targetOwner + " " + getTowerName(targetTower));
+            System.out.println("[EFFECT] " + casterOwner + " Goblin Barrel deals 2 damage to " + targetOwner + " " + getTowerName(targetTower));
 
             int spawnCount = 1 + random.nextInt(3);
-            System.out.println("[EFFECT] " + casterOwner + " Goblin Barrel spawn " + spawnCount + " goblin");
+            System.out.println("[EFFECT] " + casterOwner + " Goblin Barrel spawns " + spawnCount + " goblin(s)");
             for (int i = 0; i < spawnCount; i++) {
                 Troop goblin = new Troop("Goblin", 3, 1, 0);
                 goblin.setForcedTowerTarget(targetTower);
@@ -578,24 +600,25 @@ public class Game {
             Spell[] enemySpellToResolve = {null};
             String validationMessage = "";
             boolean validActionChosen = false;
+            boolean cheatOnlyAction = false;
 
             while (!validActionChosen) {
                 System.out.println();
                 System.out.println("==========================");
                 System.out.println("|      CLASH ROYALE      |");
                 System.out.println("==========================");
-                System.out.println("|        [Enemy]         |");
+                printActiveBuildings("Enemy", enemyBuildings);
+                printActiveTroops("Enemy", enemyTroops);
                 if (!enemyBuildings.isEmpty() || !enemyTroops.isEmpty()) {
                     System.out.println("==========================");
                 }
-                printActiveBuildings("Enemy", enemyBuildings);
-                printActiveTroops("Enemy", enemyTroops);
+                System.out.println("|        [Enemy]         |");
                 System.out.println("| [PT]     [KT]     [PT] |");
-                System.out.println("| [" + enemyPrincessTowers[0] + "]     [" + enemyKingTower[0] + "]     [" + enemyPrincessTowers[1] + "] |");
+                System.out.println("| [" + formatHp(enemyPrincessTowers[0]) + "]     [" + formatHp(enemyKingTower[0]) + "]     [" + formatHp(enemyPrincessTowers[1]) + "] |");
                 System.out.println("|                        |");
                 System.out.println("--------- RIVER --------- ");
                 System.out.println("|                        |");
-                System.out.println("| [" + playerPrincessTowers[0] + "]     [" + playerKingTower[0] + "]     [" + playerPrincessTowers[1] + "] |");
+                System.out.println("| [" + formatHp(playerPrincessTowers[0]) + "]     [" + formatHp(playerKingTower[0]) + "]     [" + formatHp(playerPrincessTowers[1]) + "] |");
                 System.out.println("| [PT]     [KT]     [PT] |");
                 System.out.println("|        [Player]        |");
                 if (!playerBuildings.isEmpty() || !playerTroops.isEmpty()) {
@@ -664,13 +687,19 @@ public class Game {
                     }
                     case 10 -> {
                         elixir = 10;
-                        playerActionLog = ">> Debug: elixir set to 10.";
+                        playerActionLog = "Elixir set to 10.";
+                        cheatOnlyAction = true;
                         validActionChosen = true;
                     }
                     default -> {
-                        validationMessage = "Input tidak valid";
+                        validationMessage = "Invalid input";
                     }
                 }
+            }
+
+            if (cheatOnlyAction) {
+                System.out.println(playerActionLog);
+                continue;
             }
 
             System.out.println();

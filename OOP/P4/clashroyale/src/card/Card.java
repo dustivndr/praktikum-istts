@@ -32,7 +32,10 @@ public class Card {
         if (amount <= 0) {
             return;
         }
-        hp = Math.max(0, hp - amount);
+        hp = hp - amount;
+        if (hp < 0) {
+            hp = 0;
+        }
     }
 
     public boolean isDead() {
