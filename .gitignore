@@ -1,8 +1,11 @@
 
 *.docx
+*.iml
 
 bin/
 lib/
+out/
 .vscode/
+.idea/
 
 *.zip
