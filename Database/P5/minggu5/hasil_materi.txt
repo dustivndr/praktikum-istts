@@ -1,0 +1,131 @@
+=== nomor1 ===
+
+Tanggal          Jumlah_Terjual  Jumlah_Transaksi  
+---------------  --------------  ------------------
+Tgl: 2023-10-16  5 Porsi         00003             
+Tgl: 2023-10-15  3 Porsi         00002             
+Tgl: 2023-10-14  4 Porsi         00002             
+Tgl: 2023-10-13  3 Porsi         00002             
+Tgl: 2023-10-12  4 Porsi         00002             
+Tgl: 2023-10-11  7 Porsi         00002             
+Tgl: 2023-10-10  5 Porsi         00002             
+Tgl: 2023-10-09  4 Porsi         00002             
+Tgl: 2023-10-08  14 Porsi        00003             
+Tgl: 2023-10-07  4 Porsi         00003             
+Tgl: 2023-10-06  6 Porsi         00003             
+Tgl: 2023-10-05  6 Porsi         00004             
+Tgl: 2023-10-04  2 Porsi         00001             
+Tgl: 2023-10-03  6 Porsi         00002             
+Tgl: 2023-10-02  7 Porsi         00003             
+Tgl: 2023-10-01  6 Porsi         00004      
+
+
+
+
+
+
+
+
+=== nomor2 ===
+
+Nama_Kategori    harga_termurah  harga_termahal  rata_rata_harga  
+---------------  --------------  --------------  -----------------
+CAMILAN          Rp. 2000        Rp. 25000       Rp. 14800.0000   
+MAKANAN PENUTUP  Rp. 25000       Rp. 30000       Rp. 27500.0000   
+MAKANAN UTAMA    Rp. 35000       Rp. 85000       Rp. 57000.0000   
+MENU MUSIMAN     Rp. 250000      Rp. 350000      Rp. 300000.0000  
+MINUMAN          Rp. 8000        Rp. 22000       Rp. 14166.6667    
+
+
+
+
+
+
+
+=== nomor3 ===
+
+Info_Cabang          Nama_Menu            Total_Terjual    
+-------------------  -------------------  -----------------
+[ RESTO DAGO ]       NASI GORENG SPESIAL  3 Unit Terjual   
+[ RESTO DAGO ]       STEAK WAGYU          1 Unit Terjual   
+[ RESTO DAGO ]       JUS ALPUKAT          1 Unit Terjual   
+[ RESTO DAGO ]       CUMI SAUS PADANG     1 Unit Terjual   
+[ RESTO DAGO ]       LEMON TEA            1 Unit Terjual   
+[ RESTO DAGO ]       SATE AYAM MADURA     1 Unit Terjual   
+[ RESTO KUTA ]       ES TEH MANIS         5 Unit Terjual   
+[ RESTO KUTA ]       SODA GEMBIRA         4 Unit Terjual   
+[ RESTO KUTA ]       NASI GORENG SPESIAL  4 Unit Terjual   
+[ RESTO KUTA ]       ES JERUK             4 Unit Terjual   
+[ RESTO KUTA ]       LOBSTER BAKAR        2 Unit Terjual   
+[ RESTO KUTA ]       TAHU GEJROT          2 Unit Terjual   
+[ RESTO KUTA ]       STEAK WAGYU          2 Unit Terjual   
+[ RESTO PUSAT ]      SATE AYAM MADURA     6 Unit Terjual   
+[ RESTO PUSAT ]      ES TEH MANIS         3 Unit Terjual   
+[ RESTO PUSAT ]      AYAM BAKAR TALIWANG  3 Unit Terjual   
+[ RESTO PUSAT ]      KENTANG GORENG       3 Unit Terjual   
+[ RESTO PUSAT ]      ICE CREAM VANILLA    3 Unit Terjual   
+[ RESTO PUSAT ]      KOPI GULA AREN       2 Unit Terjual   
+[ RESTO PUSAT ]      NASI GORENG SPESIAL  2 Unit Terjual   
+[ RESTO PUSAT ]      KERUPUK KALENG       10 Unit Terjual  
+[ RESTO PUSAT ]      STEAK WAGYU          1 Unit Terjual   
+[ RESTO SUDIRMAN ]   NASI GORENG SPESIAL  5 Unit Terjual   
+[ RESTO SUDIRMAN ]   SOP BUNTUT           3 Unit Terjual   
+[ RESTO SUDIRMAN ]   CUMI SAUS PADANG     2 Unit Terjual   
+[ RESTO SUDIRMAN ]   JUS ALPUKAT          2 Unit Terjual   
+[ RESTO SUDIRMAN ]   KOPI GULA AREN       1 Unit Terjual   
+[ RESTO SUDIRMAN ]   ES TEH MANIS         1 Unit Terjual   
+[ RESTO TUNJUNGAN ]  DIMSUM AYAM          6 Unit Terjual   
+[ RESTO TUNJUNGAN ]  PISANG GORENG KEJU   2 Unit Terjual     
+
+
+
+
+
+
+
+=== nomor4 ===
+
+nama_menu            total_pendapatan  
+-------------------  ------------------
+Steak Wagyu                     1000000
+Lobster Bakar                    700000
+Nasi Goreng Spesial              490000
+Sate Ayam Madura                 315000
+Sop Buntut                       255000    
+
+
+
+
+
+
+
+=== nomor5 ===
+
+nama_kat         nama_menu            rata_rata_bintang  total_ulasan  
+---------------  -------------------  -----------------  --------------
+Menu Musiman     Steak Wagyu                     5.0000               4
+Camilan          Kentang Goreng                  5.0000               2
+Minuman          Jus Alpukat                     5.0000               2
+Makanan Utama    Nasi Goreng Spesial             4.7500               4
+Makanan Utama    Ayam Bakar Taliwang             4.6667               3
+Makanan Utama    Sop Buntut                      4.6667               3
+Minuman          Kopi Gula Aren                  4.6667               3
+Makanan Utama    Sate Ayam Madura                4.5000               4
+Minuman          Soda Gembira                    4.5000               2
+Makanan Penutup  Ice Cream Vanilla               4.5000               2
+Camilan          Pisang Goreng Keju              4.5000               2
+Makanan Utama    Cumi Saus Padang                4.5000               2
+
+
+
+
+
+
+=== nomor6 ===
+
+CABANG       KARYAWAN     MEJA    TOTAL_TRANSAKSI  OMZET_KOTOR  HARGA_MENU_MAKS  HARGA_MENU_MIN  
+-----------  -----------  ------  ---------------  -----------  ---------------  ----------------
+RESTO DAGO   Rizky Kasir  M06                   2       272000           250000             22000
+RESTO KUTA   Maya Kasir   M10                   2       730000           350000             15000
+RESTO PUSAT  Andi Kasir   M01                   2       266000           250000              8000
+RESTO PUSAT  Andi Kasir   M02                   4       163000            45000              2000
