@@ -1,0 +1,57 @@
+NOMOR1
+
+employee_id  nama_karyawan   shift      total_transaksi  total_revenue_berhasil  
+-----------  --------------  ---------  ---------------  ------------------------
+          3  Andi Wijaya     morning                 10                3965000.00
+          4  Rina Permata    afternoon               10                2780000.00
+          5  Dodi Pratama    night                    9                2475000.00
+          6  Ayu Lestari     morning                 10                4415000.00
+          7  Hendra Saputra  afternoon                9                3080000.00
+
+NOMOR2
+
+nama_karyawan   shift      total_transaksi  total_revenue_berhasil  nominal_insentif  
+--------------  ---------  ---------------  ----------------------  ------------------
+Andi Wijaya     morning                 10              3965000.00            79300.00
+Rina Permata    afternoon               10              2780000.00            55600.00
+Dodi Pratama    night                    9              2475000.00           123750.00
+Ayu Lestari     morning                 10              4415000.00            88300.00
+Hendra Saputra  afternoon                9              3080000.00            61600.00
+
+NOMOR3
+
+jika di check dengan data ini
+
+@budget_saat_ini = 50000000.00; 
+@status_pencairan = ''; 
+@id_pegawai = 4;
+
+Pesan_Sistem                                          Sisa_Budget_Perusahaan  
+----------------------------------------------------  ------------------------
+Gaji berhasil dicairkan. Budget tersisa: 45388800.00               45388800.00
+
+
+NOMOR4
+
+CONTOH hasil pesan jika menggunakan 
+
+@total_update = 0; 
+@pesan_status = ''; 
+@id_pelanggan = 10;
+
+
+@pesan_status                                             
+----------------------------------------------------------
+Berhasil! Membership diupdate dari gold menjadi: regular  
+
+NOMOR5
+CONTOH hasil pesan jika menggunakan
+
+@budget_operasional = 5000000.00;
+@id_produk = 3;
+@log_pesan = '';
+
+
+Laporan_Sistem                             Sisa_Budget_Toko  
+-----------------------------------------  ------------------
+Restock berhasil. Stok bertambah 10 unit.          4895000.00

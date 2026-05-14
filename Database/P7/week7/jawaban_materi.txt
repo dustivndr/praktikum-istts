@@ -1,0 +1,87 @@
+NOMOR1
+
+product_id  product_name                   unit_price  category_name   
+----------  -----------------------------  ----------  ----------------
+         1  Beras Maknyus 5 Kg               75000.00  Sembako         
+         2  Minyak Goreng Bimoli 2L          38000.00  Sembako         
+         3  Gula Pasir Gulaku 1 Kg           15000.00  Sembako         
+         4  Indomie Goreng (Karton)         115000.00  Sembako         
+         5  Indomie Ayam Bawang (Pcs)         3000.00  Sembako         
+         6  Aqua Botol 600ml                  3500.00  Minuman         
+         7  Teh Pucuk Harum 350ml             4000.00  Minuman         
+         8  Coca Cola 1.5L                   16000.00  Minuman         
+         9  Oreo Vanilla 133g                10000.00  Cemilan         
+        10  Chitato Sapi Panggang 68g        11500.00  Cemilan         
+        11  Susu UHT Ultra Milk Coklat 1L    19500.00  Susu & Olahan   
+        12  Keju Kraft Cheddar 165g          24000.00  Susu & Olahan   
+        13  Kecap Bango 520ml                25000.00  Bumbu Dapur     
+        14  Saus Sambal ABC 340ml            16500.00  Bumbu Dapur     
+        15  Daging Sapi Rendang 1Kg         135000.00  Daging & Ikan   
+        16  Ayam Broiler Utuh                35000.00  Daging & Ikan   
+        17  Apel Fuji 1 Kg                   45000.00  Sayur & Buah    
+        18  Bawang Merah 500g                22000.00  Sayur & Buah    
+        19  Sabun Lifebuoy Total 10           4500.00  Perawatan Diri  
+        20  Shampo Pantene 340ml             45000.00  Perawatan Diri  
+
+NOMOR2
+
+product_name                   kategori_harga  
+-----------------------------  ----------------
+Beras Maknyus 5 Kg             Menengah        
+Minyak Goreng Bimoli 2L        Ekonomis        
+Gula Pasir Gulaku 1 Kg         Ekonomis        
+Indomie Goreng (Karton)        Premium         
+Indomie Ayam Bawang (Pcs)      Ekonomis        
+Aqua Botol 600ml               Ekonomis        
+Teh Pucuk Harum 350ml          Ekonomis        
+Coca Cola 1.5L                 Ekonomis        
+Oreo Vanilla 133g              Ekonomis        
+Chitato Sapi Panggang 68g      Ekonomis        
+Susu UHT Ultra Milk Coklat 1L  Ekonomis        
+Keju Kraft Cheddar 165g        Ekonomis        
+Kecap Bango 520ml              Ekonomis        
+Saus Sambal ABC 340ml          Ekonomis        
+Daging Sapi Rendang 1Kg        Premium         
+Ayam Broiler Utuh              Ekonomis        
+Apel Fuji 1 Kg                 Ekonomis        
+Bawang Merah 500g              Ekonomis        
+Sabun Lifebuoy Total 10        Ekonomis        
+Shampo Pantene 340ml           Ekonomis        
+
+NOMOR3
+
+contoh jawaban dengan id product 1
+
+@info                                                      
+-----------------------------------------------------------
+Produk Beras Maknyus 5 Kg termasuk dalam kategori Sembako  
+
+
+NOMOR4
+
+contoh dengan id customer id = 2 dan total belanja = 25000000
+
+
+@total_akhir  
+--------------
+   22500000.00
+
+NOMOR5
+
+hasil pesan yang muncul 
+
+Hasil_Log                                                 
+----------------------------------------------------------
+Catatan Proses: | Berhasil insert 5 produk ke kategori 2 
+
+lalu akan bertambah product nya
+
+product_id  product_name                     category_id  unit_price  is_active  created_at  total_sold  last_sold_date  
+----------  -------------------------------  -----------  ----------  ---------  ----------  ----------  ----------------      
+        71  Produk Dummy 2-1                           2     1000.00          0  (NULL)          (NULL)  (NULL)          
+        72  Produk Dummy 2-2                           2     1000.00          0  (NULL)          (NULL)  (NULL)          
+        73  Produk Dummy 2-3                           2     1000.00          0  (NULL)          (NULL)  (NULL)          
+        74  Produk Dummy 2-4                           2     1000.00          0  (NULL)          (NULL)  (NULL)          
+        75  Produk Dummy 2-5                           2     1000.00          0  (NULL)          (NULL)  (NULL)          
+                                                                                                                         
+

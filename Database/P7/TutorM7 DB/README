@@ -1,0 +1,124 @@
+# Dokumentasi Objek Database: View, Procedure, dan Function
+
+**Cara Membuat via GUI SQLyog:**
+1. Pada panel **Object Browser** (sebelah kiri), cari folder **Views** / **Stored Proc** / **Function** .
+2. **Klik Kanan** pada folder tersebut.
+3. Pilih **Create _____...** tersebut
+4. Masukkan nama View/Func/Proc dan tulis query-nya di dalam editor yang muncul.
+5. Tekan **F9** untuk menyimpan.
+
+Dokumen ini berisi panduan teknis mengenai cara pembuatan dan penggunaan objek database pada MySQL menggunakan SQLyog, mencakup logika **parameter**, variabel **SET**, percabangan **IF-ELSE**, serta perulangan **WHILE**.
+
+---
+
+## 1. VIEW (Tabel Virtual)
+**Apa itu?**
+View adalah tabel virtual yang dibuat dari hasil query `SELECT`. View tidak menyimpan data secara fisik, melainkan hanya menyimpan perintah query-nya.
+
+**Kegunaan:**
+- Menyederhanakan query JOIN yang kompleks menjadi satu nama tabel tunggal.
+- Meningkatkan keamanan dengan membatasi kolom yang boleh dilihat oleh user.
+
+**Contoh Query:**
+-- sql
+CREATE VIEW view_nama_bebas AS
+SELECT kolom1, kolom2 
+FROM tabel_a 
+JOIN tabel_b ON tabel_a.id = tabel_b.id;
+
+# Dokumentasi Objek Database: View, Procedure, dan Function
+
+Dokumen ini berisi panduan teknis mengenai cara pembuatan dan penggunaan objek database pada MySQL menggunakan SQLyog, mencakup logika **parameter**, variabel **SET**, percabangan **IF-ELSE**, serta perulangan **WHILE**.
+
+---
+
+## 2. STORED PROCEDURE (Prosedur)
+**Apa itu?**
+Kumpulan perintah SQL yang disimpan dalam database untuk menjalankan logika bisnis. Prosedur dapat menerima parameter masukan dan mengirimkan hasil melalui parameter keluaran.
+
+**Kegunaan:**
+- IN: Parameter masukan (hanya dibaca).
+- OUT: Parameter keluaran (untuk mengirim nilai balik).
+- INOUT: Masukan yang nilainya dapat diubah dan dikirim balik.
+- SET: Digunakan untuk mengisi nilai ke variabel.
+- IF-ELSE: Digunakan untuk logika percabangan.
+**Contoh Query:**
+-- sql
+CREATE VIEW view_nama_bebas AS
+SELECT kolom1, kolom2 
+FROM tabel_a 
+JOIN tabel_b ON tabel_a.id = tabel_b.id;
+
+
+## 2. STORED PROCEDURE (Prosedur)
+**Apa itu?**
+Kumpulan perintah SQL yang disimpan dalam database untuk menjalankan logika bisnis. Prosedur dapat menerima parameter masukan dan mengirimkan hasil melalui parameter keluaran.
+
+**Kegunaan:**
+- IN: Parameter masukan (hanya dibaca).
+- OUT: Parameter keluaran (untuk mengirim nilai balik).
+- INOUT: Masukan yang nilainya dapat diubah dan dikirim balik.
+- SET: Digunakan untuk mengisi nilai ke variabel.
+- IF-ELSE: Digunakan untuk logika percabangan.
+**Contoh Query:**
+-- sql
+DELIMITER //
+CREATE PROCEDURE sp_cek_kategori(IN p_angka INT, OUT p_hasil VARCHAR(50))
+BEGIN
+    -- Menggunakan SET untuk variabel internal
+    DECLARE v_teks VARCHAR(50);
+
+    -- Menggunakan Logika IF-ELSE
+    IF p_angka > 100 THEN
+        SET v_teks = 'Kategori Besar';
+    ELSE
+        SET v_teks = 'Kategori Kecil';
+    END IF;
+
+    SET p_hasil = v_teks;
+END //
+DELIMITER ;
+
+
+## 3. STORED FUNCTION (Fungsi)
+**Apa itu?**
+Objek database yang mirip dengan prosedur tetapi wajib mengembalikan satu nilai (RETURN). Fungsi dapat langsung dipanggil di dalam perintah SELECT.
+
+**Kegunaan:**
+- Melakukan kalkulasi otomatis pada setiap baris data.
+- WHILE: Digunakan untuk melakukan perulangan (looping) selama kondisi terpenuhi.
+
+**Contoh Query:**
+-- sql
+DELIMITER //
+CREATE FUNCTION fn_hitung_bintang(p_jumlah INT) 
+RETURNS VARCHAR(100)
+BEGIN
+    DECLARE v_bintang VARCHAR(100) DEFAULT '';
+    DECLARE v_counter INT DEFAULT 1;
+
+    -- Menggunakan Logika WHILE dan SET
+    WHILE v_counter <= p_jumlah DO
+        SET v_bintang = CONCAT(v_bintang, '★');
+        SET v_counter = v_counter + 1; -- Increment counter
+    END WHILE;
+
+    RETURN v_bintang;
+END //
+DELIMITER ;
+
+
+## 5. Tips Penting di SQLyog
+
+**A. Mengubah Delimiter**
+Saat membuat Procedure atau Function, gunakan DELIMITER // agar tanda titik koma (;) di dalam kode tidak dianggap sebagai akhir dari seluruh perintah oleh SQLyog.
+
+**B. Error Deterministic**
+Jika SQLyog menolak pembuatan fungsi, jalankan perintah ini satu kali untuk memberikan izin akses:
+SET GLOBAL log_bin_trust_function_creators = 1;
+
+**C. Memanggil Objek**
+- View: SELECT * FROM nama_view;
+- Procedure: CALL nama_prosedur(input, @output);
+- Function: SELECT nama_fungsi(input);
+
