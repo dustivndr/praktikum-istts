@@ -1,0 +1,183 @@
+NOMOR1
+
+result                                                         
+---------------------------------------------------------------
+Kategori: Kebutuhan Hewan | Jumlah: 3 | Rata-rata: Rp 63333    
+Kategori: Kebutuhan Bayi | Jumlah: 3 | Rata-rata: Rp 61667     
+Kategori: Daging & Ikan | Jumlah: 3 | Rata-rata: Rp 60667      
+Kategori: Sembako | Jumlah: 8 | Rata-rata: Rp 46500            
+Kategori: Makanan Beku | Jumlah: 3 | Rata-rata: Rp 36667       
+Kategori: Alat Tulis Kantor | Jumlah: 3 | Rata-rata: Rp 31667  
+Kategori: Perawatan Diri | Jumlah: 7 | Rata-rata: Rp 26000     
+Kategori: Roti & Kue | Jumlah: 2 | Rata-rata: Rp 25500         
+Kategori: Sayur & Buah | Jumlah: 3 | Rata-rata: Rp 25000       
+Kategori: Obat & P3K | Jumlah: 4 | Rata-rata: Rp 24375         
+Kategori: Pembersih Rumah | Jumlah: 4 | Rata-rata: Rp 22250    
+Kategori: Bumbu Dapur | Jumlah: 5 | Rata-rata: Rp 12800        
+Kategori: Susu & Olahan | Jumlah: 7 | Rata-rata: Rp 12000      
+Kategori: Cemilan | Jumlah: 8 | Rata-rata: Rp 11313            
+Kategori: Minuman | Jumlah: 7 | Rata-rata: Rp 10286            
+
+NOMOR2
+
+result                                        
+----------------------------------------------
+Nama: Ahmad Ridwan | Total Transaksi: 2       
+Nama: Dewi Sartika | Total Transaksi: 2       
+Nama: Reza Rahadian | Total Transaksi: 2      
+Nama: Nina Zatulini | Total Transaksi: 2      
+Nama: Fajar Nugraha | Total Transaksi: 2      
+Nama: Siska Kohl | Total Transaksi: 1         
+Nama: Tono Supriyadi | Total Transaksi: 1     
+Nama: Lina Marlina | Total Transaksi: 1       
+Nama: Bagas Putra | Total Transaksi: 1        
+Nama: Dina Lorenza | Total Transaksi: 1       
+Nama: Rudi Heryanto | Total Transaksi: 1      
+Nama: Citra Kirana | Total Transaksi: 1       
+Nama: Agus Salim | Total Transaksi: 1         
+Nama: Nita Thalia | Total Transaksi: 1        
+Nama: Kevin Julio | Total Transaksi: 1        
+Nama: Ratna Galih | Total Transaksi: 1        
+Nama: Doni Salman | Total Transaksi: 1        
+Nama: Putri Titian | Total Transaksi: 1       
+Nama: Bowo Alpenliebe | Total Transaksi: 1    
+Nama: Gisel Anastasia | Total Transaksi: 1    
+Nama: Raffi Ahmad | Total Transaksi: 1        
+Nama: Nagita Slavina | Total Transaksi: 1     
+Nama: Fadil Jaidi | Total Transaksi: 1        
+Nama: Keanu Agl | Total Transaksi: 1          
+Nama: Anya Geraldine | Total Transaksi: 1     
+Nama: Vidi Aldiano | Total Transaksi: 1       
+Nama: Bunga Citra | Total Transaksi: 1        
+Nama: Ariel Noah | Total Transaksi: 1         
+Nama: Luna Maya | Total Transaksi: 1          
+Nama: Deddy Corbuzier | Total Transaksi: 1    
+Nama: Sule Sutisna | Total Transaksi: 1       
+Nama: Andre Taulany | Total Transaksi: 1      
+Nama: Ivan Gunawan | Total Transaksi: 1       
+Nama: Ruben Onsu | Total Transaksi: 1         
+Nama: Sarwendah | Total Transaksi: 1          
+Nama: Jefri Nichol | Total Transaksi: 1       
+Nama: Tiara Andini | Total Transaksi: 1       
+Nama: Lyodra Ginting | Total Transaksi: 1     
+Nama: Ziva Magnolya | Total Transaksi: 1      
+Nama: Mahalini Raharja | Total Transaksi: 1   
+Nama: Rizky Febian | Total Transaksi: 1       
+Nama: Atta Halilintar | Total Transaksi: 1    
+Nama: Aurel Hermansyah | Total Transaksi: 1   
+Nama: Thariq Halilintar | Total Transaksi: 1  
+Nama: Fuji An | Total Transaksi: 1            
+Nama: Boy William | Total Transaksi: 1        
+Nama: Chef Juna | Total Transaksi: 1          
+Nama: Chef Renatta | Total Transaksi: 1       
+Nama: Chef Arnold | Total Transaksi: 1        
+Nama: Raditya Dika | Total Transaksi: 1       
+Nama: Budi Santoso | Total Transaksi: 0       
+Nama: Siti Aminah | Total Transaksi: 0        
+Nama: Joko Susanto | Total Transaksi: 0       
+Nama: Rina Melati | Total Transaksi: 0        
+Nama: Andi Wijaya | Total Transaksi: 0        
+Nama: Maya Sari | Total Transaksi: 0          
+Nama: Dwi Cahyono | Total Transaksi: 0        
+Nama: Fitriani Kusuma | Total Transaksi: 0    
+Nama: Hendra Setiawan | Total Transaksi: 0    
+Nama: Indah Permatasari | Total Transaksi: 0  
+Nama: Gilang Pratama | Total Transaksi: 0     
+Nama: Kartika Sari | Total Transaksi: 0       
+Nama: Lukman Hakim | Total Transaksi: 0       
+Nama: Novianti | Total Transaksi: 0           
+Nama: Eko Prasetyo | Total Transaksi: 0       
+Nama: Ayu Lestari | Total Transaksi: 0        
+Nama: Dedi Kurniawan | Total Transaksi: 0     
+Nama: Sri Rahayu | Total Transaksi: 0         
+Nama: Wahyu Hidayat | Total Transaksi: 0      
+Nama: Rian Dwi Putranto | Total Transaksi: 0  
+
+
+NOMOR3
+
+name             jumlah_produk  
+---------------  ---------------
+Ahmad Ridwan                   5
+Dewi Sartika                   3
+Reza Rahadian                  2
+Nina Zatulini                  4
+Fajar Nugraha                  2
+Siska Kohl                     3
+Tono Supriyadi                 3
+Lina Marlina                   2
+Bagas Putra                    2
+Dina Lorenza                   2
+Rudi Heryanto                  2
+Citra Kirana                   2
+Agus Salim                     2
+Nita Thalia                    2
+Kevin Julio                    0
+Ratna Galih                    2
+Doni Salman                    2
+Putri Titian                   0
+Bowo Alpenliebe                0
+Gisel Anastasia                0
+
+
+NOMOR4        
+employee_name     last_transaction  total_transaksi  total_belanja  
+----------------  ----------------  ---------------  ---------------
+Ade Irawan        (NULL)            0x Transaksi     (NULL)         
+Andi Wijaya       2026-04-01        11x Transaksi    Rp 4065000.00  
+Ayu Lestari       2026-04-01        11x Transaksi    Rp 4715000.00  
+Bella Saphira     (NULL)            0x Transaksi     (NULL)         
+Budi Santoso      (NULL)            0x Transaksi     (NULL)         
+Caca Handika      (NULL)            0x Transaksi     (NULL)         
+Derry Sudarisman  (NULL)            0x Transaksi     (NULL)         
+Dodi Pratama      2026-04-01        11x Transaksi    Rp 2700000.00  
+Eka Sari          (NULL)            0x Transaksi     (NULL)         
+Hendra Saputra    2026-04-01        11x Transaksi    Rp 3265000.00  
+Joko Susilo       (NULL)            0x Transaksi     (NULL)         
+Maya Indah        (NULL)            0x Transaksi     (NULL)         
+Rina Permata      2026-04-01        11x Transaksi    Rp 2980000.00  
+Rizal Fahmi       (NULL)            0x Transaksi     (NULL)         
+Siska Amelia      (NULL)            0x Transaksi     (NULL)         
+Siti Aminah       (NULL)            0x Transaksi     (NULL)         
+Toni Gunawan      (NULL)            0x Transaksi     (NULL)         
+Wawan Kurniawan   (NULL)            0x Transaksi     (NULL)         
+Yudi Hermawan     (NULL)            0x Transaksi     (NULL)         
+Zainal Abidin     (NULL)            0x Transaksi     (NULL)         
+                                                                    
+NOMOR5
+
+Nama_Produk                     Sisa_Stok  Transaksi_Terakhir  
+------------------------------  ---------  --------------------
+Indomie Ayam Bawang (Pcs).....       1500  20/03/2026          
+Teh Pucuk Harum 350ml.........        600  20/03/2026          
+Bear Brand 189ml..............        410  22/03/2026          
+Kopi Kapal Api Mix............        340  23/03/2026          
+Pepsodent White 190g..........        320  25/03/2026          
+Chitato Sapi Panggang 68g.....        300  27/03/2026          
+Susu UHT Ultra Milk Coklat 1L.        180  22/03/2026          
+Saus Sambal ABC 340ml.........        160  20/03/2026          
+Silverqueen Mentega 62g.......        150  27/03/2026          
+Coca Cola 1.5L................        120  26/03/2026          
+Shampo Pantene 340ml..........        110  25/03/2026         
+
+
+NOMOR6
+
+Shift_Kerja  Metode_Pembayaran  Total_Pendapatan  Jumlah_Transaksi  
+-----------  -----------------  ----------------  ------------------
+AFTERNOON    Debit Card               2900000.00                   6
+AFTERNOON    Credit Card              1560000.00                   3
+AFTERNOON    E-Wallet                  705000.00                   4
+AFTERNOON    Cash                      515000.00                   4
+AFTERNOON    QRIS                      180000.00                   2
+MORNING      Credit Card              4520000.00                   5
+MORNING      Debit Card               2030000.00                   4
+MORNING      Cash                     1075000.00                   6
+MORNING      E-Wallet                  410000.00                   3
+MORNING      QRIS                      345000.00                   2
+NIGHT        Credit Card               900000.00                   2
+NIGHT        Debit Card                680000.00                   1
+NIGHT        QRIS                      435000.00                   2
+NIGHT        Cash                      375000.00                   3
+NIGHT        E-Wallet                   85000.00                   1 
+

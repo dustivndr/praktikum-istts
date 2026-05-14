@@ -1,0 +1,98 @@
+NOMOR1
+Bulan_Tahun  NAMA_SUPPLIER        Total_Transaksi_Rp  Rata_Rata_Harga_Item  
+-----------  -------------------  ------------------  ----------------------
+March-2026   PT INDOFOOD                 21852000.00                41900.00
+March-2026   PT UNILEVER                 18714300.00                16372.73
+March-2026   PT NESTLE                   14960000.00                17722.22
+March-2026   PT ULTRAJAYA                 8098000.00                 8933.33
+March-2026   PT WINGS SURYA               7680000.00                84000.00
+March-2026   PT KALBE FARMA               7395000.00                14600.00
+March-2026   PT MAYORA INDAH              6740000.00                 8571.43
+March-2026   WHISKAS (MARS INC)           6470000.00                70000.00
+March-2026   PT NUSANTARA DAGING          5677000.00                71500.00
+March-2026   PT KAO INDONESIA             5500000.00                36666.67
+March-2026   PT CHAROEN POKPHAND          5090000.00                37040.00
+March-2026   FABER-CASTELL                4280000.00                20400.00
+March-2026   PT GARUDAFOOD                3960000.00                 5000.00
+March-2026   CV SEGAR MAKMUR              3288000.00                26500.00
+
+NOMOR2
+
+Kategori         Nama_Produk                  Total_Dibeli_Ke_Supplier  Sisa_Stok_Gudang  
+---------------  ---------------------------  ------------------------  ------------------
+CEMILAN          Oreo Vanilla 133g                                 155                   0
+MAKANAN BEKU     Fiesta Chicken Nugget 500g                         80                   0
+MINUMAN          Pocari Sweat 500ml                                492                   0
+PEMBERSIH RUMAH  Sunlight Jeruk Nipis 755ml                        100                   0
+PERAWATAN DIRI   Biore Mens Facial Wash 100g                        50                   0
+ROTI & KUE       Sari Roti Tawar Spesial                           200                  50
+SEMBAKO          Gula Pasir Gulaku 1 Kg                            100                   0
+SUSU & OLAHAN    Yakult 5 Botol                                    450                   0
+
+NOMOR3
+
+Nama_Kurir_Pad        Total_Biaya_Pengiriman  Jumlah_Pengiriman  
+--------------------  ----------------------  -------------------
+JNE.................                43000.00                    2
+Kurir Internal Toko.                60000.00                    5
+GoSend..............                78000.00                    4
+GrabExpress.........                79000.00                    3
+
+NOMOR4
+
+Kode_Promo                 Nama_Produk               Total_Terjual  Total_Penjualan_Rp  
+-------------------------  ------------------------  -------------  --------------------
+PROMO GAJIAN INDOMIE-2026  indomie goreng (karton)              13            1495000.00
+DISKON SUSU ANAK-2026      susu dancow 1+ madu 800g              6             570000.00
+DISKON MINYAK GORENG-2026  minyak goreng bimoli 2l              11             418000.00
+PAMPERS DISKON GEDE-2026   pampers mami poko l30                 5             325000.00
+
+NOMOR5
+
+Kategori  Nama_Barang                Persentase_Diskon  
+--------  -------------------------  -------------------
+minuman   Kopi Kapal Api Mix                       10.00
+minuman   Pocari Sweat 500ml                       10.00
+minuman   Aqua Botol 600ml                        (NULL)
+minuman   Teh Pucuk Harum 350ml                   (NULL)
+minuman   Coca Cola 1.5L                          (NULL)
+minuman   Produk Random 2                         (NULL)
+minuman   Produk Random 17                        (NULL)
+sembako   Beras Maknyus 5 Kg                       50.00
+sembako   Indomie Goreng (Karton)                  10.00
+sembako   Minyak Goreng Bimoli 2L                   5.00
+sembako   Gula Pasir Gulaku 1 Kg                  (NULL)
+sembako   Indomie Ayam Bawang (Pcs)               (NULL)
+sembako   Mie Sedaap Soto (Karton)                (NULL)
+sembako   Produk Random 1                         (NULL)
+sembako   Produk Random 16                        (NULL)
+
+NOMOR6
+
+Nomor_Nota        Pembeli            Kasir_Bertugas  Nominal_Belanja  delivery_id  
+----------------  -----------------  --------------  ---------------  -------------
+NOTA-202603-0021  Raffi Ahmad        Andi Wijaya          1250000.00         (NULL)
+NOTA-202603-0050  Raditya Dika       Hendra Saputra        940000.00         (NULL)
+NOTA-202603-0006  Siska Kohl         Andi Wijaya           850000.00         (NULL)
+NOTA-202603-0038  Lyodra Ginting     Dodi Pratama          380000.00         (NULL)
+NOTA-202603-0023  Fadil Jaidi        Dodi Pratama          340000.00         (NULL)
+NOTA-202603-0026  Vidi Aldiano       Andi Wijaya           280000.00         (NULL)
+NOTA-202603-0030  Deddy Corbuzier    Hendra Saputra        250000.00         (NULL)
+NOTA-202603-0041  Rizky Febian       Andi Wijaya           240000.00         (NULL)
+NOTA-202603-0013  Agus Salim         Dodi Pratama          210000.00         (NULL)
+NOTA-202603-0044  Thariq Halilintar  Ayu Lestari           195000.00         (NULL)
+NOTA-202603-0031  Sule Sutisna       Andi Wijaya           185000.00         (NULL)
+NOTA-202603-0016  Ratna Galih        Andi Wijaya           175000.00         (NULL)
+NOTA-202603-0027  Bunga Citra        Rina Permata          160000.00         (NULL)
+NOTA-202603-0024  Keanu Agl          Ayu Lestari           150000.00         (NULL)
+NOTA-202603-0040  Mahalini Raharja   Hendra Saputra        145000.00         (NULL)
+NOTA-202603-0002  Dewi Sartika       Rina Permata          145000.00         (NULL)
+NOTA-202603-0012  Citra Kirana       Rina Permata          135000.00         (NULL)
+NOTA-202603-0047  Chef Juna          Rina Permata          135000.00         (NULL)
+NOTA-202603-0036  Jefri Nichol       Andi Wijaya           120000.00         (NULL)
+NOTA-202604-0055  Fajar Nugraha      Hendra Saputra        120000.00         (NULL)
+NOTA-202603-0008  Lina Marlina       Dodi Pratama          110000.00         (NULL)
+NOTA-202603-0033  Ivan Gunawan       Dodi Pratama           95000.00         (NULL)
+NOTA-202603-0017  Doni Salman        Rina Permata           95000.00         (NULL)
+NOTA-202603-0005  Fajar Nugraha      Hendra Saputra         75000.00         (NULL)
+NOTA-202603-0046  Boy William        Andi Wijaya            65000.00         (NULL)
