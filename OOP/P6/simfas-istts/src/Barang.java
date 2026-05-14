@@ -43,7 +43,7 @@ public class Barang {
 
     @Override
     public String toString() {
-        return name + " (" + stock + "x)" + " – " + (handler == null || handler.isEmpty() ? "x" : handler);
+        return name + " (" + stock + "x) - " + (handler == null || handler.isEmpty() ? "x" : handler);
     }
 
 }

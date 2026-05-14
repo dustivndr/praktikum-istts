@@ -8,7 +8,6 @@ public class Repository<T> {
         this.database = new ArrayList<>();
     }
 
-
     public void add(T data) {
         database.add(data);
     }

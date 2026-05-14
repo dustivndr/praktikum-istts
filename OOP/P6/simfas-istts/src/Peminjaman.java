@@ -62,6 +62,10 @@ public class Peminjaman {
     }
 
     public boolean isReady() {
+        if (penanggung.equals("x")) {
+            return adminConfirmed;
+        }
+
         return penanggungConfirmed && adminConfirmed;
     }
 
