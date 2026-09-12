@@ -1,0 +1,267 @@
+/* navbarrr */
+.title {
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}
+
+.navbar {
+    background-color: #f87171;
+}
+
+.navbar .nav-link,
+.navbar .nav-link.active {
+    color: white !important;
+}
+
+.navbar .navbar-brand,
+.navbar a.title {
+    color: white !important;
+}
+
+.navbar .title-nav,
+.navbar .title-nav.active {
+    color: white !important;
+}
+
+
+/* bodyyy */
+body {
+    background-image: url('./bgYellow.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* headerrr part */
+.header {
+    height: 30vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.header-box {
+    background: white;
+    border-radius: 5px;
+    padding: 10px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    max-width: 1320px;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.header-box div {
+    text-align: center;
+    flex: 1; 
+}
+
+.pokemon-logo {
+    width: 150px;
+    height: auto;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #22c55e; 
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    font-size: 16px;
+    color: #6b21a8;
+}
+
+/* mainnn */
+.content {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 2rem 0;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.card-img-top {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 1.5rem auto;
+    padding: 0.5rem;
+}
+
+.card-title {
+    text-align: center;
+}
+
+/* Pokemon type badges */
+.type-badge {
+    display: inline-block;
+    padding: 4px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.type-electric {
+    background-color: #FFF9C4;
+    color: #F57F17;
+}
+
+.type-fire {
+    background-color: #FFEBEE;
+    color: #B71C1C;
+}
+
+.type-water {
+    background-color: #E3F2FD;
+    color: #0D47A1;
+}
+
+.type-grass {
+    background-color: #E8F5E9;
+    color: #1B5E20;
+}
+
+.type-psychic {
+    background-color: #FCE4EC;
+    color: #880E4F;
+}
+
+.type-poison {
+    background-color: #F3E5F5;
+    color: #4A148C;
+}
+
+.type-dark {
+    background-color: #FAFAFA;
+    color: #212121;
+}
+
+.type-steel {
+    background-color: #ECEFF1;
+    color: #263238;
+}
+
+.type-ghost {
+    background-color: #E8EAF6;
+    color: #1A237E;
+}
+
+.type-normal {
+    background-color: #FAFAFA;
+    color: #212121;
+}
+
+.type-fighting {
+    background-color: #FFF3E0;
+    color: #E65100;
+}
+
+.type-rock {
+    background-color: #FAFAFA;
+    color: #757575;
+}
+
+.type-ground {
+    background-color: #FFF8E1;
+    color: #FF6F00;
+}
+
+.type-flying {
+    background-color: #E3F2FD;
+    color: #01579B; 
+}
+
+.type-bug {
+    background-color: #F9FBE7;
+    color: #827717;
+}
+
+.type-ice {
+    background-color: #E0F7FA; 
+    color: #006064; 
+}
+
+.type-dragon {
+    background-color: #EDE7F6; 
+    color: #311B92; 
+}
+
+.type-fairy {
+    background-color: #FFE4E6; 
+    color: #881337; 
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pokemon-skills {
+    margin-top: 10px;
+}
+
+.skill-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.skill-item {
+    background-color: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.card-text {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* footer */
+.footer {
+    border-top: 2px solid #f87171; 
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.footer p, 
+.footer a {
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: #f87171; 
+}

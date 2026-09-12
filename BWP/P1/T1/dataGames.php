@@ -1,0 +1,96 @@
+<?php
+
+$games = [
+    1 => [
+        "id" => 1,
+        "judul" => "Elden Ring",
+        "genre" => "Action RPG",
+        "tags" => ["Action RPG", "Souls-like", "Dark Fantasy", "Open World"],
+        "harga" => 599000,
+        "diskon" => 20,
+        "gambar" => "https://picsum.photos/seed/eldenring/500/280",
+        "deskripsi" => "Sebuah game action RPG dunia terbuka yang dikembangkan oleh FromSoftware. Jelajahi Lands Between, hadapi bos-bos raksasa, dan temukan rahasia dunia yang gelap dan misterius.",
+        "developer" => "FromSoftware",
+        "rilis" => "25 Feb 2022",
+        "rating" => 4.9,
+        "labelUlasan" => "Sangat Positif",
+        "jumlahUlasan" => 214830
+    ],
+    2 => [
+        "id" => 2,
+        "judul" => "Stardew Valley",
+        "genre" => "Simulation",
+        "tags" => ["Simulation", "Farming", "Relaxing", "Pixel Graphics"],
+        "harga" => 79000,
+        "diskon" => 0,
+        "gambar" => "https://picsum.photos/seed/stardew/500/280",
+        "deskripsi" => "Bangun kembali pertanian tua warisan kakekmu. Tanam, beternak, jalin relasi dengan penduduk desa, dan temukan kehidupan baru yang tenang jauh dari kota.",
+        "developer" => "ConcernedApe",
+        "rilis" => "26 Feb 2016",
+        "rating" => 4.8,
+        "labelUlasan" => "Sangat Positif",
+        "jumlahUlasan" => 178420
+    ],
+    3 => [
+        "id" => 3,
+        "judul" => "Counter-Strike 2",
+        "genre" => "FPS",
+        "tags" => ["FPS", "Multiplayer", "Competitive", "Shooter"],
+        "harga" => 0,
+        "diskon" => 0,
+        "gambar" => "https://picsum.photos/seed/cs2/500/280",
+        "deskripsi" => "Game tembak-menembak tim kompetitif paling populer di dunia, kini dengan grafis dan sistem baru menggunakan Source 2 Engine.",
+        "developer" => "Valve",
+        "rilis" => "27 Sep 2023",
+        "rating" => 4.5,
+        "labelUlasan" => "Sangat Positif",
+        "jumlahUlasan" => 837616
+    ],
+    4 => [
+        "id" => 4,
+        "judul" => "Hollow Knight",
+        "genre" => "Metroidvania",
+        "tags" => ["Metroidvania", "Souls-like", "2D", "Atmospheric"],
+        "harga" => 129000,
+        "diskon" => 50,
+        "gambar" => "https://picsum.photos/seed/hollowknight/500/280",
+        "deskripsi" => "Jelajahi gua bawah tanah yang luas dan berbahaya di kerajaan serangga yang telah runtuh. Bertarung, temukan rahasia, dan ungkap misteri Hallownest.",
+        "developer" => "Team Cherry",
+        "rilis" => "24 Feb 2017",
+        "rating" => 4.9,
+        "labelUlasan" => "Sangat Positif",
+        "jumlahUlasan" => 132904
+    ],
+    5 => [
+        "id" => 5,
+        "judul" => "Cyberpunk 2077",
+        "genre" => "Action RPG",
+        "tags" => ["Action RPG", "Open World", "Sci-fi", "Story Rich"],
+        "harga" => 449000,
+        "diskon" => 30,
+        "gambar" => "https://picsum.photos/seed/cyberpunk/500/280",
+        "deskripsi" => "Night City, sebuah kota megapolitan yang terobsesi kekuasaan, glamor, dan modifikasi tubuh. Jadilah V, seorang mercenary outlaw yang mengejar chip unik.",
+        "developer" => "CD Projekt Red",
+        "rilis" => "10 Des 2020",
+        "rating" => 4.3,
+        "labelUlasan" => "Sangat Positif",
+        "jumlahUlasan" => 692310
+    ],
+    6 => [
+        "id" => 6,
+        "judul" => "Dota 2",
+        "genre" => "MOBA",
+        "tags" => ["MOBA", "Multiplayer", "Strategy", "Competitive"],
+        "harga" => 0,
+        "diskon" => 0,
+        "gambar" => "https://picsum.photos/seed/dota2/500/280",
+        "deskripsi" => "Setiap hari, jutaan pemain di seluruh dunia bermain Dota 2. Pilih dari lebih dari 100 hero dan bertarung dalam pertempuran tim 5 vs 5.",
+        "developer" => "Valve",
+        "rilis" => "9 Jul 2013",
+        "rating" => 4.6,
+        "labelUlasan" => "Sangat Positif",
+        "jumlahUlasan" => 1284710
+    ],
+];
+
+?>
