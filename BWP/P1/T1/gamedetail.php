@@ -46,16 +46,14 @@ $hargaDiskon = (int) round($harga - ($harga * $diskon / 100));
             <div class="account-area">
 
                 <button class="icon-button">&#128226;</button>
+                <button class="icon-button">&#128276;</button>
 
                 <button class="account-button">
                     <span class="account-icon">&#128100;</span>
                     <span>tintin</span>
+                    <span class="wallet">Rp 67.420</span>
                     <span class="arrow">&#9660;</span>
                 </button>
-
-                <span class="wallet">Rp 67.420</span>
-
-                <span class="arrow">&#9660;</span>
 
             </div>
 
