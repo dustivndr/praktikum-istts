@@ -17,7 +17,6 @@
 <body>
 
     <header>
-
         <div class="top-bar">
 
             <div class="top-left">
@@ -30,7 +29,7 @@
                     <a href="#" class="active">STORE</a>
                     <a href="#">LIBRARY</a>
                     <a href="#">COMMUNITY</a>
-                    <a href="#">DASHBOARD</a>
+                    <a href="./dashboard.php">DASHBOARD</a>
                 </nav>
 
             </div>
@@ -107,7 +106,6 @@
             </div>
 
         </div>
-
     </header>
 
     <section class="hero">
@@ -184,21 +182,10 @@
 
                                             <div class="game-screenshots">
 
-                                                <img
-                                                    src="<?= $game["gambar"] ?>"
-                                                    alt="">
-
-                                                <img
-                                                    src="<?= $game["gambar"] ?>"
-                                                    alt="">
-
-                                                <img
-                                                    src="<?= $game["gambar"] ?>"
-                                                    alt="">
-
-                                                <img
-                                                    src="<?= $game["gambar"] ?>"
-                                                    alt="">
+                                                <img src="<?= $game["gambar"] ?>" alt="">
+                                                <img src="<?= $game["gambar"] ?>" alt="">
+                                                <img src="<?= $game["gambar"] ?>" alt="">
+                                                <img src="<?= $game["gambar"] ?>" alt="">
 
                                             </div>
 
@@ -236,7 +223,7 @@
 
                                             </div>
 
-                                            <a href="detail.php?id=<?= $game["id"] ?>" class="btn btn-detail">
+                                            <a href="./gamedetail.php" class="btn btn-detail">
                                                 <span class="detail-icon">&#128065;</span>
                                                 Lihat Detail
                                             </a>
@@ -301,10 +288,9 @@
                 <div class="row all-games-layout">
 
                     <style>
-                        <?php foreach ($games as $game): ?>
-                            .all-games-layout:has(.card-game-link[data-game-id="<?= $game["id"] ?>"]:hover, .card-game-link[data-game-id="<?= $game["id"] ?>"]:focus) .game-preview[data-preview-id="<?= $game["id"] ?>"] {
-                                display: block;
-                            }
+                        <?php foreach ($games as $game): ?>.all-games-layout:has(.card-game-link[data-game-id="<?= $game["id"] ?>"]:hover, .card-game-link[data-game-id="<?= $game["id"] ?>"]:focus) .game-preview[data-preview-id="<?= $game["id"] ?>"] {
+                            display: block;
+                        }
                         <?php endforeach; ?>
                     </style>
 
@@ -316,12 +302,12 @@
                                 $hargaDiskon = $game["harga"] * (1 - $game["diskon"] / 100);
                                 ?>
 
-                                <a href="detail.php?id=<?= $game["id"] ?>" class="card-game-link" data-game-id="<?= $game["id"] ?>">
+                                <a href="gamedetail.php" class="card-game-link" data-game-id="<?= $game["id"] ?>">
                                     <article class="card-game">
                                         <img
                                             src="<?= $game["gambar"] ?>"
                                             class="card-game-image"
-                                            alt="<?= htmlspecialchars($game["judul"]) ?>">
+                                            alt="<?= $game["judul"] ?>">
 
                                         <div class="card-game-body">
                                             <h3 class="card-game-title"><?= $game["judul"] ?></h3>
@@ -394,7 +380,15 @@
 
         </section>
 
+        <section>
+            <?php include_once __DIR__ . "/dashboard-content.php" ?>
+        </section>
+
     </main>
+
+    <footer class="site-footer">
+        &copy; 2026 oll right reserve &ndash; Dustin Ivander (225117159) - SteamKu
+    </footer>
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
