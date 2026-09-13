@@ -92,5 +92,3 @@ $games = [
         "jumlahUlasan" => 1284710
     ],
 ];
-
-?>
