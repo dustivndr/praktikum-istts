@@ -500,6 +500,11 @@ main {
     font-weight: 700;
 }
 
+.regular-price {
+    color: #a4d007;
+    font-weight: 700;
+}
+
 .btn-detail {
     width: 100%;
     padding: 6px 10px;
@@ -922,18 +927,6 @@ main {
     margin: 0;
     color: #71889b;
     font-size: 9px;
-}
-
-@media (max-width: 575.98px) {
-    .detail-purchase {
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .detail-cart-button {
-        width: 100%;
-        margin-left: 0;
-    }
 }
 
 .all-games-layout:not(:has(.card-game-link:hover, .card-game-link:focus)) .game-preview.is-default {

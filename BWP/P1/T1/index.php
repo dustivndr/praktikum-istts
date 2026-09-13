@@ -215,7 +215,7 @@
 
                                                 <?php else: ?>
 
-                                                    Rp <?= number_format($game["harga"], 0, ',', '.') ?>
+                                                    <span class="regular-price">Rp <?= number_format($game["harga"], 0, ',', '.') ?></span>
 
                                                 <?php endif; ?>
 
