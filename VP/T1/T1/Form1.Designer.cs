@@ -95,169 +95,220 @@
             // 
             textBox1.Location = new Point(80, 436);
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(30, 30);
             textBox1.TabIndex = 1;
+            textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(138, 436);
             textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
             textBox2.Size = new Size(30, 30);
             textBox2.TabIndex = 2;
+            textBox2.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(193, 436);
             textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
             textBox3.Size = new Size(30, 30);
             textBox3.TabIndex = 3;
+            textBox3.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox4
             // 
             textBox4.Location = new Point(253, 436);
             textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
             textBox4.Size = new Size(30, 30);
             textBox4.TabIndex = 6;
+            textBox4.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox5
             // 
             textBox5.Location = new Point(310, 436);
             textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
             textBox5.Size = new Size(30, 30);
             textBox5.TabIndex = 5;
+            textBox5.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox6
             // 
             textBox6.Location = new Point(368, 436);
             textBox6.Name = "textBox6";
+            textBox6.ReadOnly = true;
             textBox6.Size = new Size(30, 30);
             textBox6.TabIndex = 4;
+            textBox6.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox7
             // 
+            textBox7.BackColor = Color.Green;
             textBox7.Location = new Point(368, 344);
             textBox7.Name = "textBox7";
+            textBox7.ReadOnly = true;
             textBox7.Size = new Size(30, 30);
             textBox7.TabIndex = 12;
+            textBox7.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox8
             // 
             textBox8.Location = new Point(310, 344);
             textBox8.Name = "textBox8";
+            textBox8.ReadOnly = true;
             textBox8.Size = new Size(30, 30);
             textBox8.TabIndex = 11;
+            textBox8.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox9
             // 
             textBox9.Location = new Point(253, 344);
             textBox9.Name = "textBox9";
+            textBox9.ReadOnly = true;
             textBox9.Size = new Size(30, 30);
             textBox9.TabIndex = 10;
+            textBox9.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox10
             // 
             textBox10.Location = new Point(193, 344);
             textBox10.Name = "textBox10";
+            textBox10.ReadOnly = true;
             textBox10.Size = new Size(30, 30);
             textBox10.TabIndex = 9;
+            textBox10.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox11
             // 
             textBox11.Location = new Point(138, 344);
             textBox11.Name = "textBox11";
+            textBox11.ReadOnly = true;
             textBox11.Size = new Size(30, 30);
             textBox11.TabIndex = 8;
+            textBox11.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox12
             // 
             textBox12.Location = new Point(80, 344);
             textBox12.Name = "textBox12";
+            textBox12.ReadOnly = true;
             textBox12.Size = new Size(30, 30);
             textBox12.TabIndex = 7;
+            textBox12.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox13
             // 
             textBox13.Location = new Point(80, 255);
             textBox13.Name = "textBox13";
+            textBox13.ReadOnly = true;
             textBox13.Size = new Size(30, 30);
             textBox13.TabIndex = 13;
+            textBox13.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox14
             // 
             textBox14.Location = new Point(138, 255);
             textBox14.Name = "textBox14";
+            textBox14.ReadOnly = true;
             textBox14.Size = new Size(30, 30);
             textBox14.TabIndex = 14;
+            textBox14.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox15
             // 
+            textBox15.BackColor = Color.Green;
             textBox15.Location = new Point(193, 255);
             textBox15.Name = "textBox15";
+            textBox15.ReadOnly = true;
             textBox15.Size = new Size(30, 30);
             textBox15.TabIndex = 15;
+            textBox15.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox16
             // 
             textBox16.Location = new Point(253, 255);
             textBox16.Name = "textBox16";
+            textBox16.ReadOnly = true;
             textBox16.Size = new Size(30, 30);
             textBox16.TabIndex = 16;
+            textBox16.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox17
             // 
             textBox17.Location = new Point(310, 255);
             textBox17.Name = "textBox17";
+            textBox17.ReadOnly = true;
             textBox17.Size = new Size(30, 30);
             textBox17.TabIndex = 17;
+            textBox17.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox18
             // 
             textBox18.Location = new Point(368, 255);
             textBox18.Name = "textBox18";
+            textBox18.ReadOnly = true;
             textBox18.Size = new Size(30, 30);
             textBox18.TabIndex = 18;
+            textBox18.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox19
             // 
             textBox19.Location = new Point(368, 168);
             textBox19.Name = "textBox19";
+            textBox19.ReadOnly = true;
             textBox19.Size = new Size(30, 30);
             textBox19.TabIndex = 24;
+            textBox19.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox20
             // 
             textBox20.Location = new Point(310, 168);
             textBox20.Name = "textBox20";
+            textBox20.ReadOnly = true;
             textBox20.Size = new Size(30, 30);
             textBox20.TabIndex = 23;
+            textBox20.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox21
             // 
+            textBox21.BackColor = Color.Green;
             textBox21.Location = new Point(253, 168);
             textBox21.Name = "textBox21";
+            textBox21.ReadOnly = true;
             textBox21.Size = new Size(30, 30);
             textBox21.TabIndex = 22;
+            textBox21.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox22
             // 
             textBox22.Location = new Point(193, 168);
             textBox22.Name = "textBox22";
+            textBox22.ReadOnly = true;
             textBox22.Size = new Size(30, 30);
             textBox22.TabIndex = 21;
+            textBox22.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox23
             // 
             textBox23.Location = new Point(138, 168);
             textBox23.Name = "textBox23";
+            textBox23.ReadOnly = true;
             textBox23.Size = new Size(30, 30);
             textBox23.TabIndex = 20;
+            textBox23.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox24
             // 
             textBox24.Location = new Point(80, 168);
             textBox24.Name = "textBox24";
+            textBox24.ReadOnly = true;
             textBox24.Size = new Size(30, 30);
             textBox24.TabIndex = 19;
+            textBox24.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -490,13 +541,14 @@
             // 
             // rollBtn
             // 
+            rollBtn.BackColor = Color.Transparent;
             rollBtn.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             rollBtn.Location = new Point(602, 387);
             rollBtn.Name = "rollBtn";
             rollBtn.Size = new Size(169, 43);
-            rollBtn.TabIndex = 45;
+            rollBtn.TabIndex = 0;
             rollBtn.Text = "ROLL DICE";
-            rollBtn.UseVisualStyleBackColor = true;
+            rollBtn.UseVisualStyleBackColor = false;
             rollBtn.Click += rollBtn_Click;
             // 
             // Form1
