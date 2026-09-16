@@ -85,7 +85,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label1.Location = new Point(299, 9);
+            label1.Location = new Point(300, 27);
             label1.Name = "label1";
             label1.Size = new Size(259, 46);
             label1.TabIndex = 0;
@@ -555,7 +555,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
+            BackColor = Color.GreenYellow;
             ClientSize = new Size(880, 636);
             Controls.Add(rollBtn);
             Controls.Add(diceBox);

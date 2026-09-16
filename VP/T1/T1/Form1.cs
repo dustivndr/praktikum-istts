@@ -54,11 +54,13 @@ namespace T1
 
             playerPosition += diceValue;
 
-            // boleh langsung ngilang apa gak, kalo > 24?
-
             if (playerPosition >= board.Length - 1)
             {
-                MessageBox.Show("You win!");
+                playerPosition = board.Length - 1;
+                board[playerPosition].Text = "P";
+                MessageBox.Show("FINISH!");
+
+                board[playerPosition].Text = "";
                 playerPosition = 0;
                 board[playerPosition].Text = "P";
                 return;
@@ -68,18 +70,21 @@ namespace T1
             {
                 playerPosition = 5;
                 board[playerPosition].Text = "P";
+                MessageBox.Show("Pemain terkena ular \n(Turun ke petak di bawah)");
             }
 
             if (playerPosition == 14)
             {
                 playerPosition = 9;
                 board[playerPosition].Text = "P";
+                MessageBox.Show("Pemain terkena ular \n(Turun ke petak di bawah)");
             }
 
             if (playerPosition == 20)
             {
                 playerPosition = 15;
                 board[playerPosition].Text = "P";
+                MessageBox.Show("Pemain terkena ular \n(Turun ke petak di bawah)");
             }
 
             board[playerPosition].Text = "P";
