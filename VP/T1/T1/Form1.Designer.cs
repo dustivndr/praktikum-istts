@@ -303,6 +303,7 @@
             // 
             // textBox24
             // 
+            textBox24.BackColor = Color.FromArgb(192, 192, 255);
             textBox24.Location = new Point(80, 168);
             textBox24.Name = "textBox24";
             textBox24.ReadOnly = true;
@@ -612,7 +613,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Ular Tangga";
             ResumeLayout(false);
             PerformLayout();
         }
