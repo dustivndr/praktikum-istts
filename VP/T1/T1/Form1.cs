@@ -68,23 +68,26 @@ namespace T1
 
             if (playerPosition == 6)
             {
-                playerPosition = 5;
                 board[playerPosition].Text = "P";
                 MessageBox.Show("Pemain terkena ular \n(Turun ke petak di bawah)");
+                board[playerPosition].Text = "";
+                playerPosition = 5;
             }
 
             if (playerPosition == 14)
             {
-                playerPosition = 9;
                 board[playerPosition].Text = "P";
                 MessageBox.Show("Pemain terkena ular \n(Turun ke petak di bawah)");
+                board[playerPosition].Text = "";
+                playerPosition = 9;
             }
 
             if (playerPosition == 20)
             {
-                playerPosition = 15;
                 board[playerPosition].Text = "P";
                 MessageBox.Show("Pemain terkena ular \n(Turun ke petak di bawah)");
+                board[playerPosition].Text = "";
+                playerPosition = 15;
             }
 
             board[playerPosition].Text = "P";

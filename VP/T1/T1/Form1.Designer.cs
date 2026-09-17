@@ -79,6 +79,7 @@
             label25 = new Label();
             diceBox = new TextBox();
             rollBtn = new Button();
+            label26 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -148,6 +149,7 @@
             // textBox7
             // 
             textBox7.BackColor = Color.Green;
+            textBox7.ForeColor = Color.White;
             textBox7.Location = new Point(368, 344);
             textBox7.Name = "textBox7";
             textBox7.ReadOnly = true;
@@ -221,6 +223,7 @@
             // textBox15
             // 
             textBox15.BackColor = Color.Green;
+            textBox15.ForeColor = Color.White;
             textBox15.Location = new Point(193, 255);
             textBox15.Name = "textBox15";
             textBox15.ReadOnly = true;
@@ -276,6 +279,7 @@
             // textBox21
             // 
             textBox21.BackColor = Color.Green;
+            textBox21.ForeColor = Color.White;
             textBox21.Location = new Point(253, 168);
             textBox21.Name = "textBox21";
             textBox21.ReadOnly = true;
@@ -552,12 +556,22 @@
             rollBtn.UseVisualStyleBackColor = false;
             rollBtn.Click += rollBtn_Click;
             // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(-2, -1);
+            label26.Name = "label26";
+            label26.Size = new Size(57, 23);
+            label26.TabIndex = 45;
+            label26.Text = "dustin";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.GreenYellow;
             ClientSize = new Size(880, 636);
+            Controls.Add(label26);
             Controls.Add(rollBtn);
             Controls.Add(diceBox);
             Controls.Add(label20);
@@ -671,5 +685,6 @@
         private Label label25;
         private TextBox diceBox;
         private Button rollBtn;
+        private Label label26;
     }
 }
