@@ -10,7 +10,7 @@ if (($authUser['role'] ?? null) !== 'admin') {
 $users = json_decode($_COOKIE['users'] ?? '[]', true) ?: [];
 $matakuliah = json_decode($_COOKIE['matakuliah'] ?? '[]', true) ?: [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delete_course') {
+if (isset($_POST['action']) && $_POST['action'] === 'delete_course') {
     $courseCode = trim($_POST['kode'] ?? '');
     $courseFound = false;
 

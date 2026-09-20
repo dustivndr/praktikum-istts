@@ -12,7 +12,7 @@ $matakuliah = json_decode($_COOKIE['matakuliah'] ?? '[]', true) ?: [];
 $lecturers = array_values(array_filter($users, static fn($user) => ($user['role'] ?? '') === 'dosen' && (int) ($user['banned'] ?? 0) === 0));
 $weekdays = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'add_course') {
+if (isset($_POST['action']) && $_POST['action'] === 'add_course') {
     $kode = strtoupper(trim($_POST['kode'] ?? ''));
     $nama = trim($_POST['nama_mk'] ?? '');
     $sks = (int) ($_POST['sks'] ?? 0);

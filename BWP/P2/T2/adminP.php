@@ -15,7 +15,7 @@ $totalDosen = count(array_filter($users, static fn ($user) => array_key_exists('
 $totalMahasiswa = count(array_filter($users, static fn ($user) => array_key_exists('nim', $user)));
 $totalMatakuliah = count($matakuliah);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'edit_user') {
+if (isset($_POST['action']) && $_POST['action'] === 'edit_user') {
     $userId = (int) ($_POST['user_id'] ?? 0);
     $name = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
@@ -35,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'edit_
         $errorMessage = 'Pengguna tidak ditemukan.';
     } elseif (strlen($name) < 3) {
         $errorMessage = 'Nama harus memiliki minimal 3 karakter.';
-    } elseif ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errorMessage = 'Email harus diisi dengan format yang valid.';
+    // } elseif ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    //     $errorMessage = 'Email harus diisi dengan format yang valid.';
     } elseif (array_key_exists('nim', $users[$editedUserIndex]) && strlen($identity) < 6) {
         $errorMessage = 'NIM harus memiliki minimal 6 karakter.';
     } elseif ($newPassword !== '' && strlen($newPassword) < 6) {
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'edit_
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'toggle_ban') {
+if (isset($_POST['action']) && $_POST['action'] === 'toggle_ban') {
     $userId = (int) ($_POST['user_id'] ?? 0);
     $banMessage = 'Pengguna tidak ditemukan.';
 
@@ -251,10 +251,15 @@ if ($banMessage !== null) {
                         <tbody>
 
                             <?php
-                            usort($users, function ($firstUser, $secondUser) {
-                                return (int) $firstUser['id'] <=> (int) $secondUser['id'];
-                            });
-                            // ijin make ini ^^^
+                            for ($firstIndex = 0; $firstIndex < count($users) - 1; $firstIndex++) {
+                                for ($secondIndex = $firstIndex + 1; $secondIndex < count($users); $secondIndex++) {
+                                    if ((int) $users[$firstIndex]['id'] > (int) $users[$secondIndex]['id']) {
+                                        $temporaryUser = $users[$firstIndex];
+                                        $users[$firstIndex] = $users[$secondIndex];
+                                        $users[$secondIndex] = $temporaryUser;
+                                    }
+                                }
+                            }
 
                             foreach ($users as $user) {
                                 $id = $user['id'];

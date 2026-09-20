@@ -101,12 +101,12 @@ $formattedDate = $dayNames[(int) $today->format('w')] . ', ' . $today->format('j
 					</a>
 				</li>
 				<li>
-					<a href="#mahasiswa-wali" class="nav-link">
+					<a href="dosenMW.php" class="nav-link">
 						<i class="fa-solid fa-users"></i> Mahasiswa Wali
 					</a>
 				</li>
 				<li>
-					<a href="#mata-kuliah" class="nav-link">
+					<a href="dosenKMK.php" class="nav-link">
 						<i class="fa-regular fa-rectangle-list"></i> Kelola Mata Kuliah
 					</a>
 				</li>

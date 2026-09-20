@@ -513,6 +513,117 @@
     font-size: 12px;
 }
 
+.lecturer-count-badge {
+    background-color: rgba(253, 185, 19, 0.16);
+    border: 1px solid rgba(253, 185, 19, 0.3);
+    border-radius: 5px;
+    color: var(--color-gold);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 10px;
+    white-space: nowrap;
+}
+
+.wali-student-card {
+    background-color: #14283b;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 14px;
+    padding: 12px;
+}
+
+.wali-student-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.wali-student-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.wali-student-avatar {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--color-gold);
+    border-radius: 50%;
+    color: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wali-student-identity h3 {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 3px;
+}
+
+.wali-student-identity p {
+    color: var(--text-muted);
+    font-size: 10px;
+    margin: 0;
+}
+
+.wali-student-summary {
+    display: flex;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.wali-student-summary span {
+    background-color: rgba(253, 185, 19, 0.1);
+    border-radius: 4px;
+    padding: 5px 8px;
+}
+
+.wali-student-summary strong {
+    color: var(--color-gold);
+}
+
+.wali-krs-box {
+    background-color: #202427;
+    border: 1px solid #66717a;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.wali-krs-box > strong {
+    color: var(--color-gold);
+    display: block;
+    font-size: 10px;
+    margin-bottom: 7px;
+}
+
+.wali-krs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.wali-course-badge {
+    background-color: #7c8792;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 3px 9px;
+}
+
+.empty-state {
+    color: var(--text-muted);
+    font-size: 13px;
+    padding: 24px 0 10px;
+    text-align: center;
+}
+
 .edit-alert {
     position: fixed;
     top: 20px;

@@ -9,7 +9,7 @@ if (($authUser['role'] ?? null) !== 'admin') {
 
 $users = json_decode($_COOKIE['users'] ?? '[]', true) ?: [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'add_user') {
+if (isset($_POST['action']) && $_POST['action'] === 'add_user') {
 	$role = $_POST['role'] ?? '';
 	$name = trim($_POST['name'] ?? '');
 	$email = trim($_POST['email'] ?? '');
