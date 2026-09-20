@@ -25,6 +25,16 @@
         <p class="yel" style="text-align: center;">PORTAL AKADEMIK</p>
         <h3 style="text-align: center;">LOGIN</h3>
 
+        <?php if (isset($_COOKIE['ban_message'])): ?>
+
+            <div class="alert alert-danger" role="alert">
+                <?= htmlspecialchars($_COOKIE['ban_message']) ?>
+            </div>
+
+            <?php setcookie("ban_message", "", time() - 3600, "/"); ?>
+
+        <?php endif; ?>
+
         <form method="POST" action="loginProcess.php">
             <div class="mb-3">
                 <label class="form-label ">Email</label>

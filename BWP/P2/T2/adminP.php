@@ -6,6 +6,103 @@ if (($authUser['role'] ?? null) !== 'admin') {
     header('Location: login.php');
     exit;
 }
+
+$users = json_decode($_COOKIE['users'] ?? '[]', true) ?: [];
+$matakuliah = json_decode($_COOKIE['matakuliah'] ?? '[]', true) ?: [];
+
+$totalUsers = count($users);
+$totalDosen = count(array_filter($users, static fn ($user) => array_key_exists('nid', $user)));
+$totalMahasiswa = count(array_filter($users, static fn ($user) => array_key_exists('nim', $user)));
+$totalMatakuliah = count($matakuliah);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'edit_user') {
+    $userId = (int) ($_POST['user_id'] ?? 0);
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $identity = trim($_POST['identity'] ?? '');
+    $newPassword = $_POST['password'] ?? '';
+    $errorMessage = '';
+    $editedUserIndex = null;
+
+    foreach ($users as $index => $user) {
+        if ((int) ($user['id'] ?? 0) === $userId) {
+            $editedUserIndex = $index;
+            break;
+        }
+    }
+
+    if ($editedUserIndex === null) {
+        $errorMessage = 'Pengguna tidak ditemukan.';
+    } elseif (strlen($name) < 3) {
+        $errorMessage = 'Nama harus memiliki minimal 3 karakter.';
+    } elseif ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorMessage = 'Email harus diisi dengan format yang valid.';
+    } elseif (array_key_exists('nim', $users[$editedUserIndex]) && strlen($identity) < 6) {
+        $errorMessage = 'NIM harus memiliki minimal 6 karakter.';
+    } elseif ($newPassword !== '' && strlen($newPassword) < 6) {
+        $errorMessage = 'Password baru harus memiliki minimal 6 karakter.';
+    }
+
+    if ($errorMessage === '') {
+        foreach ($users as $index => $user) {
+            if ($index !== $editedUserIndex && ($user['email'] ?? '') === $email) {
+                $errorMessage = 'Email sudah digunakan oleh pengguna lain.';
+                break;
+            }
+
+            if ($index !== $editedUserIndex && array_key_exists('nim', $users[$editedUserIndex])
+                && ($user['nim'] ?? '') === $identity) {
+                $errorMessage = 'NIM sudah digunakan oleh pengguna lain.';
+                break;
+            }
+        }
+    }
+
+    if ($errorMessage !== '') {
+        setcookie('error_message', $errorMessage, time() + 10, '/');
+    } else {
+        $users[$editedUserIndex]['nama'] = $name;
+        $users[$editedUserIndex]['email'] = $email;
+        $identityKey = array_key_exists('nim', $users[$editedUserIndex]) ? 'nim' : 'nid';
+        $users[$editedUserIndex][$identityKey] = $identity;
+
+        if ($newPassword !== '') {
+            $users[$editedUserIndex]['password'] = $newPassword;
+        }
+
+        setcookie('users', json_encode($users), time() + (86400 * 30), '/');
+        setcookie('success_message', 'Informasi pengguna berhasil diperbarui.', time() + 10, '/');
+    }
+
+    header('Location: adminP.php');
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'toggle_ban') {
+    $userId = (int) ($_POST['user_id'] ?? 0);
+    $banMessage = 'Pengguna tidak ditemukan.';
+
+    foreach ($users as &$user) {
+        if ((int) ($user['id'] ?? 0) === $userId && ($user['role'] ?? '') !== 'admin') {
+            $user['banned'] = ((int) ($user['banned'] ?? 0) === 0) ? 1 : 0;
+            $banAction = $user['banned'] === 1 ? 'dibanned' : 'diunbanned';
+            $banMessage = 'Akun ' . ($user['nama'] ?? 'pengguna') . ' berhasil ' . $banAction . '.';
+            break;
+        }
+    }
+    unset($user);
+
+    setcookie('users', json_encode($users), time() + (86400 * 30), '/');
+    setcookie('ban_message', $banMessage, time() + 10, '/');
+    header('Location: adminP.php');
+    exit;
+}
+
+$banMessage = $_COOKIE['ban_message'] ?? null;
+if ($banMessage !== null) {
+    setcookie('ban_message', '', time() - 3600, '/');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +138,7 @@ if (($authUser['role'] ?? null) !== 'admin') {
 
             <ul class="sidebar-nav">
                 <li>
-                    <a href="adminKP.php" class="nav-link active">
+                    <a href="adminP.php" class="nav-link active">
                         <i class="fa-solid fa-gauge"></i> Control Panel
                     </a>
                 </li>
@@ -80,34 +177,41 @@ if (($authUser['role'] ?? null) !== 'admin') {
                 </a>
             </div>
 
+            <?php if ($banMessage !== null): ?>
+                <div class="ban-alert" role="alert">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <?= htmlspecialchars($banMessage) ?>
+                </div>
+            <?php endif; ?>
+
             <!-- stats -->
             <div class="row g-4 mb-4">
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
                         <div class="stat-label">Total Pengguna</div>
-                        <h2 class="stat-value val-gold">10</h2>
+                        <h2 class="stat-value val-gold"><?= $totalUsers ?></h2>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fa-solid fa-address-card"></i></div>
                         <div class="stat-label">Total Dosen</div>
-                        <h2 class="stat-value val-cyan">4</h2>
+                        <h2 class="stat-value val-cyan"><?= $totalDosen ?></h2>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                         <div class="stat-label">Total Mahasiswa</div>
-                        <h2 class="stat-value val-green">5</h2>
+                        <h2 class="stat-value val-green"><?= $totalMahasiswa ?></h2>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fa-solid fa-book"></i></div>
                         <div class="stat-label">Total Mata Kuliah</div>
-                        <h2 class="stat-value val-white">3</h2>
+                        <h2 class="stat-value val-white"><?= $totalMatakuliah ?></h2>
                     </div>
                 </div>
             </div>
@@ -147,7 +251,6 @@ if (($authUser['role'] ?? null) !== 'admin') {
                         <tbody>
 
                             <?php
-                            $users = json_decode($_COOKIE['users'], true) ?: [];
                             usort($users, function ($firstUser, $secondUser) {
                                 return (int) $firstUser['id'] <=> (int) $secondUser['id'];
                             });
@@ -177,11 +280,27 @@ if (($authUser['role'] ?? null) !== 'admin') {
                                     </td>
                                     <td><span class="<?= $status === 'aktif' ? 'badge-status' : 'badge-status-ban' ?>"><?= htmlspecialchars($status) ?></span></td>
                                     <td>
-                                        <button class="btn-action btn-edit" title="Edit">
+                                        <button
+                                            type="button"
+                                            class="btn-action btn-edit"
+                                            title="Edit"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#editUserModal"
+                                            data-user-id="<?= htmlspecialchars((string) $id) ?>"
+                                            data-user-name="<?= htmlspecialchars($name, ENT_QUOTES) ?>"
+                                            data-user-email="<?= htmlspecialchars($email, ENT_QUOTES) ?>"
+                                            data-user-identity="<?= htmlspecialchars($identityNumber === '-' ? '' : $identityNumber, ENT_QUOTES) ?>"
+                                        >
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </button>
-                                        <?php if ($role !== 'admin') {?>
-                                        <button class="btn-action btn-ban"><i class="fa-solid fa-ban"></i> Ban</button>
+                                        <?php if ($role !== 'admin') { ?>
+                                        <form method="POST" class="d-inline">
+                                            <input type="hidden" name="action" value="toggle_ban">
+                                            <input type="hidden" name="user_id" value="<?= htmlspecialchars((string) $id) ?>">
+                                            <button type="submit" class="btn-action <?= $status === 'aktif' ? 'btn-ban' : 'btn-unban' ?>">
+                                                <i class="fa-solid fa-ban"></i> <?= $status === 'aktif' ? 'Ban' : 'Unban' ?>
+                                            </button>
+                                        </form>
                                         <?php } ?>
                                     </td>
                                 </tr>
@@ -195,11 +314,77 @@ if (($authUser['role'] ?? null) !== 'admin') {
         </main>
     </div>
 
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content edit-user-modal">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="editUserModalLabel">Edit Informasi Pengguna</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+                <form method="POST" id="editUserForm">
+                    <div class="modal-body">
+                        <input type="hidden" name="action" value="edit_user">
+                        <input type="hidden" name="user_id" id="editUserId">
+
+                        <div class="mb-3">
+                            <label for="editUserName" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control edit-user-input" name="name" id="editUserName" minlength="3" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editUserEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control edit-user-input" name="email" id="editUserEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editUserIdentity" class="form-label">NID / NIM</label>
+                            <input type="text" class="form-control edit-user-input" name="identity" id="editUserIdentity" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editUserPassword" class="form-label">Password Baru (kosongi jika tidak ingin mengubah)</label>
+                            <input type="password" class="form-control edit-user-input" name="password" id="editUserPassword" minlength="6" placeholder="Password lama tetap dipakai">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-gold">Simpan Perubahan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <?php if (isset($_COOKIE['error_message'])): ?>
+        <div class="alert alert-danger edit-alert" role="alert">
+            <?= htmlspecialchars($_COOKIE['error_message']) ?>
+        </div>
+        <?php setcookie('error_message', '', time() - 3600, '/'); ?>
+    <?php endif; ?>
+
+    <?php if (isset($_COOKIE['success_message'])): ?>
+        <div class="alert alert-success edit-alert" role="alert">
+            <?= htmlspecialchars($_COOKIE['success_message']) ?>
+        </div>
+        <?php setcookie('success_message', '', time() - 3600, '/'); ?>
+    <?php endif; ?>
+
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous">
     </script>
+    <script>
+        const editUserModal = document.getElementById('editUserModal');
+
+        editUserModal.addEventListener('show.bs.modal', (event) => {
+            const button = event.relatedTarget;
+
+            document.getElementById('editUserId').value = button.dataset.userId;
+            document.getElementById('editUserName').value = button.dataset.userName;
+            document.getElementById('editUserEmail').value = button.dataset.userEmail;
+            document.getElementById('editUserIdentity').value = button.dataset.userIdentity;
+            document.getElementById('editUserPassword').value = '';
+        });
+    </script>
+    <!-- kalo ngikut file soal itu pake popup, jadi perlu pake ini ^^ -->
 </body>
 
 </html>

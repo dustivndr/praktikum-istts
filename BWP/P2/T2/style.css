@@ -98,6 +98,16 @@ a {
     color: #fff;
 }
 
+.btn-unban {
+    color: #4aef44;
+    border: 1px solid #4aef44;
+}
+
+.btn-unban:hover {
+    background-color: #4def44;
+    color: #fff;
+}
+
 /* Layout Wrapper */
 .wrapper {
     display: flex;

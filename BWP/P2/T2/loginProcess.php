@@ -50,7 +50,20 @@ foreach ($users as $user) {
     }
 }
 
+$ban = $user['banned'];
+
 if ($loginSuccessful) {
+
+    if ($ban === 1) {
+        setcookie(
+        "error_message",
+        "Akun anda telah dibanned oleh Super Admin! Silahkan hubungi Pihak Akademik.",
+        time() + 10,
+        "/"
+        );
+        header("Location: login.php");
+        exit;
+    }
 
     if ($role === 'dosen') {
         setcookie(
