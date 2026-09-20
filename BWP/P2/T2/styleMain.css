@@ -374,6 +374,145 @@
     opacity: 0.78;
 }
 
+/* Lecturer dashboard */
+.lecturer-sidebar {
+    width: 260px;
+}
+
+.lecturer-profile {
+    background-color: var(--color-gold);
+    color: #101820;
+    min-height: 72px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.lecturer-avatar {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #101820;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.lecturer-profile-text {
+    line-height: 1.25;
+    min-width: 0;
+}
+
+.lecturer-profile-text strong,
+.lecturer-profile-text span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lecturer-profile-text strong {
+    font-size: 11px;
+}
+
+.lecturer-profile-text span {
+    font-size: 8px;
+}
+
+.lecturer-sidebar .sidebar-nav {
+    padding: 20px 15px;
+    gap: 10px;
+}
+
+.lecturer-sidebar .sidebar-nav .nav-link {
+    padding: 12px 15px;
+    border-radius: 8px;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.lecturer-sidebar .sidebar-nav .nav-link i {
+    width: 20px;
+    font-size: 16px;
+}
+
+.lecturer-content {
+    padding: 30px 40px;
+}
+
+.lecturer-welcome {
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.lecturer-welcome .header-title-group {
+    gap: 15px;
+}
+
+.lecturer-welcome .header-icon {
+    font-size: 28px;
+}
+
+.lecturer-welcome .header-text h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.lecturer-welcome .header-text p {
+    font-size: 14px;
+}
+
+.lecturer-welcome .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.lecturer-stat-card {
+    padding: 20px;
+}
+
+.lecturer-stat-card .stat-icon {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.lecturer-stat-card .stat-label {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.lecturer-stat-card .stat-value {
+    font-size: 28px;
+}
+
+.lecturer-table-panel {
+    padding: 20px;
+}
+
+.lecturer-table-panel .table-title {
+    font-size: 16px;
+}
+
+.lecturer-table th {
+    padding: 12px 15px;
+    font-size: 12px;
+}
+
+.lecturer-table td {
+    padding: 15px;
+    font-size: 14px;
+}
+
+.lecturer-table .badge-nid,
+.lecturer-table .badge-id {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
 .edit-alert {
     position: fixed;
     top: 20px;

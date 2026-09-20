@@ -73,7 +73,7 @@ if ($loginSuccessful) {
             '/'
         );
 
-        header("Location: dosen.php");
+        header("Location: dosenHome.php");
         exit;
     }
 
