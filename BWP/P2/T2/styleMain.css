@@ -1,0 +1,244 @@
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+}
+
+.page-header {
+    background-color: var(--bg-panel);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.header-title-group {
+    display: flex;
+    gap: 15px;
+}
+
+.header-icon {
+    color: var(--color-gold);
+    font-size: 28px;
+    background: transparent;
+    padding-top: 2px;
+}
+
+.header-text h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.header-text h1 span {
+    color: var(--color-gold);
+}
+
+.header-text p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Stats Cards */
+.stat-card {
+    background-color: var(--bg-panel);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    height: 100%;
+}
+
+.stat-icon {
+    color: var(--color-gold);
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.val-gold {
+    color: var(--color-gold);
+}
+
+.val-cyan {
+    color: #06b6d4;
+}
+
+.val-green {
+    color: #10b981;
+}
+
+.val-white {
+    color: #ffffff;
+}
+
+/* Tabs Navigation */
+.tab-navigation {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-active {
+    background-color: var(--tab-active-bg);
+    color: #fff;
+    border: 1px solid var(--tab-active-bg);
+}
+
+.tab-active:hover {
+    color: #fff;
+    opacity: 0.9;
+}
+
+.tab-inactive {
+    background-color: var(--bg-panel);
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+}
+
+.tab-inactive:hover {
+    background-color: rgba(253, 185, 19, 0.1);
+    color: var(--color-gold);
+}
+
+/* Table Panel Styling */
+.table-panel {
+    background-color: var(--bg-panel);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Custom Table */
+.table-dark-custom {
+    width: 100%;
+    color: var(--text-main);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-dark-custom th {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    letter-spacing: 0.5px;
+}
+
+.table-dark-custom td {
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+}
+
+.table-dark-custom tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Badges & Elements inside table */
+.badge-id {
+    background-color: #334155;
+    color: #cbd5e1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-nid {
+    background-color: #45300a;
+    /* Dark brownish gold */
+    color: #fbbf24;
+    /* Bright gold text */
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #78350f;
+}
+
+.form-select-dark {
+    background-color: #0f172a;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    font-size: 13px;
+    padding: 4px 30px 4px 10px;
+    border-radius: 4px;
+    width: auto;
+    min-width: 120px;
+}
+
+.form-select-dark:focus {
+    background-color: #0f172a;
+    color: var(--text-main);
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 0.25rem rgba(253, 185, 19, 0.25);
+}
+
+.badge-status {
+    background-color: #008700;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-status-ban {
+    background-color: #b90000;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
