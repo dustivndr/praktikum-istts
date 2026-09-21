@@ -41,7 +41,11 @@ if (isset($_POST['action'])) {
     if ($action === 'delete_course') {
         if ($courseIndex !== null) {
             unset($matakuliah[$courseIndex]);
-            $matakuliah = array_values($matakuliah);
+            $reindexedMatakuliah = [];
+            foreach ($matakuliah as $course) {
+                $reindexedMatakuliah[] = $course;
+            }
+            $matakuliah = $reindexedMatakuliah;
             setcookie('course_message', 'Mata kuliah berhasil dihapus.', time() + 10, '/');
         } else {
             setcookie('course_error', 'Mata kuliah tidak ditemukan.', time() + 10, '/');
@@ -228,8 +232,16 @@ foreach ($matakuliah as $course) {
                                             <td><?= htmlspecialchars((string) ($course['sks'] ?? '-')) ?> SKS</td>
                                             <td><?= htmlspecialchars(($course['hari'] ?? '-') . ', ' . ($course['jam'] ?? '-')) ?></td>
                                             <td><?= htmlspecialchars($course['ruangan'] ?? '-') ?></td>
-                                            <td><button type="button" class="btn-action btn-edit" onclick='fillCourseForm(<?= json_encode($course, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>)' title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                                <form method="POST" class="d-inline" onsubmit="return confirm(&quot;Hapus mata kuliah ini?&quot;);"><input type="hidden" name="action" value="delete_course"><input type="hidden" name="kode" value="<?= htmlspecialchars($course['kode'] ?? '', ENT_QUOTES) ?>">
+                                            <td>
+                                                <button type="button"
+                                                    class="btn-action btn-edit"
+                                                    data-course="<?= htmlspecialchars(json_encode($course), ENT_QUOTES, 'UTF-8') ?>"
+                                                    onclick="fillCourseForm(this.dataset.course)" title="Edit">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </button>
+                                                <form method="POST" class="d-inline"
+                                                    onsubmit="
+                                                    return confirm(&quot;Hapus mata kuliah ini?&quot;);"><input type="hidden" name="action" value="delete_course"><input type="hidden" name="kode" value="<?= htmlspecialchars($course['kode'] ?? '', ENT_QUOTES) ?>">
                                                     <button type="submit" class="btn-action btn-ban" title="Hapus">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
@@ -250,7 +262,8 @@ foreach ($matakuliah as $course) {
 
     </div>
     <script>
-        function fillCourseForm(course) {
+        function fillCourseForm(courseData) {
+            const course = JSON.parse(courseData);
             document.querySelector('[name="action"]').value = 'update_course';
             document.getElementById('kode').value = course.kode || '';
             document.getElementById('kode').readOnly = true;

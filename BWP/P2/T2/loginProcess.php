@@ -85,7 +85,7 @@ if ($loginSuccessful) {
             '/'
         );
 
-        header("Location: mhs.php");
+        header("Location: mhsHome.php");
         exit;
     }
 

@@ -20,7 +20,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'add_user') {
 
 	if (!in_array($role, ['mahasiswa', 'dosen'], true)) {
 		$errorMessage = 'Role pengguna tidak valid.';
-	} elseif ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	} elseif ($email === '' || strpos($email, '@') === false || strpos($email, '.') === false) {
 		$errorMessage = 'Email harus diisi dengan format yang valid.';
 	}
 

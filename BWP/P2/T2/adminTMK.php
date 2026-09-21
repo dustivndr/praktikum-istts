@@ -9,7 +9,12 @@ if (($authUser['role'] ?? null) !== 'admin') {
 
 $users = json_decode($_COOKIE['users'] ?? '[]', true) ?: [];
 $matakuliah = json_decode($_COOKIE['matakuliah'] ?? '[]', true) ?: [];
-$lecturers = array_values(array_filter($users, static fn($user) => ($user['role'] ?? '') === 'dosen' && (int) ($user['banned'] ?? 0) === 0));
+$lecturers = [];
+foreach ($users as $user) {
+    if (($user['role'] ?? '') === 'dosen' && (int) ($user['banned'] ?? 0) === 0) {
+        $lecturers[] = $user;
+    }
+}
 $weekdays = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
 
 if (isset($_POST['action']) && $_POST['action'] === 'add_course') {
@@ -28,10 +33,30 @@ if (isset($_POST['action']) && $_POST['action'] === 'add_course') {
         $errorMessage = 'Jumlah SKS harus berada di antara 1 dan 6.';
     } elseif (!in_array($hari, $weekdays, true)) {
         $errorMessage = 'Hari kuliah tidak valid.';
-    } elseif (count(array_filter($matakuliah, static fn($course) => strtoupper($course['kode'] ?? '') === $kode)) > 0) {
-        $errorMessage = 'Kode mata kuliah sudah digunakan.';
-    } elseif (count(array_filter($lecturers, static fn($lecturer) => (int) ($lecturer['id'] ?? 0) === $dosenId)) === 0) {
-        $errorMessage = 'Dosen pengampu tidak valid.';
+    } else {
+        $courseCodeExists = false;
+        foreach ($matakuliah as $course) {
+            if (strtoupper($course['kode'] ?? '') === $kode) {
+                $courseCodeExists = true;
+                break;
+            }
+        }
+
+        if ($courseCodeExists) {
+            $errorMessage = 'Kode mata kuliah sudah digunakan.';
+        } else {
+            $lecturerExists = false;
+            foreach ($lecturers as $lecturer) {
+                if ((int) ($lecturer['id'] ?? 0) === $dosenId) {
+                    $lecturerExists = true;
+                    break;
+                }
+            }
+
+            if (!$lecturerExists) {
+                $errorMessage = 'Dosen pengampu tidak valid.';
+            }
+        }
     }
 
     if ($errorMessage !== '') {

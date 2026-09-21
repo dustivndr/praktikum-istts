@@ -22,7 +22,11 @@ if (isset($_POST['action']) && $_POST['action'] === 'delete_course') {
         }
     }
 
-    $matakuliah = array_values($matakuliah);
+    $reindexedMatakuliah = [];
+    foreach ($matakuliah as $course) {
+        $reindexedMatakuliah[] = $course;
+    }
+    $matakuliah = $reindexedMatakuliah;
     $matakuliahCookie = json_encode($matakuliah);
     setcookie('matakuliah', $matakuliahCookie, time() + (86400 * 30), '/');
     $_COOKIE['matakuliah'] = $matakuliahCookie;
@@ -43,15 +47,19 @@ if ($courseMessage !== null) {
 }
 
 $lecturers = [];
+$totalDosen = 0;
+$totalMahasiswa = 0;
 foreach ($users as $user) {
-    if (isset($user['nid'])) {
+    if (array_key_exists('nid', $user)) {
         $lecturers[(int) ($user['id'] ?? 0)] = $user['nama'] ?? '-';
+        $totalDosen++;
+    }
+    if (array_key_exists('nim', $user)) {
+        $totalMahasiswa++;
     }
 }
 
 $totalUsers = count($users);
-$totalDosen = count(array_filter($users, static fn($user) => array_key_exists('nid', $user)));
-$totalMahasiswa = count(array_filter($users, static fn($user) => array_key_exists('nim', $user)));
 $totalMatakuliah = count($matakuliah);
 ?>
 

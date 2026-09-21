@@ -10,9 +10,18 @@ if (($authUser['role'] ?? null) !== 'admin') {
 $users = json_decode($_COOKIE['users'] ?? '[]', true) ?: [];
 $matakuliah = json_decode($_COOKIE['matakuliah'] ?? '[]', true) ?: [];
 
+$totalDosen = 0;
+$totalMahasiswa = 0;
+foreach ($users as $user) {
+    if (array_key_exists('nid', $user)) {
+        $totalDosen++;
+    }
+    if (array_key_exists('nim', $user)) {
+        $totalMahasiswa++;
+    }
+}
+
 $totalUsers = count($users);
-$totalDosen = count(array_filter($users, static fn ($user) => array_key_exists('nid', $user)));
-$totalMahasiswa = count(array_filter($users, static fn ($user) => array_key_exists('nim', $user)));
 $totalMatakuliah = count($matakuliah);
 
 if (isset($_POST['action']) && $_POST['action'] === 'edit_user') {
@@ -35,8 +44,6 @@ if (isset($_POST['action']) && $_POST['action'] === 'edit_user') {
         $errorMessage = 'Pengguna tidak ditemukan.';
     } elseif (strlen($name) < 3) {
         $errorMessage = 'Nama harus memiliki minimal 3 karakter.';
-    // } elseif ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //     $errorMessage = 'Email harus diisi dengan format yang valid.';
     } elseif (array_key_exists('nim', $users[$editedUserIndex]) && strlen($identity) < 6) {
         $errorMessage = 'NIM harus memiliki minimal 6 karakter.';
     } elseif ($newPassword !== '' && strlen($newPassword) < 6) {

@@ -60,9 +60,7 @@ foreach ($users as $user) {
 $lecturerName = $lecturer['nama'] ?? 'Dosen';
 $dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
 $monthNames = [1 => 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-$today = new DateTimeImmutable();
-$formattedDate = $dayNames[(int) $today->format('w')] . ', ' . $today->format('j') . ' ' . $monthNames[(int) $today->format('n')] . ' ' . $today->format('Y');
-// ijin make itu yg di atas bole kan?
+$formattedDate = $dayNames[(int) date('w')] . ', ' . date('j') . ' ' . $monthNames[(int) date('n')] . ' ' . date('Y');
 ?>
 
 <!DOCTYPE html>
