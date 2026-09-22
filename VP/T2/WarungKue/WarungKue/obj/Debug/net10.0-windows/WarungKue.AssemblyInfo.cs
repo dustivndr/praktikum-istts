@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WarungKue")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1f00d5337d2213bfe9774ca01451209fc97e0c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d486c4f4b94831d065f7707fdaecbcf09211f6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("WarungKue")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WarungKue")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

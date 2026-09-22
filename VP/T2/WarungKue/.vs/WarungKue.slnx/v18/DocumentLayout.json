@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\T2\\WarungKue\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{457ACD00-40AD-4150-B627-494C3B5EC62E}|WarungKue\\WarungKue.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\t2\\warungkue\\warungkue\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{457ACD00-40AD-4150-B627-494C3B5EC62E}|WarungKue\\WarungKue.csproj|solutionrelative:warungkue\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{37194F9C-C573-840E-0221-AFA52F7D5276}|WarungKue\\WarungKue.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\t2\\warungkue\\warungkue\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{37194F9C-C573-840E-0221-AFA52F7D5276}|WarungKue\\WarungKue.csproj|solutionrelative:warungkue\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37194F9C-C573-840E-0221-AFA52F7D5276}|WarungKue\\WarungKue.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\t2\\warungkue\\warungkue\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37194F9C-C573-840E-0221-AFA52F7D5276}|WarungKue\\WarungKue.csproj|solutionrelative:warungkue\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,8 +29,21 @@
               "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\T2\\WarungKue\\WarungKue\\Form1.cs [Design]",
               "RelativeToolTip": "WarungKue\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T01:22:48.757Z",
+              "WhenOpened": "2026-09-22T02:11:41.254Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\T2\\WarungKue\\WarungKue\\Form1.cs",
+              "RelativeDocumentMoniker": "WarungKue\\Form1.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\T2\\WarungKue\\WarungKue\\Form1.cs",
+              "RelativeToolTip": "WarungKue\\Form1.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAUwCcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T01:45:46.409Z",
+              "EditorCaption": ""
             }
           ]
         }
