@@ -1,0 +1,251 @@
+﻿namespace WarungKue
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            RandomMenu();
+        }
+
+        Random random = new Random();
+        int totalRoti, totalKue, totalCoklat, totalKeju;
+        int menu, money;
+
+        public void UpdateGudang()
+        {
+            gudangRoti.Text = "Roti: " + totalRoti;
+            gudangKue.Text = "Kue: " + totalKue;
+            gudangCoklat.Text = "Coklat: " + totalCoklat;
+            gudangKeju.Text = "Keju: " + totalKeju;
+        }
+
+        public void RandomMenu()
+        {
+            menu = random.Next(0, 8);
+            switch (menu)
+            {
+                case 0:
+                    labelPesanan.Text = "Roti Plain";
+                    break;
+                case 1:
+                    labelPesanan.Text = "Roti Coklat";
+                    break;
+                case 2:
+                    labelPesanan.Text = "Roti Keju";
+                    break;
+                case 3:
+                    labelPesanan.Text = "Roti Coklat + Keju";
+                    break;
+                case 4:
+                    labelPesanan.Text = "Kue Plain";
+                    break;
+                case 5:
+                    labelPesanan.Text = "Kue Coklat";
+                    break;
+                case 6:
+                    labelPesanan.Text = "Kue Keju";
+                    break;
+                case 7:
+                    labelPesanan.Text = "Kue Coklat + Keju";
+                    break;
+            }
+        }
+
+        public void ResetComboBox()
+        {
+            cbBahanUtama.SelectedIndex = -1;
+            cbRasa1.SelectedIndex = -1;
+            cbRasa2.SelectedIndex = -1;
+            cbBahanUtama.Enabled = true;
+            cbRasa1.Enabled = true;
+            cbRasa2.Enabled = true;
+        }
+
+        public void UpdateMoney()
+        {
+            targetPenjualanCounter.Text = 
+                "Target Penjualan:\n" +
+                "Rp" + money + " / Rp 100000";
+        }
+
+        private void newGame_Click(object sender, EventArgs e)
+        {
+            panelMainMenu.Visible = false;
+            totalRoti = 3;
+            totalKue = 3;
+            totalCoklat = 3;
+            totalKeju = 3;
+            UpdateGudang();
+        }
+
+        private void continueGame_Click(object sender, EventArgs e)
+        {
+            panelMainMenu.Visible = false;
+
+        }
+
+        private void exitGame_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tunjukResepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("" +
+                "Roti Coklat = Roti + Coklat\n" +
+                "Roti Keju = Roti + Keju\n" +
+                "Roti Coklat Keju = Roti + Coklat + Keju\n" +
+                "Kue Coklat = Kue + Coklat\n" +
+                "Kue Keju = Kue + Keju\n" +
+                "Kue Coklat Keju = Kue + Coklat + Keju",
+                "Resep",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+        }
+
+        private void addRoti_Click(object sender, EventArgs e)
+        {
+            if (money >= 2000)
+            {
+                money -= 2000;
+                totalRoti += 1;
+                UpdateGudang();
+                UpdateMoney();
+            }
+            else
+            {
+                MessageBox.Show("Uang tidak cukup!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void addKue_Click(object sender, EventArgs e)
+        {
+            if (money >= 3000)
+            {
+                money -= 3000;
+                totalKue += 1;
+                UpdateGudang();
+                UpdateMoney();
+            }
+            else
+            {
+                MessageBox.Show("Uang tidak cukup!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void addCoklat_Click(object sender, EventArgs e)
+        {
+            if (money >= 5000)
+            {
+                money -= 5000;
+                totalCoklat += 1;
+                UpdateGudang();
+                UpdateMoney();
+            }
+            else
+            {
+                MessageBox.Show("Uang tidak cukup!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void addKeju_Click(object sender, EventArgs e)
+        {
+            if (money >= 5000)
+            {
+                money -= 5000;
+                totalKeju+= 1;
+                UpdateGudang();
+                UpdateMoney();
+            }
+            else
+            {
+                MessageBox.Show("Uang tidak cukup!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void cbRasa1_DropDown(object sender, EventArgs e)
+        {
+            if (cbBahanUtama.SelectedIndex == -1)
+            {
+                MessageBox.Show("Pilih bahan utama terlebih dahulu!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbRasa1.DroppedDown = false;
+                return;
+            }
+        }
+
+        private void cbRasa2_DropDown(object sender, EventArgs e)
+        {
+            if (cbBahanUtama.SelectedIndex == -1)
+            {
+                MessageBox.Show("Pilih bahan utama terlebih dahulu!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbRasa2.DroppedDown = false;
+                return;
+            }
+        }
+
+        private void kirimPesanan_Click(object sender, EventArgs e)
+        {
+            switch (menu)
+            {
+                case 0: // Roti Plain
+                    if (
+                        cbBahanUtama.SelectedIndex == 0 &&
+                        cbRasa1.SelectedIndex == -1 &&
+                        cbRasa2.SelectedIndex == -1
+                        )
+                    {
+                        money += 6000;
+                        RandomMenu();
+                        break;
+                    }
+                case 1: // Roti Coklat
+                    if (
+                        cbBahanUtama.SelectedIndex == 0 &&
+                        cbRasa1.SelectedIndex == 0 &&
+                        cbRasa2.SelectedIndex == -1
+                        )
+                    {
+                        money += 6000 + 8000;
+                        RandomMenu();
+                        break;
+                    }
+                case 2: // Roti Keju
+                    if (
+                        cbBahanUtama.SelectedIndex == 0 &&
+                        cbRasa1.SelectedIndex == 1 &&
+                        cbRasa2.SelectedIndex == -1
+                        )
+                    {
+                        money += 6000 + 8000;
+                        RandomMenu();
+                        break;
+                    }
+                case 3: // Roti Coklat + Keju
+                    if (
+                        cbBahanUtama.SelectedIndex == 0 &&
+                        cbRasa1.SelectedIndex != cbRasa2.SelectedIndex &&
+                        cbRasa1.SelectedIndex != -1
+                        )
+                    {
+                        money += 6000 + 8000;
+                        RandomMenu();
+                        break;
+                    }
+                default:
+                    MessageBox.Show("Pesanan tidak sesuai!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+            }
+        }
+
+        private void buangItems_Click(object sender, EventArgs e)
+        {
+            ResetComboBox();
+        }
+    }
+}
