@@ -4,6 +4,7 @@ window.addEventListener('load', function () {
     const timerElement = document.querySelector('#timer');
     const mistakesElement = document.querySelector('#mistakes');
     const hintsElement = document.querySelector('#hints-left');
+    const hintButton = document.querySelector('[data-tool="hint"]');
     const modal = document.querySelector('#modal');
     const solution = Array.from({ length: 9 }, () => Array(9).fill(0));
     const puzzle = Array.from({ length: 9 }, () => Array(9).fill(0));
@@ -39,13 +40,15 @@ window.addEventListener('load', function () {
         return true;
     };
     const formatTime = (value) => `${String(Math.floor(value / 60)).padStart(2, '0')}:${String(value % 60).padStart(2, '0')}`;
-    const showModal = (title, message, isGameOver = false) => {
+    const showModal = (title, message, isGameOver = false, note = '') => {
         document.querySelector('#modal-title').textContent = title;
         document.querySelector('#modal-message').textContent = message;
+        document.querySelector('#modal-note').textContent = note;
+        modal.classList.toggle('success', !isGameOver);
         document.querySelector('#modal-icon').innerHTML = isGameOver
             ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-star"></i>';
-        document.querySelector('#modal-primary').textContent = 'Main lagi';
+            : '<i class="fa-solid fa-trophy"></i>';
+        document.querySelector('#modal-primary').innerHTML = '<i class="fa-solid fa-play"></i> Main Game Baru';
         modal.hidden = false;
     };
     const closeModal = () => { modal.hidden = true; };
@@ -63,7 +66,7 @@ window.addEventListener('load', function () {
             if (selected && selected[0] === row && selected[1] === col) cell.classList.add('selected');
             if (puzzle[row][col]) cell.classList.add('given');
             if (player[row][col]) cell.classList.add('user-number');
-            cell.innerHTML = value ? `<span>${value}</span>` : [...notes[row][col]].sort().map((note) => `<i>${note}</i>`).join('');
+            cell.innerHTML = value ? `<span>${value}</span>` : [...notes[row][col]].sort().map((note) => `<i class="note note-${note}">${note}</i>`).join('');
             cell.addEventListener('click', () => { selected = [row, col]; render(); });
             boardElement.appendChild(cell);
         }
@@ -98,16 +101,19 @@ window.addEventListener('load', function () {
             dataType: 'json'
         }).done(() => {
             loadLeaderboard();
-            showModal('Congratulations!', `Puzzle selesai dalam ${formatTime(seconds)}. Skormu sudah masuk leaderboard.`);
+            showModal('SELAMAT! ANDA MENANG!', `Anda berhasil menyelesaikan Sudoku dalam waktu ${seconds} detik.`, false, 'Skor Anda telah otomatis dicatat di Leaderboard.');
         }).fail(() => {
-            showModal('Puzzle selesai!', `Waktu penyelesaianmu ${formatTime(seconds)}. Skor belum dapat disimpan ke leaderboard.`);
+            showModal('SELAMAT! ANDA MENANG!', `Anda berhasil menyelesaikan Sudoku dalam waktu ${seconds} detik.`, false, 'Skor belum dapat disimpan ke Leaderboard.');
         });
     };
     const startGame = () => {
         clearInterval(timer); solution.forEach((row) => row.fill(0)); puzzle.forEach((row) => row.fill(0)); player.forEach((row) => row.fill(0)); notes.forEach((row) => row.forEach((set) => set.clear()));
         solve(solution); solution.forEach((row, r) => row.forEach((value, c) => { puzzle[r][c] = Math.random() < 0.42 ? value : 0; }));
         selected = null; pencilMode = false; mistakes = 0; hints = 3; seconds = 0; gameOver = false;
-        mistakesElement.textContent = '0'; hintsElement.textContent = '3'; document.querySelector('[data-tool="pencil"]').classList.remove('active');
+        mistakesElement.textContent = '0';
+        hintsElement.textContent = 'HINT (3)';
+        hintButton.disabled = false;
+        document.querySelector('[data-tool="pencil"]').classList.remove('active');
         timer = setInterval(() => { seconds++; timerElement.textContent = formatTime(seconds); }, 1000);
         render();
     };
@@ -131,7 +137,7 @@ window.addEventListener('load', function () {
         const tool = button.dataset.tool;
         if (tool === 'pencil') { pencilMode = !pencilMode; button.classList.toggle('active', pencilMode); }
         if (tool === 'erase' && selected && !puzzle[selected[0]][selected[1]]) { player[selected[0]][selected[1]] = 0; notes[selected[0]][selected[1]].clear(); render(); }
-        if (tool === 'hint' && hints > 0 && selected && !puzzle[selected[0]][selected[1]] && !player[selected[0]][selected[1]]) { player[selected[0]][selected[1]] = solution[selected[0]][selected[1]]; hints--; hintsElement.textContent = hints; render(); if (isComplete()) finishGame(); }
+        if (tool === 'hint' && hints > 0 && selected && !puzzle[selected[0]][selected[1]] && !player[selected[0]][selected[1]]) { player[selected[0]][selected[1]] = solution[selected[0]][selected[1]]; hints--; hintsElement.textContent = `HINT (${hints})`; hintButton.disabled = hints === 0; render(); if (isComplete()) finishGame(); }
     }));
     document.querySelector('#new-game').addEventListener('click', startGame);
     document.querySelector('#modal-primary').addEventListener('click', () => { closeModal(); startGame(); });

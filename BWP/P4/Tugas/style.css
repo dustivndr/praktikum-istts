@@ -335,10 +335,33 @@ button {
 }
 
 .sudoku-cell i {
+    display: block;
     font-size: 7px;
     font-style: normal;
-    align-self: start;
-    margin-top: 1px
+    line-height: 1;
+    text-align: center
+}
+
+.sudoku-cell:has(.note) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center
+}
+
+.sudoku-cell .note-1 { grid-column: 1; grid-row: 1 }
+.sudoku-cell .note-2 { grid-column: 2; grid-row: 1 }
+.sudoku-cell .note-3 { grid-column: 3; grid-row: 1 }
+.sudoku-cell .note-4 { grid-column: 1; grid-row: 2 }
+.sudoku-cell .note-5 { grid-column: 2; grid-row: 2 }
+.sudoku-cell .note-6 { grid-column: 3; grid-row: 2 }
+.sudoku-cell .note-7 { grid-column: 1; grid-row: 3 }
+.sudoku-cell .note-8 { grid-column: 2; grid-row: 3 }
+.sudoku-cell .note-9 { grid-column: 3; grid-row: 3 }
+
+.sudoku-cell > span {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1
 }
 
 .tools {
@@ -372,6 +395,13 @@ button {
 .tool-btn[data-tool=hint] {
     border-color: #ffc107;
     color: #e0a800
+}
+
+.tool-btn[data-tool=hint]:disabled {
+    background: #adb5bd;
+    border-color: #adb5bd;
+    color: #fff;
+    cursor: not-allowed
 }
 
 .tool-btn.active {
@@ -409,7 +439,8 @@ button {
 .leader-head {
     display: flex;
     align-items: center;
-    justify-content: space-between
+    justify-content: flex-start;
+    gap: 10px
 }
 
 .leader-head h2 {
@@ -420,7 +451,8 @@ button {
 }
 
 .trophy {
-    display: none
+    color: #f0b400;
+    font-size: 17px
 }
 
 .leader-list {
@@ -451,7 +483,29 @@ button {
 }
 
 .rank {
+    width: 16px;
+    height: 16px;
+    display: grid;
+    place-items: center;
+    border-radius: 4px;
+    background: #343a40;
+    color: #fff;
+    font-size: 9px;
     font-weight: 700
+}
+
+.leader-row:nth-child(1) .rank {
+    background: #ffc107;
+    color: #3f3200
+}
+
+.leader-row:nth-child(2) .rank {
+    background: #adb5bd;
+    color: #263238
+}
+
+.leader-row:nth-child(3) .rank {
+    background: #9b363e
 }
 
 .avatar {
@@ -477,10 +531,10 @@ button {
 }
 
 .modal-card {
-    width: 260px;
+    width: min(344px, calc(100vw - 32px));
     background: #fff;
-    border-radius: 5px;
-    padding: 20px;
+    border-radius: 6px;
+    padding: 28px;
     text-align: center
 }
 
@@ -488,26 +542,56 @@ button {
     margin: auto;
     background: #dc3545;
     color: #fff;
-    border-radius: 50%;
-    width: 34px;
-    height: 34px;
+    border-radius: 4px;
+    width: 44px;
+    height: 44px;
     display: grid;
-    place-items: center
+    place-items: center;
+    font-size: 22px
 }
 
 .modal-card h2 {
     color: #dc3545;
-    font-size: 18px
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 16px 0 8px
 }
 
 .modal-card p {
-    font-size: 11px;
-    color: var(--muted)
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0
+}
+
+.modal-card small {
+    display: block;
+    color: #8a9299;
+    font-size: 10px;
+    margin: 14px 0 17px
 }
 
 .modal-actions {
     display: flex;
     justify-content: center
+}
+
+.modal.success .modal-icon {
+    background: #ffbd00;
+    color: #fff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px
+}
+
+.modal.success .modal-card h2 {
+    color: #198754
+}
+
+.modal.success .primary-btn {
+    background: #198754;
+    font-size: 14px;
+    padding: 9px
 }
 
 @media(max-width:800px) {

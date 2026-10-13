@@ -47,21 +47,21 @@ if (isset($_GET['action']) && $_GET['action'] === 'save_score' && isset($_POST['
                     <div class="game-stats">
                         <div><span class="stat-label"><i class="fa-solid fa-xmark"></i> KESALAHAN </span><strong><span id="mistakes">0</span><small> / 3</small></strong></div>
                         <div><span class="stat-label"><i class="fa-regular fa-clock"></i> WAKTU </span><strong id="timer">00:00</strong></div>
-                        <div><span class="stat-label">HINT TERSISA</span><strong id="hints-left">3</strong></div>
                     </div>
                 </div>
             </div>
             <div class="board-wrap">
                 <div id="sudoku-board" class="sudoku-board" aria-label="Papan Sudoku"></div>
             </div>
-            <div class="tools"><button class="tool-btn" data-tool="pencil"><i class="fa-solid fa-pencil"></i> <span>Pensil</span></button><button class="tool-btn" data-tool="erase"><i class="fa-solid fa-eraser"></i> <span>Hapus</span></button><button class="tool-btn" data-tool="hint"><i class="fa-solid fa-lightbulb"></i> <span>Hint</span></button></div>
+            <div class="tools"><button class="tool-btn" data-tool="pencil"><i class="fa-solid fa-pencil"></i> <span>Pensil</span></button><button class="tool-btn" data-tool="erase"><i class="fa-solid fa-eraser"></i> <span>Hapus</span></button><button class="tool-btn" data-tool="hint"><i class="fa-solid fa-lightbulb"></i> <span id="hints-left">HINT (3)</span></button></div>
             <div id="number-pad" class="number-pad"></div>
         </section>
         <aside class="leaderboard">
             <div class="leader-head">
+                <span class="trophy"><i class="fa-solid fa-trophy"></i></span>
                 <div>
                     <h2>Leaderboard</h2>
-                </div><span class="trophy"><i class="fa-solid fa-trophy"></i></span>
+                </div>
             </div>
             <div class="leader-columns"><span>#</span><span>Pemain</span><span>Waktu</span></div>
             <div id="leaderboard-list" class="leader-list">
@@ -74,6 +74,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'save_score' && isset($_POST['
             <div id="modal-icon" class="modal-icon"><i class="fa-solid fa-star"></i></div>
             <h2 id="modal-title">Congratulations!</h2>
             <p id="modal-message">Kamu berhasil menyelesaikan puzzle.</p>
+            <small id="modal-note"></small>
             <div class="modal-actions"><button id="modal-primary" class="primary-btn">Main lagi</button></div>
         </div>
     </div>
