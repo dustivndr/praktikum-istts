@@ -1,0 +1,37 @@
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.exe
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.deps.json
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.runtimeconfig.json
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.dll
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.pdb
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.Form1.resources
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.csproj.GenerateResource.cache
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.AssemblyInfoInputs.cache
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.AssemblyInfo.cs
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.csproj.CoreCompileInputs.cache
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.dll
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\refint\growtopia.dll
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.pdb
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.genruntimeconfig.cache
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\ref\growtopia.dll
+C:\Dustin-Ivander\iSTTS\Visual Programming\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.csproj.Up2Date
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.exe
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.deps.json
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.runtimeconfig.json
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.dll
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\bin\Debug\net10.0-windows\growtopia.pdb
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.Form1.resources
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.csproj.GenerateResource.cache
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.AssemblyInfoInputs.cache
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.AssemblyInfo.cs
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.csproj.CoreCompileInputs.cache
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.sourcelink.json
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.dll
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\refint\growtopia.dll
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.pdb
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.genruntimeconfig.cache
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\ref\growtopia.dll
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.csproj.Up2Date
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.LwForm.resources
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.SetSlotForm.resources
