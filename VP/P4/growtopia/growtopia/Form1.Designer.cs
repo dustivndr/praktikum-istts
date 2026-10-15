@@ -37,7 +37,9 @@
             leaveWorldBtn = new Button();
             labelWorldName = new Label();
             panel2 = new Panel();
+            tileInfoLabel = new Label();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -57,18 +59,17 @@
             // 
             // topQuickSlot1
             // 
-            topQuickSlot1.BackColor = Color.Gold;
-            topQuickSlot1.FlatAppearance.BorderColor = Color.Gold;
+            topQuickSlot1.BackColor = Color.FromArgb(60, 60, 60);
             topQuickSlot1.FlatStyle = FlatStyle.Flat;
             topQuickSlot1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            topQuickSlot1.ForeColor = Color.Black;
+            topQuickSlot1.ForeColor = Color.White;
             topQuickSlot1.Location = new Point(428, 7);
             topQuickSlot1.Name = "topQuickSlot1";
             topQuickSlot1.Size = new Size(145, 54);
             topQuickSlot1.TabIndex = 3;
             topQuickSlot1.Text = "[1]";
             topQuickSlot1.UseVisualStyleBackColor = false;
-            topQuickSlot1.Click += leaveWorldBtn_Click;
+            topQuickSlot1.Click += QuickSlot_Click;
             // 
             // topQuickSlot3
             // 
@@ -82,7 +83,7 @@
             topQuickSlot3.TabIndex = 3;
             topQuickSlot3.Text = "[3]";
             topQuickSlot3.UseVisualStyleBackColor = false;
-            topQuickSlot3.Click += leaveWorldBtn_Click;
+            topQuickSlot3.Click += QuickSlot_Click;
             // 
             // topQuickSlot2
             // 
@@ -96,7 +97,7 @@
             topQuickSlot2.TabIndex = 3;
             topQuickSlot2.Text = "[2]";
             topQuickSlot2.UseVisualStyleBackColor = false;
-            topQuickSlot2.Click += leaveWorldBtn_Click;
+            topQuickSlot2.Click += QuickSlot_Click;
             // 
             // inventoryBtn
             // 
@@ -124,7 +125,7 @@
             splicingBtn.TabIndex = 3;
             splicingBtn.Text = "📖 Splicing";
             splicingBtn.UseVisualStyleBackColor = false;
-            splicingBtn.Click += leaveWorldBtn_Click;
+            splicingBtn.Click += splicingBtn_Click;
             // 
             // leaveWorldBtn
             // 
@@ -154,10 +155,21 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(20, 20, 20);
+            panel2.Controls.Add(tileInfoLabel);
             panel2.Location = new Point(0, 623);
             panel2.Name = "panel2";
             panel2.Size = new Size(882, 32);
             panel2.TabIndex = 1;
+            // 
+            // tileInfoLabel
+            // 
+            tileInfoLabel.AutoSize = true;
+            tileInfoLabel.ForeColor = Color.Lime;
+            tileInfoLabel.Location = new Point(7, 8);
+            tileInfoLabel.Name = "tileInfoLabel";
+            tileInfoLabel.Size = new Size(38, 15);
+            tileInfoLabel.TabIndex = 0;
+            tileInfoLabel.Text = "label1";
             // 
             // Form1
             // 
@@ -174,6 +186,8 @@
             Text = "Growtopia 2D";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -188,5 +202,6 @@
         private Button topQuickSlot2;
         private Button topQuickSlot1;
         private Button topQuickSlot3;
+        private Label tileInfoLabel;
     }
 }

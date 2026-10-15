@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("growtopia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87ba6303819bc093eb987790ee40359743d1a0da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75c41ac9b3dde84684d34afec33a2cba1b3b0e2c")]
 [assembly: System.Reflection.AssemblyProductAttribute("growtopia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("growtopia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

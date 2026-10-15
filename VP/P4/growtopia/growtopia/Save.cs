@@ -68,14 +68,11 @@ namespace growtopia
             }
         }
 
-        public static bool LoadWorld(string worldName, Panel[,] tileGrid, int rows, int cols)
+        public static bool LoadWorld(string worldName, Panel[,] tileGrid, int rows, int cols, int[,] tileHealth, bool[,] isWorldGeneratedDirt)
         {
             string filePath = $"{worldName.ToUpper()}.xml";
 
-            if (!File.Exists(filePath))
-            {
-                return false; // File doesn't exist, signaling to generate procedural world
-            }
+            if (!File.Exists(filePath)) return false;
 
             try
             {
@@ -93,10 +90,40 @@ namespace growtopia
                     if (y < rows && x < cols)
                     {
                         tileGrid[y, x].BackColor = GetColorFromTileType(type);
+
+                        if (type == "Dirt")
+                        {
+                            tileHealth[y, x] = 3;
+                            isWorldGeneratedDirt[y, x] = true;
+                        }
+                        else if (type == "Rock")
+                        {
+                            tileHealth[y, x] = 4;
+                            isWorldGeneratedDirt[y, x] = false;
+                        }
+                        else if (type == "Lava")
+                        {
+                            tileHealth[y, x] = 1;
+                            isWorldGeneratedDirt[y, x] = false;
+                        }
+                        else if (type == "CaveBG")
+                        {
+                            tileHealth[y, x] = 3;
+                            isWorldGeneratedDirt[y, x] = false;
+                        }
+                        else if (type == "Bedrock")
+                        {
+                            tileHealth[y, x] = 999;
+                            isWorldGeneratedDirt[y, x] = false;
+                        }
+                        else // Sky or undefined
+                        {
+                            tileHealth[y, x] = 0;
+                            isWorldGeneratedDirt[y, x] = false;
+                        }
                     }
                 }
-
-                return true; // Successfully loaded
+                return true;
             }
             catch (Exception ex)
             {
@@ -110,6 +137,8 @@ namespace growtopia
             if (color == Color.LightSkyBlue) return "Sky";
             if (color == Color.SaddleBrown) return "Dirt";
             if (color == Color.DimGray) return "Rock";
+            if (color == Color.Red) return "Lava";
+            if (color == Color.DarkSlateGray) return "CaveBG";
             return "Bedrock";
         }
 
@@ -120,7 +149,9 @@ namespace growtopia
                 case "Sky": return Color.LightSkyBlue;
                 case "Dirt": return Color.SaddleBrown;
                 case "Rock": return Color.DimGray;
-                case "Bedrock": return Color.DimGray;
+                case "Lava": return Color.Red;
+                case "CaveBG": return Color.DarkSlateGray;
+                case "Bedrock": return Color.FromArgb(50, 50, 50);
                 default: return Color.LightSkyBlue;
             }
         }

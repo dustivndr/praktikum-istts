@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|solutionrelative:growtopia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p4\\growtopia\\growtopia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|solutionrelative:growtopia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p4\\growtopia\\growtopia\\save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|solutionrelative:growtopia\\save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p4\\growtopia\\growtopia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|solutionrelative:growtopia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p4\\growtopia\\growtopia\\setslotform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AE3042D-3A9E-6FB1-4FEB-2E91EC3877A3}|growtopia\\growtopia.csproj|solutionrelative:growtopia\\setslotform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,51 +26,37 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SetSlotForm.cs",
-              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\SetSlotForm.cs",
-              "RelativeDocumentMoniker": "growtopia\\SetSlotForm.cs",
-              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\SetSlotForm.cs",
-              "RelativeToolTip": "growtopia\\SetSlotForm.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T16:04:26.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Save.cs",
               "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\Save.cs",
               "RelativeDocumentMoniker": "growtopia\\Save.cs",
               "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\Save.cs",
               "RelativeToolTip": "growtopia\\Save.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwJ4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T14:33:14.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T14:33:14.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\Form1.cs",
               "RelativeDocumentMoniker": "growtopia\\Form1.cs",
-              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\Form1.cs*",
-              "RelativeToolTip": "growtopia\\Form1.cs*",
-              "ViewState": "AgIAACYBAAAAAAAAAAAAAEMBAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\Form1.cs",
+              "RelativeToolTip": "growtopia\\Form1.cs",
+              "ViewState": "AgIAANQCAAAAAAAAAAAowOwCAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-13T13:56:42.67Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\Form1.cs",
               "RelativeDocumentMoniker": "growtopia\\Form1.cs",
-              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\Form1.cs [Design]*",
-              "RelativeToolTip": "growtopia\\Form1.cs [Design]*",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P4\\growtopia\\growtopia\\Form1.cs [Design]",
+              "RelativeToolTip": "growtopia\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-13T14:17:11.068Z",
               "EditorCaption": " [Design]"

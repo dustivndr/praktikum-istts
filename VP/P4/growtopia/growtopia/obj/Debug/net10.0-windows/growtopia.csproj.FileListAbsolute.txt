@@ -35,3 +35,4 @@ C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net1
 C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.csproj.Up2Date
 C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.LwForm.resources
 C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.SetSlotForm.resources
+C:\Dustin-Ivander\iSTTS\praktikum-istts\VP\P4\growtopia\growtopia\obj\Debug\net10.0-windows\growtopia.Properties.Resources.resources
