@@ -1,0 +1,5 @@
+video jumbotron = https://prod-chagee-official-vietnam.chagee.com/web/uploads/20240902/b543a77a-4b2f-4786-a948-74b951ce7113.mp4
+
+gambar global growth = https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80
+
+hero our menu = https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1600&q=80
