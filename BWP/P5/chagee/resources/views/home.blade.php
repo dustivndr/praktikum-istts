@@ -91,7 +91,7 @@
 
         <section class="w-100 p-0 bg-white">
             <div class="row g-0">
-                <!-- Left Image -->
+
                 <div class="col-lg-6">
                     <img src="https://global.chagee.com/_next/image?url=https%3A%2F%2Fprod-chagee-official-vietnam.chagee.com%2Fweb%2Fid%2Fuploads%2F20260713%2Fa28435f3-2e4b-4c54-beea-dc0c5ce67ef9.jpeg&w=3840&q=100"
                         alt="About Chagee"
@@ -105,13 +105,14 @@
                             About Us
                         </h1>
                         <p class="text-secondary mb-5 fs-5" style="line-height: 1.8;">
-                            CHAGEE is from Yunnan, the birthplace of tea. Guided by our mission to bring people together and forge relationships via a good cup of tea, we are committed to providing healthy and low-calorie tea beverages suitable for everyday.[cite: 2]
+                            CHAGEE is from Yunnan, the birthplace of tea. Guided by our mission to bring people together and forge relationships via a good cup of tea, we are committed to providing healthy and low-calorie tea beverages suitable for everyday.
                         </p>
                         <a href="{{ url('/about') }}" class="btn btn-light bg-white rounded-pill px-4 py-2 fw-medium text-secondary shadow-sm" style="border: 1px solid #dee2e6;">
                             Learn More
                         </a>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -136,7 +137,7 @@
 
                 <div class="col-lg-8 ps-lg-3 pe-5">
                     <div class="d-flex flex-nowrap overflow-x-auto pb-4 gap-4 scrollable-tea-container" style="padding-right: 2rem;">
-                        @forelse ($teaCards ?? [] as $card)
+                        @foreach ($teaCards ?? [] as $card)
                         <div class="flex-shrink-0" style="width: 280px;">
                             <div class="card border-0 rounded-4 overflow-hidden shadow-sm h-100">
                                 <img src="{{ $card['image'] }}"
@@ -145,9 +146,7 @@
                                     style="height: 380px;">
                             </div>
                         </div>
-                        @empty
-                        <p class="text-muted">No tea items available.</p>
-                        @endforelse
+                        @endforeach
                     </div>
                 </div>
 
@@ -173,7 +172,9 @@
                 </h5>
 
                 <p class="lead mb-5 text-light opacity-90 mx-auto" style="max-width: 780px; line-height: 1.8; font-size: 1.1rem;">
-                    CHAGEE has expanded across Asia Pacific - in Malaysia, Singapore, Thailand, Indonesia, Vietnam and Philippines to become an international tea beverage company with over 6,000+ stores worldwide.[cite: 4]
+                    CHAGEE has expanded across Asia Pacific - 
+                    in Malaysia, Singapore, Thailand, Indonesia, Vietnam and Philippines 
+                    to become an international tea beverage company with over 6,000+ stores worldwide.
                 </p>
 
                 <a href="" class="btn btn-outline-light rounded-pill px-4 py-2 fw-medium shadow-sm">
@@ -184,6 +185,36 @@
         </section>
 
     </main>
+
+    <footer class="w-100 bg-white border-top py-3 text-secondary" style="font-size: 0.9rem;">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row align-items-center gy-3">
+
+                <div class="col-md-4 d-flex align-items-center justify-content-start">
+                    <a href="#" class="text-secondary text-decoration-none d-flex align-items-center gap-2">
+                        &#128205; <span>Global Sites</span>
+                    </a>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <span class="d-inline-flex align-items-center gap-1">
+                        <span style="font-size: 1.1rem;">©</span> 225117159 Dustin Ivander
+                    </span>
+                </div>
+
+                <div class="col-md-4 d-flex align-items-center justify-content-end gap-2">
+                    <a href="{{ url('/contact') }}" class="text-secondary text-decoration-none text-uppercase fw-medium">
+                        Contact
+                    </a>
+                    <span class="text-muted">|</span>
+                    <a href="" class="text-secondary text-decoration-none text-uppercase fw-medium">
+                        Privacy & Legal
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

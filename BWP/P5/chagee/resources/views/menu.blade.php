@@ -178,6 +178,36 @@
 
     </main>
 
+    <footer class="w-100 bg-white border-top py-3 text-secondary" style="font-size: 0.9rem;">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row align-items-center gy-3">
+
+                <div class="col-md-4 d-flex align-items-center justify-content-start">
+                    <a href="#" class="text-secondary text-decoration-none d-flex align-items-center gap-2">
+                        &#128205; <span>Global Sites</span>
+                    </a>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <span class="d-inline-flex align-items-center gap-1">
+                        <span style="font-size: 1.1rem;">©</span> 225117159 Dustin Ivander
+                    </span>
+                </div>
+
+                <div class="col-md-4 d-flex align-items-center justify-content-end gap-2">
+                    <a href="{{ url('/contact') }}" class="text-secondary text-decoration-none text-uppercase fw-medium">
+                        Contact
+                    </a>
+                    <span class="text-muted">|</span>
+                    <a href="" class="text-secondary text-decoration-none text-uppercase fw-medium">
+                        Privacy & Legal
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

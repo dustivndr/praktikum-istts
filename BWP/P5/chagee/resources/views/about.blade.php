@@ -66,9 +66,9 @@
 
         <!-- hero -->
         <section class="position-relative w-100 text-white d-flex align-items-end overflow-hidden" style="min-height: 85vh; padding-bottom: 5rem;">
-            <img src="{{ $data['hero_bg'] }}" 
-                 alt="Hero Background" 
-                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+            <img src="{{ $data['hero_bg'] }}"
+                alt="Hero Background"
+                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
 
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25 z-n1"></div>
 
@@ -79,7 +79,6 @@
             </div>
         </section>
 
-        <!--  -->
         <section class="w-100 py-5 bg-white text-center">
             <div class="container py-5 px-4" style="max-width: 900px;">
                 <h2 class="fw-bolder mb-4 text-uppercase" style="color: #0b1a30; font-size: 2.2rem; letter-spacing: 2px;">
@@ -93,9 +92,9 @@
 
         <!-- the Beginning -->
         <section class="position-relative w-100 text-white d-flex align-items-center overflow-hidden" style="min-height: 80vh;">
-            <img src="{{ $data['beginning_bg'] }}" 
-                 alt="The Beginning Background" 
-                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+            <img src="{{ $data['beginning_bg'] }}"
+                alt="The Beginning Background"
+                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
 
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 z-n1"></div>
 
@@ -115,10 +114,10 @@
         <section class="w-100 p-0 bg-white">
             <div class="row g-0 align-items-center">
                 <div class="col-lg-6">
-                    <img src="{{ $data['mission_img'] }}" 
-                         alt="Brand Mission" 
-                         class="w-100 h-100 object-fit-cover" 
-                         style="min-height: 60vh;">
+                    <img src="{{ $data['mission_img'] }}"
+                        alt="Brand Mission"
+                        class="w-100 h-100 object-fit-cover"
+                        style="min-height: 60vh;">
                 </div>
 
                 <div class="col-lg-6 d-flex align-items-center bg-white text-center">
@@ -126,11 +125,11 @@
                         <h2 class="fw-bolder mb-4 text-uppercase" style="color: #0b1a30; font-size: 2.2rem; letter-spacing: 2px;">
                             {{ $data['mission_title'] }}
                         </h2>
-                        
+
                         <h1 class="fw-bold mb-3" style="color: #0b1a30; font-size: 2.8rem; letter-spacing: 3px;">
                             {{ $data['mission_cn'] }}
                         </h1>
-                        
+
                         <p class="text-secondary fw-semibold text-uppercase" style="letter-spacing: 2px;">
                             {{ $data['mission_en'] }}
                         </p>
@@ -148,28 +147,58 @@
                             <h2 class="display-4 fw-bolder text-uppercase mb-5" style="letter-spacing: 2px;">
                                 {{ $data['goal_title'] }}
                             </h2>
-                            
+
                             <ul class="list-unstyled">
                                 @foreach ($data['goals'] as $goal)
-                                    <li class="lead fs-6 mb-4 opacity-90" style="line-height: 1.6;">
-                                        {{ $goal }}
-                                    </li>
+                                <li class="lead fs-6 mb-4 opacity-90" style="line-height: 1.6;">
+                                    {{ $goal }}
+                                </li>
                                 @endforeach
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-lg-6 position-relative d-none d-lg-block" style="min-height: 80vh;">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80" 
-                             alt="Our Goal World View" 
-                             class="position-absolute top-0 end-0 h-100 w-100 object-fit-cover"
-                             style="border-top-left-radius: 500px; border-bottom-left-radius: 500px;">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
+                            alt="Our Goal World View"
+                            class="position-absolute top-0 end-0 h-100 w-100 object-fit-cover"
+                            style="border-top-left-radius: 500px; border-bottom-left-radius: 500px;">
                     </div>
                 </div>
             </div>
         </section>
 
     </main>
+
+    <footer class="w-100 bg-white border-top py-3 text-secondary" style="font-size: 0.9rem;">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row align-items-center gy-3">
+
+                <div class="col-md-4 d-flex align-items-center justify-content-start">
+                    <a href="#" class="text-secondary text-decoration-none d-flex align-items-center gap-2">
+                        &#128205; <span>Global Sites</span>
+                    </a>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <span class="d-inline-flex align-items-center gap-1">
+                        <span style="font-size: 1.1rem;">©</span> 225117159 Dustin Ivander
+                    </span>
+                </div>
+
+                <div class="col-md-4 d-flex align-items-center justify-content-end gap-2">
+                    <a href="{{ url('/contact') }}" class="text-secondary text-decoration-none text-uppercase fw-medium">
+                        Contact
+                    </a>
+                    <span class="text-muted">|</span>
+                    <a href="" class="text-secondary text-decoration-none text-uppercase fw-medium">
+                        Privacy & Legal
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
