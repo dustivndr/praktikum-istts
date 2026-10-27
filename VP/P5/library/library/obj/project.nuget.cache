@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "zAoDqrpy1WQ=",
+  "success": true,
+  "projectFilePath": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dustin Ivander\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\Dustin Ivander\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\Dustin Ivander\\.nuget\\packages\\mysqlconnector\\2.6.2\\mysqlconnector.2.6.2.nupkg.sha512"
+  ],
+  "logs": []
+}
