@@ -53,10 +53,8 @@ namespace library
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    // Retrieve the 'role' column from the database row
                     string userRole = reader["role"].ToString();
 
-                    // Pass the retrieved role into your BookCatalog constructor
                     var bookCatalogForm = new BookCatalog(userRole);
                     bookCatalogForm.Show();
                     this.Hide();
