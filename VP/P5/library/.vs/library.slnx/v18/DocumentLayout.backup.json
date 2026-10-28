@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AA4651A-8A43-4F17-A6F1-8ED8A461032E}|library\\library.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p5\\library\\library\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9AA4651A-8A43-4F17-A6F1-8ED8A461032E}|library\\library.csproj|solutionrelative:library\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p5\\library\\library\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|solutionrelative:library\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p5\\library\\library\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|solutionrelative:library\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p5\\library\\library\\bookcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|solutionrelative:library\\bookcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p5\\library\\library\\bookcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|solutionrelative:library\\bookcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|solutionrelative:library\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p5\\library\\library\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D32E270C-7028-7BD8-792D-C69059A28440}|library\\library.csproj|solutionrelative:library\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Form1.cs",
-              "RelativeDocumentMoniker": "library\\Form1.cs",
-              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Form1.cs [Design]",
-              "RelativeToolTip": "library\\Form1.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "BookCatalog.cs [Design]",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\BookCatalog.cs",
+              "RelativeDocumentMoniker": "library\\BookCatalog.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\BookCatalog.cs [Design]",
+              "RelativeToolTip": "library\\BookCatalog.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T01:48:14.441Z",
+              "WhenOpened": "2026-10-28T07:20:28.384Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookCatalog.cs",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\BookCatalog.cs",
+              "RelativeDocumentMoniker": "library\\BookCatalog.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\BookCatalog.cs",
+              "RelativeToolTip": "library\\BookCatalog.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAIAwwL4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T16:01:23.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Login.cs",
+              "RelativeDocumentMoniker": "library\\Login.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Login.cs [Design]",
+              "RelativeToolTip": "library\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T14:15:31.53Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Login.cs",
+              "RelativeDocumentMoniker": "library\\Login.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Login.cs",
+              "RelativeToolTip": "library\\Login.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwCcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T14:00:38.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cs [Design]",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Register.cs",
+              "RelativeDocumentMoniker": "library\\Register.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Register.cs [Design]",
+              "RelativeToolTip": "library\\Register.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T07:20:32.938Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Register.cs",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Register.cs",
+              "RelativeDocumentMoniker": "library\\Register.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P5\\library\\library\\Register.cs",
+              "RelativeToolTip": "library\\Register.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAD4v1wAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T14:01:23.9Z",
+              "EditorCaption": ""
             }
           ]
         }
