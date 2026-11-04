@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
+            labelMoney = new Label();
             label3 = new Label();
             label4 = new Label();
             labelCopper = new Label();
@@ -38,9 +38,9 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            listBox1 = new ListBox();
+            artifactListBox = new ListBox();
             button4 = new Button();
-            button5 = new Button();
+            btnBuyWin = new Button();
             SuspendLayout();
             // 
             // label1
@@ -56,19 +56,18 @@
             label1.TabIndex = 0;
             label1.Text = "Store";
             // 
-            // label2
+            // labelMoney
             // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Top;
-            label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label2.Location = new Point(0, 47);
-            label2.Margin = new Padding(5);
-            label2.Name = "label2";
-            label2.Padding = new Padding(10, 1, 5, 5);
-            label2.Size = new Size(195, 31);
-            label2.TabIndex = 1;
-            label2.Text = "Current Money: $0";
-            label2.Click += this.label2_Click;
+            labelMoney.AutoSize = true;
+            labelMoney.Dock = DockStyle.Top;
+            labelMoney.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            labelMoney.Location = new Point(0, 47);
+            labelMoney.Margin = new Padding(5);
+            labelMoney.Name = "labelMoney";
+            labelMoney.Padding = new Padding(10, 1, 5, 5);
+            labelMoney.Size = new Size(195, 31);
+            labelMoney.TabIndex = 1;
+            labelMoney.Text = "Current Money: $0";
             // 
             // label3
             // 
@@ -149,13 +148,13 @@
             button3.Text = "Sell";
             button3.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // artifactListBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(318, 142);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(323, 124);
-            listBox1.TabIndex = 5;
+            artifactListBox.FormattingEnabled = true;
+            artifactListBox.Location = new Point(318, 142);
+            artifactListBox.Name = "artifactListBox";
+            artifactListBox.Size = new Size(323, 124);
+            artifactListBox.TabIndex = 5;
             // 
             // button4
             // 
@@ -166,25 +165,26 @@
             button4.Text = "Sell";
             button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnBuyWin
             // 
-            button5.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button5.Location = new Point(14, 321);
-            button5.Name = "button5";
-            button5.Size = new Size(278, 51);
-            button5.TabIndex = 4;
-            button5.Text = "Buy Win ($100000)";
-            button5.UseVisualStyleBackColor = true;
+            btnBuyWin.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnBuyWin.Location = new Point(14, 321);
+            btnBuyWin.Name = "btnBuyWin";
+            btnBuyWin.Size = new Size(278, 51);
+            btnBuyWin.TabIndex = 4;
+            btnBuyWin.Text = "Buy Win ($100000)";
+            btnBuyWin.UseVisualStyleBackColor = true;
+            btnBuyWin.Click += btnBuyWin_Click;
             // 
             // Store
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(682, 403);
-            Controls.Add(listBox1);
+            Controls.Add(artifactListBox);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button5);
+            Controls.Add(btnBuyWin);
             Controls.Add(button4);
             Controls.Add(button1);
             Controls.Add(labelDiamond);
@@ -192,12 +192,13 @@
             Controls.Add(labelCopper);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(labelMoney);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Store";
             Text = "Store";
+            Load += Store_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,7 +206,7 @@
         #endregion
 
         private Label label1;
-        private Label label2;
+        private Label labelMoney;
         private Label label3;
         private Label label4;
         private Label labelCopper;
@@ -214,8 +215,8 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private ListBox listBox1;
+        private ListBox artifactListBox;
         private Button button4;
-        private Button button5;
+        private Button btnBuyWin;
     }
 }

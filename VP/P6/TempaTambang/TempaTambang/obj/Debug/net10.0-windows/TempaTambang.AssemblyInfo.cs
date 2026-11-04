@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TempaTambang")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de6e5fd4d5e88759bc3a6d4036281eff2ae2447b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82233692ed09b1bbcbabe3b2360c96b698ac2aa8")]
 [assembly: System.Reflection.AssemblyProductAttribute("TempaTambang")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TempaTambang")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

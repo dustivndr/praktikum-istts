@@ -144,6 +144,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tempa Tambang";
+            Load += Form1_Load;
             KeyDown += Form1_KeyDown;
             areaForge.ResumeLayout(false);
             areaForge.PerformLayout();

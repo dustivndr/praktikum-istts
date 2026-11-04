@@ -4,10 +4,12 @@ namespace TempaTambang
     {
         bool goUp, goDown, goLeft, goRight;
         int speed = 8;
+        public static int copper = 0, iron = 0, diamond = 0, money = 0;
 
         public Form1()
         {
             InitializeComponent();
+            updateRMlabels();
 
             labelForge.Hide();
             labelStorage.Hide();
@@ -46,6 +48,7 @@ namespace TempaTambang
 
                     Forge forgeMenu = new Forge();
                     forgeMenu.ShowDialog();
+                    updateRMlabels();
                 }
                 else if (thePlayer.Bounds.IntersectsWith(areaStore.Bounds))
                 {
@@ -53,6 +56,7 @@ namespace TempaTambang
 
                     Store storageMenu = new Store();
                     storageMenu.ShowDialog();
+                    updateRMlabels();
                 }
             }
         }
@@ -94,5 +98,20 @@ namespace TempaTambang
             }
         }
 
+        public void updateRMlabels()
+        {
+            labelCID.Text = "Copper: " + copper + " | Iron: " + iron + " | Diamond: " + diamond;
+            labelMoney.Text = "Money: $" + money;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            money = 100000;
+            copper = 10;
+            iron = 10;
+            diamond = 10;
+
+            updateRMlabels();
+        }
     }
 }
