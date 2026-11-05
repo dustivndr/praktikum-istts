@@ -132,6 +132,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Forge";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Forge";
             ((System.ComponentModel.ISupportInitialize)copperAmount).EndInit();
             ((System.ComponentModel.ISupportInitialize)ironAmount).EndInit();

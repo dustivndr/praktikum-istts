@@ -37,6 +37,7 @@
             labelStorage = new Label();
             thePlayer = new PictureBox();
             GameTimer = new System.Windows.Forms.Timer(components);
+            spawnTimer = new System.Windows.Forms.Timer(components);
             areaForge.SuspendLayout();
             areaStore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)thePlayer).BeginInit();
@@ -129,6 +130,10 @@
             GameTimer.Enabled = true;
             GameTimer.Tick += GameTimer_Tick;
             // 
+            // spawnTimer
+            // 
+            spawnTimer.Tick += spawnTimer_Tick;
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -165,5 +170,6 @@
         private System.Windows.Forms.Timer GameTimer;
         private Label labelForge;
         private Label labelStorage;
+        private System.Windows.Forms.Timer spawnTimer;
     }
 }

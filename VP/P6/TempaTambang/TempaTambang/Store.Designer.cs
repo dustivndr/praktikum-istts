@@ -35,11 +35,11 @@
             labelCopper = new Label();
             labelIron = new Label();
             labelDiamond = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            sellCopper = new Button();
+            sellIron = new Button();
+            sellDiamond = new Button();
             artifactListBox = new ListBox();
-            button4 = new Button();
+            sellArtifact = new Button();
             btnBuyWin = new Button();
             SuspendLayout();
             // 
@@ -121,32 +121,35 @@
             labelDiamond.TabIndex = 3;
             labelDiamond.Text = "Diamond: 0 x $500";
             // 
-            // button1
+            // sellCopper
             // 
-            button1.Location = new Point(231, 142);
-            button1.Name = "button1";
-            button1.Size = new Size(61, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Sell";
-            button1.UseVisualStyleBackColor = true;
+            sellCopper.Location = new Point(231, 142);
+            sellCopper.Name = "sellCopper";
+            sellCopper.Size = new Size(61, 29);
+            sellCopper.TabIndex = 4;
+            sellCopper.Text = "Sell";
+            sellCopper.UseVisualStyleBackColor = true;
+            sellCopper.Click += sellCopper_Click;
             // 
-            // button2
+            // sellIron
             // 
-            button2.Location = new Point(231, 189);
-            button2.Name = "button2";
-            button2.Size = new Size(61, 29);
-            button2.TabIndex = 4;
-            button2.Text = "Sell";
-            button2.UseVisualStyleBackColor = true;
+            sellIron.Location = new Point(231, 189);
+            sellIron.Name = "sellIron";
+            sellIron.Size = new Size(61, 29);
+            sellIron.TabIndex = 4;
+            sellIron.Text = "Sell";
+            sellIron.UseVisualStyleBackColor = true;
+            sellIron.Click += sellIron_Click;
             // 
-            // button3
+            // sellDiamond
             // 
-            button3.Location = new Point(231, 237);
-            button3.Name = "button3";
-            button3.Size = new Size(61, 29);
-            button3.TabIndex = 4;
-            button3.Text = "Sell";
-            button3.UseVisualStyleBackColor = true;
+            sellDiamond.Location = new Point(231, 237);
+            sellDiamond.Name = "sellDiamond";
+            sellDiamond.Size = new Size(61, 29);
+            sellDiamond.TabIndex = 4;
+            sellDiamond.Text = "Sell";
+            sellDiamond.UseVisualStyleBackColor = true;
+            sellDiamond.Click += sellDiamond_Click;
             // 
             // artifactListBox
             // 
@@ -156,14 +159,15 @@
             artifactListBox.Size = new Size(323, 124);
             artifactListBox.TabIndex = 5;
             // 
-            // button4
+            // sellArtifact
             // 
-            button4.Location = new Point(318, 288);
-            button4.Name = "button4";
-            button4.Size = new Size(92, 29);
-            button4.TabIndex = 4;
-            button4.Text = "Sell";
-            button4.UseVisualStyleBackColor = true;
+            sellArtifact.Location = new Point(318, 288);
+            sellArtifact.Name = "sellArtifact";
+            sellArtifact.Size = new Size(92, 29);
+            sellArtifact.TabIndex = 4;
+            sellArtifact.Text = "Sell";
+            sellArtifact.UseVisualStyleBackColor = true;
+            sellArtifact.Click += sellArtifact_Click;
             // 
             // btnBuyWin
             // 
@@ -182,11 +186,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(682, 403);
             Controls.Add(artifactListBox);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(sellDiamond);
+            Controls.Add(sellIron);
             Controls.Add(btnBuyWin);
-            Controls.Add(button4);
-            Controls.Add(button1);
+            Controls.Add(sellArtifact);
+            Controls.Add(sellCopper);
             Controls.Add(labelDiamond);
             Controls.Add(labelIron);
             Controls.Add(labelCopper);
@@ -197,6 +201,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Store";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Store";
             Load += Store_Load;
             ResumeLayout(false);
@@ -212,11 +217,11 @@
         private Label labelCopper;
         private Label labelIron;
         private Label labelDiamond;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button sellCopper;
+        private Button sellIron;
+        private Button sellDiamond;
         private ListBox artifactListBox;
-        private Button button4;
+        private Button sellArtifact;
         private Button btnBuyWin;
     }
 }

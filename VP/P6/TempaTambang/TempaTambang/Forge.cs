@@ -17,12 +17,32 @@ namespace TempaTambang
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {   
+        {
+            if (copperAmount.Value > Form1.copper)
+            {
+                MessageBox.Show("Not enough copper!");
+                return;
+            }
+            if (ironAmount.Value > Form1.iron)
+            {
+                MessageBox.Show("Not enough iron!");
+                return;
+            }
+            if (diamondAmount.Value > Form1.diamond)
+            {
+                MessageBox.Show("Not enough diamond!");
+                return;
+            }
+
             if (
-                copperAmount.Value + ironAmount.Value + diamondAmount.Value >= 3 && 
+                copperAmount.Value + ironAmount.Value + diamondAmount.Value >= 3 &&
                 copperAmount.Value + ironAmount.Value + diamondAmount.Value <= 20
-            ) {
-                int amount = (int)(copperAmount.Value + ironAmount.Value + diamondAmount.Value);
+            )
+            {
+                int c = (int)copperAmount.Value;
+                int i = (int)ironAmount.Value;
+                int d = (int)diamondAmount.Value;
+                int amount = c + i + d;
                 string size, quality;
 
                 // size
@@ -44,45 +64,27 @@ namespace TempaTambang
                 }
 
                 // quality
-                if (ironAmount.Value == 0 && diamondAmount.Value == 0)
+                int rquality = rand.Next(1, amount + 1);
+
+                if (rquality <= c)
                 {
                     quality = "Cheap";
                 }
-                else if (copperAmount.Value == 0 && diamondAmount.Value == 0)
+                else if (rquality <= c + i)
                 {
                     quality = "Fair";
                 }
-                else if (copperAmount.Value == 0 && ironAmount.Value == 0)
-                {
-                    quality = "Expensive";
-                }
                 else
                 {
-                    int rquality = rand.Next(1, amount);
-                    if (rquality >= 1 && rquality <= 5)
-                    {
-                        quality = "Cheap";
-                    }
-                    else if (rquality >= 6 && rquality <= 13)
-                    {
-                        quality = "Fair";
-                    }
-                    else if (rquality >= 14 && rquality <= 20)
-                    {
-                        quality = "Expensive";
-                    }
-                    else
-                    {
-                        quality = "Unknown";
-                    }
+                    quality = "Expensive";
                 }
 
                 Artifact forgedArtifact = new Artifact(size, quality);
                 Store.artifactInventory.Add(forgedArtifact);
 
-                Form1.copper -= (int)copperAmount.Value;
-                Form1.iron -= (int)ironAmount.Value;
-                Form1.diamond -= (int)diamondAmount.Value;
+                Form1.copper -= c;
+                Form1.iron -= i;
+                Form1.diamond -= d;
 
                 MessageBox.Show("Forge Successful");
 
@@ -95,5 +97,6 @@ namespace TempaTambang
                 MessageBox.Show("Please enter minimum total 3 ores, maximum 20 ores");
             }
         }
+
     }
 }

@@ -33,15 +33,8 @@ namespace TempaTambang
             updateRMlabels();
         }
 
-        //public void AddArtifactToList(Artifact newArtifact)
-        //{
-        //    artifactInventory.Add(newArtifact);
-        //    artifactListBox.Items.Add(newArtifact);
-        //}
-
         private void sellButton_Click(object sender, EventArgs e)
         {
-            // Ensure an item is actually selected before trying to sell it
             if (artifactListBox.SelectedItem != null)
             {
                 Artifact selectedArtifact = (Artifact)artifactListBox.SelectedItem;
@@ -79,5 +72,66 @@ namespace TempaTambang
             labelDiamond.Text = $"Diamond: {Form1.diamond} x $1000";
         }
 
+        // Note: aku anggep sell ore nya jual 1 ore 1 ore
+        // - - -
+
+        private void sellCopper_Click(object sender, EventArgs e)
+        {
+            if (Form1.copper <= 0)
+            {
+                MessageBox.Show("You don't have any copper to sell!");
+                return;
+            }
+            Form1.money += 100;
+            Form1.copper -= 1;
+            updateRMlabels();
+        }
+
+        private void sellIron_Click(object sender, EventArgs e)
+        {
+            if (Form1.iron <= 0)
+            {
+                MessageBox.Show("You don't have any iron to sell!");
+                return;
+            }
+            Form1.money += 200;
+            Form1.iron -= 1;
+            updateRMlabels();
+        }
+
+        private void sellDiamond_Click(object sender, EventArgs e)
+        {
+            if (Form1.diamond <= 0)
+            {
+                MessageBox.Show("You don't have any diamond to sell!");
+                return;
+            }
+            Form1.money += 500;
+            Form1.diamond -= 1;
+            updateRMlabels();
+
+        }
+
+        private void sellArtifact_Click(object sender, EventArgs e)
+        {
+            if (artifactListBox.SelectedItem != null)
+            {
+                Artifact selectedArtifact = (Artifact)artifactListBox.SelectedItem;
+
+                Form1.money += selectedArtifact.Price;
+
+                artifactInventory.Remove(selectedArtifact);
+
+                artifactListBox.Items.Remove(selectedArtifact);
+
+                MessageBox.Show($"You sold the artifact for {selectedArtifact.Price}!\nTotal Money: {Form1.money}");
+            }
+            else
+            {
+                MessageBox.Show("Please select an artifact from the list to sell.");
+            }
+
+            updateRMlabels();
+        }
     }
 }
