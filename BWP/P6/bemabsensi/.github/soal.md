@@ -263,7 +263,7 @@ Sidebar harus ditampilkan pada seluruh halaman website dengan ketentuan:
 
 - Posisi: Membentang secara horizontal di bagian paling atas area konten utama (sisi kanan), menghubungkan batas sidebar kiri hingga ujung kanan layar.
 - Warna Latar: Kuning mustard (seragam dengan warna menu "Home" yang aktif).
-- Teks "Dashboard Overview": Berada di sisi kiri dalam bar kuning tersebut, menggunakan warna hitam.
+
 
 ### Area Konten Utama (Main Content)
 - Posisi: Menempati sisi kanan layar (sekitar 80% lebar layar) tepat di bawah Top Header kuning.   
@@ -286,6 +286,10 @@ yang berkaitan dengan kegiatan kampus.
 UKK" yang mengarahkan pengguna menuju halaman sesuai kategorinya.
 
 ### Detail:
+### Bar Atas (Top Header)
+- Posisi: Membentang secara horizontal di bagian paling atas area konten utama (sisi kanan), menghubungkan batas sidebar kiri hingga ujung kanan layar.
+- Teks "Dashboard Overview": Berada di sisi kiri dalam bar kuning tersebut, menggunakan warna hitam.
+
 ### Card "Welcome..."
 - Posisi: Berada di area paling atas dalam area konten utama, membentang lebar (horizontal) dari kiri ke kanan.
 - Warna Latar: Putih.
@@ -301,3 +305,155 @@ UKK" yang mengarahkan pengguna menuju halaman sesuai kategorinya.
     - Kartu 2 (Total UKK): Ikon biru dengan latar lingkaran biru muda/pastel.
     - Kartu 3 (Total Members): Ikon hijau dengan latar lingkaran hijau muda/pastel.
     - Kartu 4 (Open Recruitment): Ikon ungu dengan latar lingkaran ungu muda/pastel.
+
+## Halaman Daftar UKM | route: "/ukm"
+
+Pada halaman ini, tampilkan seluruh organisasi yang termasuk dalam kategori UKM.
+Setiap organisasi ditampilkan dalam bentuk card yang memuat:
+1. Ikon organisasi.
+2. Nama organisasi.
+3. Kategori organisasi, seperti Olahraga, Seni, atau Teknologi.
+4. Jumlah anggota yang dihitung berdasarkan data mahasiswa yang terdaftar pada organisasi tersebut.
+5. Badge status pendaftaran organisasi.
+6. Link "Lihat Detail" yang mengarahkan pengguna menuju halaman detail berdasarkan ID
+organisasi.
+Di bagian atas daftar, tampilkan judul "Daftar UKM", deskripsi singkat, serta jumlah organisasi UKM
+yang sedang ditampilkan.
+
+### Detail:
+### Bar Atas (Top Header)
+- Posisi & Warna: Membentang secara horizontal di bagian paling atas area konten utama dengan latar belakang berwarna kuning mustard.
+- Teks: Terdapat teks "Daftar UKM" berwarna hitam yang diposisikan rata kiri.
+
+### Header Card
+- Posisi: Berada tepat di bawah bar atas kuning, membentang penuh dari kiri ke kanan area konten.   Warna Latar: Putih dengan sudut membulat (rounded corners).   
+- Teks: Judul utama "Daftar UKM" dicetak tebal berwarna hitam, dengan subteks "Temukan Unit Kegiatan Mahasiswa yang sesuai dengan minat dan bakatmu." berwarna abu-abu di bawahnya.
+
+### Judul Bagian dan Label Jumlah
+- Posisi: Terletak di bawah kartu judul halaman, di atas deretan kartu UKM.
+- Teks Kiri: Terdapat judul bagian "Semua UKM" berwarna hitam.
+- Label Kanan: Di sisi kanan sejajar dengan judul bagian, terdapat badge atau label bertuliskan "4 Organisasi" dengan latar belakang kuning mustard dan teks hitam.
+
+### Grid Kartu Daftar UKM (4 Kartu)
+- Posisi & Tata Letak: Kartu-kartu disusun dalam format grid. Baris pertama berisi tiga kartu yang sejajar secara horizontal, dan baris kedua berisi satu kartu di posisi paling kiri.
+- Gaya Umum Kartu: Semua kartu memiliki latar belakang putih dengan sudut membulat.   
+- Struktur Isi Kartu (Berlaku untuk semua kartu):
+    - Ikon: Terletak di pojok kiri atas, berwarna kuning kecokelatan dengan latar belakang kotak melengkung berwarna kuning pucat.
+    - Judul & Kategori: Nama UKM dicetak tebal (hitam), di bawahnya terdapat kategori UKM (abu-abu).
+    - Jumlah Anggota: Ikon pengguna kecil dan teks jumlah anggota (misal: "5 Members") berwarna abu-abu.
+    - Badge Status: Badge yang menunjukkan status pendaftaran organisasi.
+    - Tautan: Teks "Lihat Detail →" berwarna biru di bagian kiri bawah.
+- Rincian Spesifik Masing-masing Kartu:
+    - Kartu 1 (Kiri Atas): Judul "UKM Basket", kategori "Olahraga", ikon bola basket, "5 Members", dan label status "Open Recruitment" dengan teks putih berlatar hijau.   
+    - Kartu 2 (Tengah Atas): Judul "UKM Musik", kategori "Seni", ikon tangga nada musik, "4 Members", dan label status "Coming Soon" dengan teks hitam berlatar kuning.  
+    - Kartu 3 (Kanan Atas): Judul "UKM Fotografi", kategori "Seni", ikon kamera, "3 Members", dan label status "Closed" dengan teks putih berlatar merah.
+    - Kartu 4 (Kiri Bawah): Judul "UKM Coding", kategori "Teknologi", ikon kode </>, "5 Members", dan label status "Open Recruitment" dengan teks putih berlatar hijau. 
+
+## Halaman Daftar UKK | route: "/ukk"
+
+Pada halaman ini, tampilkan seluruh organisasi yang termasuk dalam kategori UKK. Ketentuan tampilan sama seperti halaman Daftar UKM, tetapi data yang ditampilkan hanya organisasi dengan tipe UKK.
+
+Halaman Daftar UKM dan Daftar UKK diperbolehkan menggunakan satu file Blade yang sama dengan data berbeda dari Controller. Status pendaftaran pada kedua halaman ditampilkan menggunakan Blade Conditional dengan ketentuan berikut:
+
+| Status | Warna Badge | Bootstrap Class
+|--------|-------------|----------------
+| Open Recruitment | Hijau | bg-success
+| Coming Soon | Kuning | bg-warning
+| Closed | Merah | bg-danger
+
+Seluruh card organisasi harus ditampilkan menggunakan Blade Loop dan bukan ditulis satu per satu.
+
+### Detail:
+* **Top Header:** Bar kuning *mustard* membentang horizontal dengan teks "Daftar UKK" berwarna hitam rata kiri.
+* **Latar Belakang Utama:** Abu-abu sangat muda (*off-white*).
+* **Kartu Judul "Daftar UKK":** Berada di posisi atas dengan latar putih sudut membulat, judul hitam tebal, dan teks deskripsi abu-abu.
+* **Header Bagian "Semua UKK":**
+    * Teks judul bagian "Semua UKK" berwarna hitam rata kiri.
+    * Terdapat *badge* di ujung kanan sejajar dengan judul, menggunakan latar kuning *mustard* dan teks "2 Organisasi" hitam.
+* **Grid Kartu Daftar Organisasi:** Terdiri dari 2 kartu berlatar putih yang disejajarkan secara horizontal:
+    * **Elemen Umum:** Ikon garis kuning kecokelatan berlatar kuning pucat, judul UKK hitam tebal, kategori "Kerohanian" abu-abu, tautan "Lihat Detail &rarr;" biru.
+    * **Kartu UKK Kerohanian Kristen:** Menggunakan ikon grup orang, "3 Members", dan *badge* status "Open Recruitment" (teks putih, latar hijau).
+    * **Kartu UKK Kerohanian Katolik:** Menggunakan ikon bentuk hati, "3 Members", dan *badge* status "Coming Soon" (teks hitam, latar kuning).
+
+## Halaman Detail Organisasi | route: "/organizations/{id}"
+
+Halaman ini menampilkan rincian dari suatu organisasi (dalam contoh ini UKM Basket) yang terdiri dari beberapa bagian tabel dan daftar.
+
+* **Top Header:** Bar membentang horizontal berwarna kuning *mustard* dengan teks "Organization Detail" berwarna hitam rata kiri.
+* **Latar Belakang Utama:** Abu-abu sangat muda (*off-white*).
+* **Tombol Navigasi:** Di bagian kiri atas area konten (di bawah *header* kuning), terdapat tombol putih dengan ikon panah kiri dan teks "Kembali ke Daftar UKM".
+
+### Kartu "Daftar Mahasiswa"
+* **Posisi:** Berada paling atas setelah tombol navigasi, dengan latar belakang kotak putih.
+* **Header Kartu:** Judul "Daftar Mahasiswa" dicetak tebal berwarna hitam di sebelah kiri, dan terdapat *badge* kuning bertuliskan "5 Members" di ujung kanan.
+* **Tabel Mahasiswa:** Menampilkan tabel dengan *header* berlatar abu-abu terang yang berisi tiga kolom: **No**, **NRP**, dan **Nama Mahasiswa**.
+* **Isi Tabel:** Terdiri dari 5 baris data nama mahasiswa beserta NRP-nya, dengan warna baris selang-seling (putih dan abu-abu sangat pucat).
+
+### Kartu "Organization Activities"
+* **Posisi:** Terletak di tengah, tepat di bawah kartu Daftar Mahasiswa, berlatar belakang kotak putih.
+* **Header Kartu:** Judul "Organization Activities" dicetak tebal berwarna hitam rata kiri.
+* **Daftar Aktivitas:** Menampilkan daftar kegiatan yang disusun vertikal ke bawah dengan warna baris selang-seling (putih dan abu-abu sangat pucat). Terdapat tiga item aktivitas: "Latihan Rutin", "Friendly Match", dan "Turnamen Basket". Setiap item diawali dengan ikon bulat berwarna hijau.
+
+### Kartu "Attendance Records"
+* **Posisi:** Berada di bagian paling bawah halaman, berlatar belakang kotak putih.
+* **Header Kartu:** Judul "Attendance Records" hitam tebal dengan subteks abu-abu "Daftar kehadiran anggota UKM Basket" di bawahnya. Di sudut kanan atas sejajar dengan judul, terdapat *badge* kuning bertuliskan "4 Records".
+* **Tabel Kehadiran:** Memiliki *header* berlatar abu-abu terang dengan delapan kolom: **No**, **NRP**, **Nama Mahasiswa**, **Tanggal**, **Check-in**, **Check-out**, **Status**, dan **Durasi**.
+* **Isi Tabel:** Menampilkan 4 baris data rekam kehadiran dengan berbagai elemen visual untuk status:
+    * **Check-in/Check-out:** Menampilkan jam dengan warna hijau untuk *Check-in* dan warna merah untuk *Check-out*.
+    * **Status "Lengkap":** Menggunakan *badge* warna hijau (terdapat pada 2 baris pertama).
+    * **Status "Belum Check-out":** Menggunakan *badge* warna kuning (pada baris ke-3).
+    * **Status "Tidak Hadir":** Menggunakan *badge* warna merah (pada baris ke-4).
+    * **Durasi:** Ditampilkan menggunakan *badge* lonjong berwarna biru (untuk status yang sudah lengkap).
+
+Pada halaman ini, tampilkan informasi lengkap organisasi berdasarkan ID yang dipilih dari halaman Daftar UKM atau Daftar UKK.
+
+1. Organization Information
+
+    Tampilkan informasi organisasi yang meliputi:
+    - Ikon dan nama organisasi.
+    - Tipe dan kategori organisasi.
+    - Deskripsi organisasi.
+    - Jumlah anggota.
+    - Badge status pendaftaran sesuai ketentuan sebelumnya.
+
+2. Organization Activities
+
+    Tampilkan seluruh kegiatan organisasi berdasarkan data array yang tersedia pada Controller. Setiap kegiatan ditampilkan dalam bentuk list menggunakan Blade Loop.
+
+3. Daftar Mahasiswa
+Tampilkan daftar mahasiswa yang terdaftar pada organisasi tersebut dalam bentuk tabel dengan kolom:
+    - No.
+    - NRP.
+    - Nama Mahasiswa.
+
+    Nomor urut dapat ditampilkan menggunakan $loop->iteration. Jumlah anggota yang ditampilkan harus sesuai dengan data mahasiswa yang terdaftar pada organisasi tersebut.
+
+4. Attendance Records
+Tampilkan catatan kehadiran mahasiswa berdasarkan organisasi yang dipilih dalam bentuk tabel
+dengan kolom:
+    - No.
+    - NRP.
+    - Nama Mahasiswa.
+    - Tanggal.
+    - Check-in.
+    - Check-out.
+    - Status.
+    - Durasi.
+
+    Status kehadiran harus ditampilkan menggunakan Blade Conditional dengan ketentuan:
+
+    | Status Kehadiran | Warna Badge |
+    |------------------|-------------|
+    | Lengkap          | Hijau (bg-success) |
+    | Belum Check-out  | Kuning (bg-warning) |
+    | Tidak Hadir      | Merah (bg-danger) |
+
+    Apabila mahasiswa tidak memiliki waktu Check-in, Check-out, atau Durasi, tampilkan tanda "-" pada kolom yang bersangkutan.
+    Di bagian atas tabel, tampilkan jumlah Attendance Records berdasarkan data kehadiran organisasi tersebut.
+
+5. Navigasi Kembali
+Sediakan tombol kembali dengan ketentuan:
+    - Jika organisasi bertipe UKM, tombol mengarah ke halaman /ukm.
+    - Jika organisasi bertipe UKK, tombol mengarah ke halaman /ukk.
+
+    Seluruh organisasi harus menggunakan satu halaman Detail Blade yang sama. Jika ID organisasi tidak ditemukan, tampilkan halaman 404 Not Found.
