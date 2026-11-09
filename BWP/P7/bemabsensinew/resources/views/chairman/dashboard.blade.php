@@ -2,7 +2,70 @@
 @section('title', 'Dashboard Ketua UKM / UKK')
 @section('pageTitle', 'Dashboard Ketua UKM / UKK')
 @section('content')
-<h2 class="fw-bold">Halo, {{ $user['nama'] }}!</h2><p class="text-secondary">Dashboard Ketua {{ $organization['name'] }}. Di sini notifikasi mahasiswa yang ingin bergabung akan muncul.</p><div class="row g-3 mb-4"><div class="col-md-6"><div class="card shadow-sm"><div class="card-body"><div class="text-secondary">Permintaan Bergabung</div><div class="fs-2 fw-bold">{{ count($requests) }}</div></div></div></div><div class="col-md-6"><div class="card shadow-sm"><div class="card-body"><div class="text-secondary">Anggota Organisasi</div><div class="fs-2 fw-bold">{{ count($members) }}</div></div></div></div></div>
-<div class="card shadow-sm mb-4"><div class="card-body"><h3 class="h5 fw-bold">Notifikasi Calon Anggota</h3><p class="text-secondary">Saat Admin menambahkan mahasiswa sebagai anggota, permintaan otomatis tidak ditampilkan lagi.</p>@forelse($requests as $request)<div class="border-bottom py-2">{{ $request['name'] }} ({{ $request['nrp'] }}) · {{ $request['created_at'] }}</div>@empty<div class="text-center text-secondary py-4">Belum ada permintaan bergabung untuk organisasi Anda.</div>@endforelse</div></div>
-<div class="card shadow-sm"><div class="card-body"><h3 class="h5 fw-bold">Jadwal Kegiatan {{ $organization['name'] }}</h3><table class="table"><thead><tr><th>Nama Kegiatan</th><th>Tanggal</th><th>Jam</th><th>Lokasi</th></tr></thead><tbody>@forelse($schedules as $schedule)<tr><td>{{ $schedule['title'] }}</td><td>{{ $schedule['date'] }}</td><td>{{ $schedule['start_time'] }}-{{ $schedule['end_time'] }}</td><td>{{ $schedule['location'] }}</td></tr>@empty<tr><td colspan="4">Belum ada jadwal.</td></tr>@endforelse</tbody></table></div></div>
+    <h2 class="fw-bold">Halo, {{ $user['nama'] }}!</h2>
+    <p class="text-secondary">Dashboard Ketua {{ $organization['name'] }}. Di sini notifikasi mahasiswa yang ingin bergabung
+        akan muncul.</p>
+    <div class="row g-3 mb-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex justify-content-between align-items-start">
+                    <div>
+                        <div class="text-secondary">Permintaan Bergabung</div>
+                        <div class="fs-2 fw-bold">{{ count($requests) }}</div>
+                    </div>
+                    <div class="stat-icon bg-warning-subtle text-warning">
+                        <i class="bi bi-bell-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex justify-content-between align-items-start">
+                    <div>
+                        <div class="text-secondary">Anggota Organisasi</div>
+                        <div class="fs-2 fw-bold">{{ count($members) }}</div>
+                    </div>
+                    <div class="stat-icon bg-success-subtle text-success">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h3 class="h5 fw-bold">Notifikasi Calon Anggota</h3>
+            <p class="text-secondary">Saat Admin menambahkan mahasiswa sebagai anggota, permintaan otomatis tidak
+                ditampilkan lagi.</p>@forelse($requests as $request)
+                    <div class="border-bottom py-2">{{ $request['name'] }} ({{ $request['nrp'] }}) · {{ $request['created_at'] }}
+                </div>@empty<div class="text-center text-secondary py-4">Belum ada permintaan bergabung untuk organisasi Anda.
+            </div>@endforelse
+        </div>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h3 class="h5 fw-bold">Jadwal Kegiatan {{ $organization['name'] }}</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nama Kegiatan</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>Lokasi</th>
+                    </tr>
+                </thead>
+                <tbody>@forelse($schedules as $schedule)
+                    <tr>
+                        <td>{{ $schedule['title'] }}</td>
+                        <td>{{ $schedule['date'] }}</td>
+                        <td>{{ $schedule['start_time'] }}-{{ $schedule['end_time'] }}</td>
+                        <td>{{ $schedule['location'] }}</td>
+                </tr>@empty<tr>
+                        <td colspan="4">Belum ada jadwal.</td>
+                    </tr>@endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection

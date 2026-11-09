@@ -311,8 +311,12 @@ class AbsensiController extends Controller
         return view('student.dashboard', [
             'user' => $user,
             'organizations' => $this->organizationsForUser($user['id']),
-            'schedules' => $this->schedulesForUser($user['id']),
+            'schedules' => array_values(array_filter(
+                $this->schedulesForUser($user['id']),
+                fn (array $schedule): bool => $schedule['date'] === today()->toDateString()
+            )),
             'attendance' => $attendance,
+            'recentAttendance' => array_slice(array_reverse($attendance), 0, 5),
             'stats' => [
                 'total' => count($attendance),
                 'complete' => count(array_filter($attendance, fn (array $record): bool => $record['status'] === 'Lengkap')),

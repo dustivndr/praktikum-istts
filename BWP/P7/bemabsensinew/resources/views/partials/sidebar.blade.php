@@ -19,9 +19,9 @@
         <nav class="nav flex-column gap-1">
             @if ($mode === 'admin')
                 <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}"><i class="bi bi-grid me-2"></i>Dashboard</a>
-                <a class="nav-link {{ request()->routeIs('admin.organizations*') ? 'active' : '' }}" href="{{ route('admin.organizations') }}"><i class="bi bi-building me-2"></i>Kelola UKM &amp; UKK</a>
-                <a class="nav-link" href="{{ route('admin.organizations', 'UKM') }}"><i class="bi bi-people me-2"></i>Daftar UKM</a>
-                <a class="nav-link" href="{{ route('admin.organizations', 'UKK') }}"><i class="bi bi-heart me-2"></i>Daftar UKK</a>
+                <a class="nav-link {{ request()->routeIs('admin.organizations') && request()->route('type') === null ? 'active' : '' }}" href="{{ route('admin.organizations') }}"><i class="bi bi-building me-2"></i>Kelola UKM &amp; UKK</a>
+                <a class="nav-link {{ request()->routeIs('admin.organizations') && request()->route('type') === 'UKM' ? 'active' : '' }}" href="{{ route('admin.organizations', 'UKM') }}"><i class="bi bi-people me-2"></i>Daftar UKM</a>
+                <a class="nav-link {{ request()->routeIs('admin.organizations') && request()->route('type') === 'UKK' ? 'active' : '' }}" href="{{ route('admin.organizations', 'UKK') }}"><i class="bi bi-heart me-2"></i>Daftar UKK</a>
                 <a class="nav-link {{ request()->routeIs('admin.schedules*') ? 'active' : '' }}" href="{{ route('admin.schedules') }}"><i class="bi bi-calendar3 me-2"></i>Jadwal Kegiatan</a>
             @elseif ($mode === 'ketua')
                 <a class="nav-link active" href="{{ route('chairman.dashboard') }}"><i class="bi bi-bell me-2"></i>Notifikasi Permintaan</a>

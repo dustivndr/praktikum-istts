@@ -1,6 +1,6 @@
 @php
     $badgeClass = match ($status) {
-        'Open Recruitment', 'Lengkap' => 'bg-success text-white',
+        'Open Recruitment', 'Lengkap', 'Sudah Check-out' => 'bg-success text-white',
         'Coming Soon', 'Belum Check-out' => 'bg-warning text-dark',
         default => 'bg-danger text-white',
     };
