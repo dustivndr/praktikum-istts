@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p7\\bank7\\bank7\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|solutionrelative:bank7\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|solutionrelative:bank7\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|solutionrelative:bank7\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p7\\bank7\\bank7\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|solutionrelative:bank7\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p7\\bank7\\bank7\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|solutionrelative:bank7\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p7\\bank7\\bank7\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|solutionrelative:bank7\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Transfer.cs [Design]",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Transfer.cs",
+              "RelativeDocumentMoniker": "bank7\\Transfer.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Transfer.cs [Design]",
+              "RelativeToolTip": "bank7\\Transfer.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T13:09:16.634Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Transfer.cs",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Transfer.cs",
+              "RelativeDocumentMoniker": "bank7\\Transfer.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Transfer.cs",
+              "RelativeToolTip": "bank7\\Transfer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA/wIUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T13:21:09.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Dashboard.cs",
+              "RelativeDocumentMoniker": "bank7\\Dashboard.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Dashboard.cs [Design]",
+              "RelativeToolTip": "bank7\\Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T06:28:42.302Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dashboard.cs",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Dashboard.cs",
+              "RelativeDocumentMoniker": "bank7\\Dashboard.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Dashboard.cs",
+              "RelativeToolTip": "bank7\\Dashboard.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBIAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T14:35:27.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Login.cs",
+              "RelativeDocumentMoniker": "bank7\\Login.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Login.cs [Design]",
+              "RelativeToolTip": "bank7\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T06:14:06.987Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Login.cs",
+              "RelativeDocumentMoniker": "bank7\\Login.cs",
+              "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Login.cs",
+              "RelativeToolTip": "bank7\\Login.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwCcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T06:49:12.152Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
