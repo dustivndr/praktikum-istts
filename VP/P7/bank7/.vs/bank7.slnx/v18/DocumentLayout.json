@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|solutionrelative:bank7\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|c:\\dustin-ivander\\istts\\praktikum-istts\\vp\\p7\\bank7\\bank7\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C8397A7D-56EE-EF47-E409-0BA48AC3B84F}|bank7\\bank7.csproj|solutionrelative:bank7\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -45,8 +45,7 @@
               "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Transfer.cs [Design]",
               "RelativeToolTip": "bank7\\Transfer.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T13:09:16.634Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-11-11T13:09:16.634Z"
             },
             {
               "$type": "Document",
@@ -58,8 +57,7 @@
               "RelativeToolTip": "bank7\\Transfer.cs",
               "ViewState": "AgIAAGQAAAAAAAAAAAAkwGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T13:21:09.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-11T13:21:09.812Z"
             },
             {
               "$type": "Document",
@@ -70,8 +68,7 @@
               "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Dashboard.cs [Design]",
               "RelativeToolTip": "bank7\\Dashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T06:28:42.302Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-11-11T06:28:42.302Z"
             },
             {
               "$type": "Document",
@@ -83,8 +80,7 @@
               "RelativeToolTip": "bank7\\Dashboard.cs",
               "ViewState": "AgIAAK0AAAAAAAAAAAAUwJQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T14:35:27.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-11T14:35:27.225Z"
             },
             {
               "$type": "Document",
@@ -106,7 +102,7 @@
               "RelativeDocumentMoniker": "bank7\\Login.cs",
               "ToolTip": "C:\\Dustin-Ivander\\iSTTS\\praktikum-istts\\VP\\P7\\bank7\\bank7\\Login.cs",
               "RelativeToolTip": "bank7\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwCcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T06:49:12.152Z",
               "EditorCaption": ""
